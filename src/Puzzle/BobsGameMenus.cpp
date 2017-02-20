@@ -3146,6 +3146,16 @@ string getNiceTime(long ms)
 	return niceTime;
 }
 
+string getDateFromEpochTime(long ms)
+{
+	std::time_t result = ms;
+	string s = std::asctime(std::localtime(&result));
+	std::string::size_type i = s.find("\n");
+	if (i != std::string::npos)
+		s.erase(i, s.length());
+	return s;
+}
+
 //=========================================================================================================================
 //gameTypeOrSequenceString or difficulty string can be "OVERALL"
 void BobsGame::populateUserStatsForSpecificGameAndDifficultyMenu(BobMenu *menu, string gameTypeOrSequenceUUID, string difficultyString)
@@ -3210,8 +3220,8 @@ void BobsGame::populateUserStatsForSpecificGameAndDifficultyMenu(BobMenu *menu, 
 	menu->add("Longest Game Length: " + getNiceTime(stats->longestGameLength));
 	menu->add("Average Game Length: " + getNiceTime(stats->averageGameLength));
 	menu->add("Total Time Played: " + getNiceTime(stats->totalTimePlayed));
-	menu->add("First Time Played: " + getNiceTime(stats->firstTimePlayed));
-	menu->add("Last Time Played: " + getNiceTime(stats->lastTimePlayed));
+	menu->add("First Time Played: " + getDateFromEpochTime(stats->firstTimePlayed));
+	menu->add("Last Time Played: " + getDateFromEpochTime(stats->lastTimePlayed));
 	menu->add("Most Blocks Cleared: " + to_string(stats->mostBlocksCleared));
 	menu->add("Total Blocks Made: " + to_string(stats->totalBlocksMade));
 	menu->add("Total Blocks Cleared: " + to_string(stats->totalBlocksCleared));
@@ -3356,35 +3366,35 @@ void BobsGame::populateLeaderBoardOrHighScoreBoardMenu(BobMenu *menu, string gam
 	for (int i = 0; i < stats->entries.size(); i++)
 	{
 		BobsGameLeaderBoardAndHighScoreBoard::BobsGameLeaderBoardAndHighScoreBoardEntry* e = stats->entries.get(i);
-		menu->add("Player: " + e->userName);
+		string s = to_string(i)+") " + e->userName + " | ";
 
 		if (totalTimePlayed)
 		{
-			menu->add("Total Time Played: " + getNiceTime(e->totalTimePlayed));
+			menu->add(s+"Total Time Played: " + getNiceTime(e->totalTimePlayed));
 		}
 		if (totalBlocksCleared)
 		{
-			menu->add("Total Blocks Cleared: " + to_string(e->totalBlocksCleared));
+			menu->add(s + "Total Blocks Cleared: " + to_string(e->totalBlocksCleared));
 		}
 
 		if (planeswalkerPoints)
 		{
-			menu->add("Planeswalker Score: " + to_string(e->planesWalkerPoints));
+			menu->add(s + "Planeswalker Score: " + to_string(e->planesWalkerPoints));
 		}
 
 		if (eloScore)
 		{
-			menu->add("Elo Score: " + to_string(e->eloScore));
+			menu->add(s + "Elo Score: " + to_string(e->eloScore));
 		}
 
 		if (timeLasted)
 		{
-			menu->add("Longest Game Length: " + getNiceTime(e->longestGameLength));
+			menu->add(s + "Longest Game Length: " + getNiceTime(e->longestGameLength));
 		}
 
 		if (blocksCleared)
 		{
-			menu->add("Most Blocks Cleared: " + to_string(e->mostBlocksClearedInOneGame));
+			menu->add(s + "Most Blocks Cleared: " + to_string(e->mostBlocksClearedInOneGame));
 		}
 
 //		menu->add("Total Games Played: " + to_string(e->totalGamesPlayed));
@@ -3395,8 +3405,8 @@ void BobsGame::populateLeaderBoardOrHighScoreBoardMenu(BobMenu *menu, string gam
 //		menu->add("Tournament Games Played: " + to_string(e->tournamentGamesPlayed));
 //		menu->add("Tournament Games Won: " + to_string(e->tournamentGamesWon));
 //		menu->add("Tournament Games Lost: " + to_string(e->tournamentGamesLost));
-//		menu->add("First Time Played: " + getNiceTime(e->firstTimePlayed));
-//		menu->add("Time Record Set: " + getNiceTime(e->timeRecordSet));
+//		menu->add("First Time Played: " + getDateFromEpochTime(e->firstTimePlayed));
+//		menu->add("Time Record Set: " + getDateFromEpochTime(e->timeRecordSet));
 //		menu->add("Biggest Combo: " + to_string(e->biggestCombo));
 		
 		

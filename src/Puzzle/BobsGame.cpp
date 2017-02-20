@@ -2151,10 +2151,6 @@ void BobsGame::saveGameTypeToXML(GameType *gs, bool downloaded)
 void BobsGame::getGameTypesAndSequencesFromServer()
 {//=========================================================================================================================
 	
-	if (sentServerGamesRequest && gotGamesFromServer == false)
-	{
-		gettingGamesFromServerMenuShowing = true;
-	}
 
 	
 	
@@ -2164,10 +2160,12 @@ void BobsGame::getGameTypesAndSequencesFromServer()
 		{
 			if (gotGamesFromServer == false)
 			{
+				if (getServerConnection()->getAuthorizedOnServer_S() || sentServerGamesRequest)gettingGamesFromServerMenuShowing = true;
+
 				long long currentTime = System::currentHighResTimer();
 				long long startTime = lastCheckedGamesFromServerTime;
 				int ticksPassed = (int)(System::getTicksBetweenTimes(startTime, currentTime));
-				if (ticksPassed > 1000)
+				if (ticksPassed > 2000)
 				{
 					lastCheckedGamesFromServerTime = currentTime;
 					if (sentServerGamesRequest == false)
