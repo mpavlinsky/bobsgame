@@ -1,0 +1,31 @@
+*.sdf
+*.opensdf
+*.tlog
+*.lastbuildstate
+*.idb
+*.res
+*.opendb
+*.db
+distro/
+Release/
+Debug/
+version.txt
+log.html
+*.suo
+
+
+*.dia
+.DS_Store
+
+# Compiled Object files
+*.slo
+*.lo
+*.obj
+*.xcuserstate
+
+# Precompiled Headers
+*.gch
+*.pch
+*.ipch
+
+
