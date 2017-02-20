@@ -1,6 +1,0 @@
-id:255
-name:ramiobrickchunk
-width:16
-height:16
-frames:1
-animation:Frame0:0

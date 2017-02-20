@@ -1,6 +1,0 @@
-id:253
-name:ramiomoneyblock
-width:16
-height:16
-frames:8
-animation:Frame0:0
