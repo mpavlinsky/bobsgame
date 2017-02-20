@@ -85,5 +85,8 @@
     <ArrayOfString>
       <string>C:\Users\Administrator\workspace\bobsgame\src\Puzzle\Stats\LeaderBoardAndHighScoreBoardEntry.h</string>
     </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Puzzle\Legacy.h</string>
+    </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

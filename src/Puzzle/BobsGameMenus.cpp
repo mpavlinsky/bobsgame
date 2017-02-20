@@ -34,6 +34,11 @@ bool BobsGame::updateMenus()
 		startScreenMenuUpdate();
 		updatedMenu = true;
 	}
+	if (gettingGamesFromServerMenuShowing)
+	{
+		gettingGamesFromServerMenuUpdate();
+		updatedMenu = true;
+	}
 
 	if (controllerMenuShowing)
 	{
@@ -173,6 +178,13 @@ bool BobsGame::renderMenus()
 		startScreenMenuRender();
 		renderedMenu = true;
 	}
+
+	if (gettingGamesFromServerMenuShowing)
+	{
+		gettingGamesFromServerMenuRender();
+		renderedMenu = true;
+	}
+
 	if (controllerMenuShowing)
 	{
 		controllerMenuRender();
@@ -699,6 +711,64 @@ void BobsGame::startScreenMenuRender()
 		int y = y = c->screenY;
 		forumMenu->render(y, x);
 	}
+}
+
+void BobsGame::gettingGamesFromServerMenuUpdate()
+{ //=========================================================================================================================
+
+	titleMenuFrameTicks += super::engineTicksPassed();
+	if (titleMenuFrameTicks > 20)
+	{
+		titleMenuFrameTicks = 0;
+		currentTitleMenuTextureFrame++;
+		if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
+		{
+			currentTitleMenuTextureFrame = 0;
+		}
+
+		updateTitleMenuLogoTexture();
+	}
+
+	if (gettingGamesFromServerMenu == nullptr)
+	{
+		gettingGamesFromServerMenu = new BobMenu(this, "");
+		gettingGamesFromServerMenu->spacing = 1.2f;
+		gettingGamesFromServerMenu->addInfo("Downloading games from server...","Downloading");
+	}
+
+	long long currentTime = System::currentHighResTimer();
+	long long startTime = gettingGamesFromServerDotsTime;
+	int ticksPassed = (int)(System::getTicksBetweenTimes(startTime, currentTime));
+	if (ticksPassed > 300)
+	{
+		gettingGamesFromServerDotsTime = currentTime;
+		gettingGamesFromServerCount++;
+		gettingGamesFromServerMenu->getCaptionByID("Downloading")->setText("Downloading games from server" + cycleDots(gettingGamesFromServerCount));
+	}
+	
+	
+}
+
+
+void BobsGame::gettingGamesFromServerMenuRender()
+{ //=========================================================================================================================
+
+	GLUtils::drawFilledRect(255,255,255, 0, (float)getWidth(), 0, (float)getHeight(), 1.0f);
+
+
+	BobTexture *t = nullptr;
+
+	if (titleMenuTextures != nullptr && titleMenuTextures->size()>0)t = titleMenuTextures->get(currentTitleMenuTextureFrame);
+	if (titleMenuTexture != nullptr)t = titleMenuTexture;
+	
+	if (gettingGamesFromServerMenu == nullptr)return;
+
+	if (t != nullptr)
+	{
+		gettingGamesFromServerMenu->setGraphic(t, getWidth()/3*2, getHeight() / 7);
+		gettingGamesFromServerMenu->render();
+	}
+
 }
 
 

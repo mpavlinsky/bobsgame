@@ -2151,6 +2151,10 @@ void BobsGame::saveGameTypeToXML(GameType *gs, bool downloaded)
 void BobsGame::getGameTypesAndSequencesFromServer()
 {//=========================================================================================================================
 	
+	if (sentServerGamesRequest && gotGamesFromServer == false)
+	{
+		gettingGamesFromServerMenuShowing = true;
+	}
 
 	
 	
@@ -2250,7 +2254,13 @@ void BobsGame::getGameTypesAndSequencesFromServer()
 						}
 
 						setGotIncomingGamesFromServer_S(false);
+						gettingGamesFromServerMenuShowing = false;
 
+						if (gettingGamesFromServerMenu != nullptr)
+						{
+							delete gettingGamesFromServerMenu;
+							gettingGamesFromServerMenu = nullptr;
+						}
 					}
 				}
 			}
