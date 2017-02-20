@@ -151,6 +151,15 @@ public:
 	void startScreenMenuUpdate();
 	void startScreenMenuRender();
 
+	BobMenu *gettingGamesFromServerMenu = nullptr;
+	void gettingGamesFromServerMenuUpdate();
+	void gettingGamesFromServerMenuRender();
+	bool gettingGamesFromServerMenuShowing = false;
+	long long gettingGamesFromServerDotsTime = 0;
+	int gettingGamesFromServerCount = 0;
+
+	string cycleDots(int tries);
+
 	virtual void updateTitleMenuLogoTexture() override;
 	virtual void titleMenuUpdate() override;
 	virtual void titleMenuRender() override;

@@ -1,0 +1,34 @@
+*.sdf
+*.opensdf
+*.tlog
+*.lastbuildstate
+*.idb
+*.res
+*.opendb
+*.db
+distro/
+_resources/
+DerivedData/
+obj/
+Release/
+Debug/
+version.txt
+log.html
+*.suo
+src/Puzzle/Legacy.h
+
+*.dia
+.DS_Store
+
+# Compiled Object files
+*.slo
+*.lo
+*.obj
+*.xcuserstate
+
+# Precompiled Headers
+*.gch
+*.pch
+*.ipch
+
+
