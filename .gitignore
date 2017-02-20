@@ -7,12 +7,22 @@
 *.opendb
 *.db
 distro/
+<<<<<<< HEAD
+=======
+_resources/
+DerivedData/
+obj/
+>>>>>>> fdd96b86fcf03a9517c1969419d5e307acea1cf7
 Release/
 Debug/
 version.txt
 log.html
 *.suo
+<<<<<<< HEAD
 
+=======
+src/Puzzle/Legacy.h
+>>>>>>> fdd96b86fcf03a9517c1969419d5e307acea1cf7
 
 *.dia
 .DS_Store
