@@ -1,0 +1,30 @@
+﻿  XMLConfigurationTest.cpp
+  WinRegistryTest.cpp
+  WindowsTestSuite.cpp
+  WinConfigurationTest.cpp
+  ValidatorTest.cpp
+  UtilTestSuite.cpp
+  TimerTestSuite.cpp
+  TimerTest.cpp
+  SystemConfigurationTest.cpp
+  PropertyFileConfigurationTest.cpp
+  OptionTest.cpp
+  OptionsTestSuite.cpp
+  OptionSetTest.cpp
+  OptionProcessorTest.cpp
+  MapConfigurationTest.cpp
+  LoggingConfiguratorTest.cpp
+  LayeredConfigurationTest.cpp
+  JSONConfigurationTest.cpp
+  IniFileConfigurationTest.cpp
+  HelpFormatterTest.cpp
+  Generating Code...
+  Compiling...
+  FilesystemConfigurationTest.cpp
+  Driver.cpp
+  ConfigurationViewTest.cpp
+  ConfigurationTestSuite.cpp
+  ConfigurationMapperTest.cpp
+  AbstractConfigurationTest.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Util\testsuite\bin\static_mt\TestSuited.exe

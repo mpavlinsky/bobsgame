@@ -1,0 +1,5 @@
+﻿  TestPlugin.cpp
+  TestLibrary.cpp
+  Generating Code...
+     Creating library bin\TestLibraryd.lib and object bin\TestLibraryd.exp
+  TestLibrary_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Foundation\testsuite\bin\TestLibraryd.dll

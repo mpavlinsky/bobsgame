@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74442AF3-60FC-6B40-C903-459CB5DA0631}</ProjectGuid>
+    <RootNamespace>libmodplug</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\lib\</OutDir>
+    <IntDir>debug\Debug\libmodplug\</IntDir>
+    <TargetName>libmodplug</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\lib\</OutDir>
+    <IntDir>release\Release\libmodplug\</IntDir>
+    <TargetName>libmodplug</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\ext\libmodplug\src\libmodplug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;DEBUG;MODPLUG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)libmodplug.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;DEBUG;MODPLUG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\ext\libmodplug\src\libmodplug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)libmodplug.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\ext\libmodplug\src\libmodplug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;MODPLUG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;MODPLUG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\ext\libmodplug\src\libmodplug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)libmodplug.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ext\libmodplug\src\fastmix.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_669.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_abc.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_amf.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ams.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dbm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dmf.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dsm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_far.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_it.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_j2b.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mdl.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_med.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mid.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mod.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mt2.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mtm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_okt.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_pat.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_psm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ptm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_s3m.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_stm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ult.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_umx.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_wav.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_xm.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\mmcmp.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\modplug.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\sndfile.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\sndmix.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_dsp.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_flt.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_fx.cpp">
+      <ObjectFileName>$(IntDir)ext\libmodplug\src\</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

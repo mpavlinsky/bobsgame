@@ -1,0 +1,6 @@
+﻿  SQLExecutor.cpp
+  MySQLTestSuite.cpp
+  MySQLTest.cpp
+  Driver.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\MySQL\testsuite\bin\TestSuited.exe

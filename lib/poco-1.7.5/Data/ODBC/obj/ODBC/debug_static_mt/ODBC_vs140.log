@@ -1,0 +1,16 @@
+﻿  Utility.cpp
+  Unicode.cpp
+  TypeInfo.cpp
+  SessionImpl.cpp
+  Preparator.cpp
+  Parameter.cpp
+  ODBCStatementImpl.cpp
+  ODBCMetaColumn.cpp
+  ODBCException.cpp
+  Extractor.cpp
+  EnvironmentHandle.cpp
+  Connector.cpp
+  ConnectionHandle.cpp
+  Binder.cpp
+  Generating Code...
+  ODBC_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\ODBC\..\..\lib\PocoDataODBCmtd.lib

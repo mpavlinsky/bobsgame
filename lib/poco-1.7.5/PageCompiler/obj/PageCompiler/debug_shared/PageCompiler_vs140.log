@@ -1,0 +1,8 @@
+﻿  PageReader.cpp
+  PageCompiler.cpp
+  Page.cpp
+  OSPCodeWriter.cpp
+  CodeWriter.cpp
+  ApacheCodeWriter.cpp
+  Generating Code...
+  PageCompiler_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\PageCompiler\bin\cpspcd.exe
