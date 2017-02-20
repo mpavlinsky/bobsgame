@@ -1,6 +1,0 @@
-id:249
-name:ramio
-width:16
-height:32
-frames:14
-animation:Frame0:0

@@ -1,6 +1,0 @@
-id:252
-name:ramioevil
-width:16
-height:32
-frames:11
-animation:Frame0:0
