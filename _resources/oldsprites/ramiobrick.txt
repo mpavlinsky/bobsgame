@@ -1,6 +1,0 @@
-id:254
-name:ramiobrick
-width:16
-height:16
-frames:1
-animation:Frame0:0
