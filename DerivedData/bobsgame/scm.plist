@@ -7,7 +7,7 @@
 		<string>/Users/bob/Documents/bobsgame</string>
 	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2017-02-19T05:01:41Z</date>
+	<date>2017-02-20T15:06:34Z</date>
 	<key>MissingFilePaths</key>
 	<array>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/ja.lproj/mh11395.html</string>
@@ -4434,6 +4434,7 @@
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/fi.lproj/mchlp2727.html</string>
 		<string>/Users/bob/Documents/bobsgame/src/Engine/stadium/StadiumGameEngine.h</string>
 		<string>/Users/bob/Documents/bobsgame/ro.lproj/iMessagePreferencesView.strings</string>
+		<string>/Users/bob/Documents/bobsgame/macos/SDL2_mixer.framework/Versions/A/Headers</string>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/da.lproj/instX001.html</string>
 		<string>/Library/Dictionaries/The Standard Dictionary of Contemporary Chinese.dictionary/Contents/Resources/Body.data</string>
 		<string>/Users/bob/Documents/bobsgame/BANGLADESH.png</string>
@@ -5831,6 +5832,7 @@
 		<string>/Library/Messages/PlugIns/AIM.imservice/Contents/Resources/id.lproj/AIMLocalizable.strings</string>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/ms.lproj/mchl1035472a.html</string>
 		<string>/Library/Documentation/Help/VoiceOver.help/Contents/Resources/en.lproj/search.helpindex</string>
+		<string>/Users/bob/Documents/bobsgame/macos/SDL2_net.framework/Versions/A/Headers</string>
 		<string>/Users/bob/Documents/bobsgame/22A52326-7ECD-6F8D-41E1-D00802A088BC__Travelogue_LD_shadow_214.png</string>
 		<string>/Users/bob/Documents/bobsgame/rock bass.png</string>
 		<string>/Users/bob/Documents/bobsgame/BentoBox-SQ_7119B111-E6DB-45AD-8CC3-A712ABB6B6AE.png</string>
@@ -6427,6 +6429,7 @@
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/pl.lproj/mchlp2718.html</string>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/uk.lproj/mchlp2415.html</string>
 		<string>/Users/bob/Documents/bobsgame/ro.lproj/BlockListView.strings</string>
+		<string>/Users/bob/Documents/bobsgame/macos/SDL2_ttf.framework/Versions/A/Headers</string>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/ro.lproj/mchlp1179.html</string>
 		<string>/Library/Documentation/Help/MacHelp.help/Contents/Resources/vi.lproj/mchlp1579.html</string>
 		<string>/Library/WebServer/share/httpd/manual/mod/mod_proxy_html.html</string>
