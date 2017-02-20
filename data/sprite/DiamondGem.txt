@@ -1,0 +1,6 @@
+id:57
+name:DiamondGem
+width:64
+height:64
+frames:10
+animation:Normal:0

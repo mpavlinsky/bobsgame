@@ -1,0 +1,6 @@
+id:45
+name:SparkBall
+width:64
+height:64
+frames:4
+animation:Normal:0

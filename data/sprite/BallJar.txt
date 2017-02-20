@@ -1,0 +1,7 @@
+id:63
+name:BallJar
+width:64
+height:64
+frames:12
+animation:Normal:0
+animation:Popping:8

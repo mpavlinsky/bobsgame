@@ -1,0 +1,16 @@
+id:62
+name:Counter
+width:64
+height:64
+frames:11
+animation:10:0
+animation:9:1
+animation:8:2
+animation:7:3
+animation:6:4
+animation:5:5
+animation:4:6
+animation:3:7
+animation:2:8
+animation:1:9
+animation:0:10
