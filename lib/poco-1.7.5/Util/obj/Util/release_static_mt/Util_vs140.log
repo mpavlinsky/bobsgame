@@ -1,0 +1,34 @@
+﻿  AbstractConfiguration.cpp
+  Application.cpp
+  ConfigurationMapper.cpp
+  ConfigurationView.cpp
+  FilesystemConfiguration.cpp
+  HelpFormatter.cpp
+  IniFileConfiguration.cpp
+  IntValidator.cpp
+  JSONConfiguration.cpp
+  LayeredConfiguration.cpp
+  LoggingConfigurator.cpp
+  LoggingSubsystem.cpp
+  MapConfiguration.cpp
+  Option.cpp
+  OptionCallback.cpp
+  OptionException.cpp
+  OptionProcessor.cpp
+  OptionSet.cpp
+  PropertyFileConfiguration.cpp
+  RegExpValidator.cpp
+  Generating Code...
+  Compiling...
+  ServerApplication.cpp
+  Subsystem.cpp
+  SystemConfiguration.cpp
+  Timer.cpp
+  TimerTask.cpp
+  Validator.cpp
+  WinRegistryConfiguration.cpp
+  WinRegistryKey.cpp
+  WinService.cpp
+  XMLConfiguration.cpp
+  Generating Code...
+  Util_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Util\..\lib\PocoUtilmt.lib

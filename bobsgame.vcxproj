@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AF7EAEC1-0865-4133-9A48-C8097F619525}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>bobsgame</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>
+    </LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>
+      </Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>.;.\lib;C:\Users\Administrator\workspace\bobsgame\lib\glew-2.0.0\include;.\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\include;.\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\include;.\lib\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;.\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\include;.\lib\SDL2_net-devel-2.0.1-VC\SDL2_net-2.0.1\include;.\lib\SDL2_gfx-1.0.1;.\lib\imgui-master;.\lib\soloud_20160109\include;.\lib\hyperic-sigar-1.6.4\sigar-bin\include;.\lib\poco-1.7.5\Foundation\include;.\lib\poco-1.7.5\JSON\include;.\lib\poco-1.7.5\Net\include;.\lib\poco-1.7.5\Util\include;.\lib\poco-1.7.5\XML\include;.\lib\poco-1.7.5\Zip\include;.\lib\enet-1.3.13\include;.\lib\zlib-1.2.8\include;.\lib\libzip-1.1.3\lib;.\lib\libzip-1.1.3\src;.\lib\zlib-1.2.8\contrib\minizip;.\lib\minilzo-2.09;.\lib\miniz-master;.\lib\cereal-master\include;.\lib\boost_1_62_0\;.\lib\GWEN-master\gwen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <IntrinsicFunctions>
+      </IntrinsicFunctions>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\lib\glew-2.0.0\lib;.\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\lib\x86;.\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\lib\x86;.\lib\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;.\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\lib\x86;.\lib\SDL2_net-devel-2.0.1-VC\SDL2_net-2.0.1\lib\x86;.\lib\soloud_20160109\lib;.\lib\hyperic-sigar-1.6.4\sigar-bin\lib;.\lib\poco-1.7.5\lib;.\lib\enet-1.3.13;.\lib\zlib-1.2.8\lib;.\lib\libzip-1.1.3\Release;.\lib\boost_1_62_0\lib32-msvc-14.0;.\lib\GWEN-master\gwen\lib\windows\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2_net.lib;opengl32.lib;CppUnitmtd.lib;PocoFoundationmtd.lib;PocoNetmtd.lib;PocoUtilmtd.lib;PocoZipmtd.lib;gwen_staticd.lib;GWEND-Renderer-OpenGL_TruetypeFontd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <MapExports />
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>.;.\lib;C:\Users\Administrator\workspace\bobsgame\lib\glew-2.0.0\include;.\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\include;.\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\include;.\lib\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;.\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\include;.\lib\SDL2_net-devel-2.0.1-VC\SDL2_net-2.0.1\include;.\lib\SDL2_gfx-1.0.1;.\lib\imgui-master;.\lib\soloud_20160109\include;.\lib\hyperic-sigar-1.6.4\sigar-bin\include;.\lib\poco-1.7.5\Foundation\include;.\lib\poco-1.7.5\JSON\include;.\lib\poco-1.7.5\Net\include;.\lib\poco-1.7.5\Util\include;.\lib\poco-1.7.5\XML\include;.\lib\poco-1.7.5\Zip\include;.\lib\enet-1.3.13\include;.\lib\zlib-1.2.8\include;.\lib\libzip-1.1.3\lib;.\lib\libzip-1.1.3\src;.\lib\zlib-1.2.8\contrib\minizip;.\lib\minilzo-2.09;.\lib\miniz-master;.\lib\cereal-master\include;.\lib\boost_1_62_0\;.\lib\GWEN-master\gwen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <SmallerTypeCheck />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>.\lib\glew-2.0.0\lib;.\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\lib\x86;.\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\lib\x86;.\lib\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;.\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\lib\x86;.\lib\SDL2_net-devel-2.0.1-VC\SDL2_net-2.0.1\lib\x86;.\lib\soloud_20160109\lib;.\lib\hyperic-sigar-1.6.4\sigar-bin\lib;.\lib\poco-1.7.5\lib;.\lib\enet-1.3.13;.\lib\zlib-1.2.8\lib;.\lib\libzip-1.1.3\Release;.\lib\boost_1_62_0\lib32-msvc-14.0;.\lib\GWEN-master\gwen\lib\windows\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2_net.lib;opengl32.lib;CppUnit.lib;PocoFoundationmt.lib;PocoNetmt.lib;PocoUtilmt.lib;PocoZipmt.lib;gwen_static.lib;GWEN-Renderer-OpenGL_TruetypeFont.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <MapExports />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="bobtypes.h" />
+    <ClInclude Include="lib\authenticate-GWEN-master\include\Gwen\renderer\gwen_renderer_sdl2.h" />
+    <ClInclude Include="lib\DG_misc.h" />
+    <ClInclude Include="lib\libzip-1.1.3\lib\zipconf.h" />
+    <ClInclude Include="lib\SDL_platform.h" />
+    <ClInclude Include="lib\stb_image_resize.h" />
+    <ClInclude Include="lib\stb_image_write.h" />
+    <ClInclude Include="lib\stb_truetype.h" />
+    <ClInclude Include="src\Engine\network\TCPServerConnection.h" />
+    <ClInclude Include="src\Puzzle\Legacy.h" />
+    <ClInclude Include="src\Puzzle\Room.h" />
+    <ClInclude Include="src\Puzzle\Stats\LeaderBoardAndHighScoreBoardEntry.h" />
+    <ClInclude Include="src\Puzzle\Stats\GameStats.h" />
+    <ClInclude Include="src\Puzzle\Stats\UserStatsForSpecificGameAndDifficulty.h" />
+    <ClInclude Include="src\Puzzle\CustomGameEditor.h" />
+    <ClInclude Include="src\Puzzle\GameSequence.h" />
+    <ClInclude Include="src\Puzzle\GameSequenceEditor.h" />
+    <ClInclude Include="src\Puzzle\GameTestMenu.h" />
+    <ClInclude Include="src\Puzzle\GlobalSettings.h" />
+    <ClInclude Include="src\Puzzle\PuzzlePlayer.h" />
+    <ClInclude Include="src\Utility\ArrayList.h" />
+    <ClInclude Include="src\Utility\BobMath.h" />
+    <ClInclude Include="src\Utility\BobMenu.h" />
+    <ClInclude Include="src\Utility\BobString.h" />
+    <ClInclude Include="src\Utility\HashMap.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="lib\HQ2X\HQ2X.h" />
+    <ClInclude Include="lib\SDL_stbimage.h" />
+    <ClInclude Include="lib\stb_image.h" />
+    <ClInclude Include="src\Engine\cinematics\CinematicsManager.h" />
+    <ClInclude Include="src\Engine\cinematics\Letterbox.h" />
+    <ClInclude Include="src\Engine\cinematics\ScreenOverlay.h" />
+    <ClInclude Include="src\Engine\Engine.h" />
+    <ClInclude Include="src\Engine\EnginePart.h" />
+    <ClInclude Include="src\Engine\entity\Cameraman.h" />
+    <ClInclude Include="src\Engine\entity\Character.h" />
+    <ClInclude Include="src\Engine\entity\Entity.h" />
+    <ClInclude Include="src\Engine\entity\PathFinder.h" />
+    <ClInclude Include="src\Engine\entity\RandomCharacter.h" />
+    <ClInclude Include="src\Engine\entity\ScreenSprite.h" />
+    <ClInclude Include="src\Engine\entity\Sprite.h" />
+    <ClInclude Include="src\Engine\entity\SpriteAnimationSequence.h" />
+    <ClInclude Include="src\Engine\entity\SpriteData.h" />
+    <ClInclude Include="src\Engine\entity\SpriteManager.h" />
+    <ClInclude Include="src\Engine\rpg\event\ActionManager.h" />
+    <ClInclude Include="src\Engine\rpg\event\Dialogue.h" />
+    <ClInclude Include="src\Engine\rpg\event\DialogueData.h" />
+    <ClInclude Include="src\Engine\rpg\event\Event.h" />
+    <ClInclude Include="src\Engine\rpg\event\EventCommand.h" />
+    <ClInclude Include="src\Engine\rpg\event\EventData.h" />
+    <ClInclude Include="src\Engine\rpg\event\EventManager.h" />
+    <ClInclude Include="src\Engine\rpg\event\EventParameter.h" />
+    <ClInclude Include="src\Engine\rpg\event\Flag.h" />
+    <ClInclude Include="src\Engine\rpg\event\FlagData.h" />
+    <ClInclude Include="src\Engine\rpg\event\GameString.h" />
+    <ClInclude Include="src\Engine\rpg\event\GameStringData.h" />
+    <ClInclude Include="src\Utility\audio\MusicData.h" />
+    <ClInclude Include="src\Engine\network\ServerObject.h" />
+    <ClInclude Include="src\Engine\rpg\event\Skill.h" />
+    <ClInclude Include="src\Engine\rpg\event\SkillData.h" />
+    <ClInclude Include="src\Utility\audio\SoundData.h" />
+    <ClInclude Include="src\Engine\rpg\BGClientEngine.h" />
+    <ClInclude Include="src\Engine\rpg\FriendCharacter.h" />
+    <ClInclude Include="src\Engine\rpg\FriendManager.h" />
+    <ClInclude Include="src\Engine\network\GameSave.h" />
+    <ClInclude Include="src\Engine\rpg\Clock.h" />
+    <ClInclude Include="src\Engine\rpg\EasingTest.h" />
+    <ClInclude Include="src\Engine\rpg\gui\CountryCodes.h" />
+    <ClInclude Include="src\Engine\rpg\gui\GameChallengeNotificationPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\gameStore\GameItem.h" />
+    <ClInclude Include="src\Engine\rpg\gui\gameStore\GameStore.h" />
+    <ClInclude Include="src\Engine\rpg\gui\GUIManager.h" />
+    <ClInclude Include="src\Engine\rpg\gui\MenuPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\PlayerEditMenu.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\buttons\GameStoreButton.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\buttons\NDButton.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\buttons\StatusBarButton.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\buttons\StuffButton.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\captions\ClockCaption.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\captions\DayCaption.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\captions\MoneyCaption.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\captions\StatusBarCaption.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\NotificationManager.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\notification\Notification.h" />
+    <ClInclude Include="src\Engine\rpg\gui\statusbar\StatusBar.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\StuffMenu.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\ControlsPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\DebugInfoPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\FriendsPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\ItemsPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\LogsPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\MessagesPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\SettingsPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\subMenus\StatusPanel.h" />
+    <ClInclude Include="src\Engine\rpg\gui\stuffMenu\SubPanel.h" />
+    <ClInclude Include="src\Engine\rpg\Item.h" />
+    <ClInclude Include="src\Engine\MiniGameEngine.h" />
+    <ClInclude Include="src\Engine\nd\GameDataLoader.h" />
+    <ClInclude Include="src\Engine\nd\ND.h" />
+    <ClInclude Include="src\Engine\nd\NDGameEngine.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\NDMenu.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\NDMenuBackground.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\NDMenuWheel.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\wheelitem\NDMenuInfoPanel.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\wheelitem\NDMenuMovie.h" />
+    <ClInclude Include="src\Engine\nd\ndmenu\wheelitem\NDMenuWheelItem.h" />
+    <ClInclude Include="src\Engine\nd\ping\PingBackground.h" />
+    <ClInclude Include="src\Engine\nd\ping\PingBall.h" />
+    <ClInclude Include="src\Engine\nd\ping\PingPaddle.h" />
+    <ClInclude Include="src\Engine\nd\ping\Ping.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioBackground.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioBlock.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioBoba.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioBrickBlock.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioGuy.h" />
+    <ClInclude Include="src\Engine\nd\ramio\RamioMoneyBlock.h" />
+    <ClInclude Include="src\Engine\nd\ramio\Ramio.h" />
+    <ClInclude Include="src\Engine\stadium\BobsGameStadium.h" />
+    <ClInclude Include="src\Engine\stadium\StadiumScreen.h" />
+    <ClInclude Include="src\Engine\rpg\Player.h" />
+    <ClInclude Include="src\Engine\rpg\Wallet.h" />
+    <ClInclude Include="src\Engine\map\Area.h" />
+    <ClInclude Include="src\Engine\map\AreaData.h" />
+    <ClInclude Include="src\Engine\map\Door.h" />
+    <ClInclude Include="src\Engine\map\DoorData.h" />
+    <ClInclude Include="src\Engine\map\EntityData.h" />
+    <ClInclude Include="src\Engine\map\Light.h" />
+    <ClInclude Include="src\Engine\map\LightData.h" />
+    <ClInclude Include="src\Engine\map\Map.h" />
+    <ClInclude Include="src\Engine\map\MapData.h" />
+    <ClInclude Include="src\Engine\map\MapManager.h" />
+    <ClInclude Include="src\Engine\map\MapState.h" />
+    <ClInclude Include="src\Engine\map\MapStateData.h" />
+    <ClInclude Include="src\Engine\map\WarpArea.h" />
+    <ClInclude Include="src\Engine\network\BobNet.h" />
+    <ClInclude Include="src\Engine\network\UDPPeerConnection.h" />
+    <ClInclude Include="src\Engine\state\CreateNewAccount.h" />
+    <ClInclude Include="src\Engine\state\CreateNewAccountState.h" />
+    <ClInclude Include="src\Engine\state\GlowTileBackground.h" />
+    <ClInclude Include="src\Engine\state\KeyboardScreen.h" />
+    <ClInclude Include="src\Engine\state\LegalScreen.h" />
+    <ClInclude Include="src\Engine\state\LoggedOutState.h" />
+    <ClInclude Include="src\Engine\state\LoginScreen.h" />
+    <ClInclude Include="src\Engine\state\LoginState.h" />
+    <ClInclude Include="src\Engine\state\ServersHaveShutDownState.h" />
+    <ClInclude Include="src\Engine\state\State.h" />
+    <ClInclude Include="src\Engine\state\StateManager.h" />
+    <ClInclude Include="src\Engine\state\TitleScreenState.h" />
+    <ClInclude Include="src\Engine\state\YouWillBeNotifiedState.h" />
+    <ClInclude Include="src\Engine\text\TextManager.h" />
+    <ClInclude Include="src\Engine\text\TextWindow.h" />
+    <ClInclude Include="src\Utility\audio\Music.h" />
+    <ClInclude Include="src\Utility\audio\Sound.h" />
+    <ClInclude Include="src\Utility\BobBool.h" />
+    <ClInclude Include="src\Utility\BufferedImage.h" />
+    <ClInclude Include="src\Utility\Console.h" />
+    <ClInclude Include="src\Utility\ConsoleText.h" />
+    <ClInclude Include="src\Utility\gl\Texture.h" />
+    <ClInclude Include="src\Utility\Logger.h" />
+    <ClInclude Include="src\Utility\Easing.h" />
+    <ClInclude Include="src\Utility\FileUtils.h" />
+    <ClInclude Include="src\Utility\RectangularVectors.h" />
+    <ClInclude Include="src\Utility\stringconverter.h" />
+    <ClInclude Include="src\Puzzle\Block.h" />
+    <ClInclude Include="src\Puzzle\BobsGame.h" />
+    <ClInclude Include="src\Puzzle\GameLogic.h" />
+    <ClInclude Include="src\Puzzle\Grid.h" />
+    <ClInclude Include="src\Puzzle\Piece.h" />
+    <ClInclude Include="src\Puzzle\GameType.h" />
+    <ClInclude Include="src\Utility\AssetData.h" />
+    <ClInclude Include="src\Utility\audio\AudioManager.h" />
+    <ClInclude Include="src\Utility\BobFont.h" />
+    <ClInclude Include="src\Utility\Caption.h" />
+    <ClInclude Include="src\Utility\CaptionManager.h" />
+    <ClInclude Include="src\Utility\ControlsManager.h" />
+    <ClInclude Include="src\Utility\gl\GLUtils.h" />
+    <ClInclude Include="src\Utility\System.h" />
+    <ClInclude Include="src\Utility\Color.h" />
+    <ClInclude Include="src\main.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\glew-2.0.0\src\glew.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lib\GWEN-master\gwen\src\input\gwen_input_sdl2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lib\HQ2X\HQ2X.cpp" />
+    <ClCompile Include="lib\minilzo-2.09\minilzo.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lib\miniz-master\timer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lib\miniz-master\tinfl.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Engine\network\TCPServerConnection.cpp" />
+    <ClCompile Include="src\Puzzle\BobsGameMenus.cpp" />
+    <ClCompile Include="src\Engine\cinematics\CinematicsManager.cpp" />
+    <ClCompile Include="src\Engine\cinematics\Letterbox.cpp" />
+    <ClCompile Include="src\Engine\cinematics\ScreenOverlay.cpp" />
+    <ClCompile Include="src\Engine\Engine.cpp" />
+    <ClCompile Include="src\Engine\EnginePart.cpp" />
+    <ClCompile Include="src\Engine\entity\Cameraman.cpp" />
+    <ClCompile Include="src\Engine\entity\Character.cpp" />
+    <ClCompile Include="src\Engine\entity\Entity.cpp" />
+    <ClCompile Include="src\Engine\entity\PathFinder.cpp" />
+    <ClCompile Include="src\Engine\entity\RandomCharacter.cpp" />
+    <ClCompile Include="src\Engine\entity\ScreenSprite.cpp" />
+    <ClCompile Include="src\Engine\entity\Sprite.cpp" />
+    <ClCompile Include="src\Engine\entity\SpriteAnimationSequence.cpp" />
+    <ClCompile Include="src\Engine\entity\SpriteData.cpp" />
+    <ClCompile Include="src\Engine\entity\SpriteManager.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\ActionManager.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\Dialogue.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\DialogueData.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\Event.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\EventCommand.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\EventData.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\EventManager.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\EventParameter.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\Flag.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\FlagData.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\GameString.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\GameStringData.cpp" />
+    <ClCompile Include="src\Puzzle\CustomGameEditor.cpp" />
+    <ClCompile Include="src\Puzzle\GameSequence.cpp" />
+    <ClCompile Include="src\Puzzle\GameSequenceEditor.cpp" />
+    <ClCompile Include="src\Puzzle\BobsGameNetwork.cpp" />
+    <ClCompile Include="src\Puzzle\GameTestMenu.cpp" />
+    <ClCompile Include="src\Utility\audio\MusicData.cpp" />
+    <ClCompile Include="src\Engine\network\ServerObject.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\Skill.cpp" />
+    <ClCompile Include="src\Engine\rpg\event\SkillData.cpp" />
+    <ClCompile Include="src\Utility\audio\SoundData.cpp" />
+    <ClCompile Include="src\Engine\rpg\BGClientEngine.cpp" />
+    <ClCompile Include="src\Engine\rpg\FriendCharacter.cpp" />
+    <ClCompile Include="src\Engine\rpg\FriendManager.cpp" />
+    <ClCompile Include="src\Engine\network\GameSave.cpp" />
+    <ClCompile Include="src\Engine\rpg\Clock.cpp" />
+    <ClCompile Include="src\Engine\rpg\EasingTest.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\CountryCodes.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\GameChallengeNotificationPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\gameStore\GameItem.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\gameStore\GameStore.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\GUIManager.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\MenuPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\PlayerEditMenu.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\buttons\GameStoreButton.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\buttons\NDButton.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\buttons\StatusBarButton.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\buttons\StuffButton.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\captions\ClockCaption.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\captions\DayCaption.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\captions\MoneyCaption.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\captions\StatusBarCaption.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\NotificationManager.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\notification\Notification.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\statusbar\StatusBar.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\StuffMenu.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\ControlsPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\DebugInfoPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\FriendsPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\ItemsPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\LogsPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\MessagesPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\SettingsPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\subMenus\StatusPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\gui\stuffMenu\SubPanel.cpp" />
+    <ClCompile Include="src\Engine\rpg\Item.cpp" />
+    <ClCompile Include="src\Engine\MiniGameEngine.cpp" />
+    <ClCompile Include="src\Engine\nd\GameDataLoader.cpp" />
+    <ClCompile Include="src\Engine\nd\ND.cpp" />
+    <ClCompile Include="src\Engine\nd\NDGameEngine.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\NDMenu.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\NDMenuBackground.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\NDMenuWheel.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\wheelitem\NDMenuInfoPanel.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\wheelitem\NDMenuMovie.cpp" />
+    <ClCompile Include="src\Engine\nd\ndmenu\wheelitem\NDMenuWheelItem.cpp" />
+    <ClCompile Include="src\Engine\nd\ping\PingBackground.cpp" />
+    <ClCompile Include="src\Engine\nd\ping\PingBall.cpp" />
+    <ClCompile Include="src\Engine\nd\ping\PingPaddle.cpp" />
+    <ClCompile Include="src\Engine\nd\ping\Ping.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioBackground.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioBlock.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioBoba.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioBrickBlock.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioGuy.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\RamioMoneyBlock.cpp" />
+    <ClCompile Include="src\Engine\nd\ramio\Ramio.cpp" />
+    <ClCompile Include="src\Engine\stadium\BobsGameStadium.cpp" />
+    <ClCompile Include="src\Engine\stadium\StadiumScreen.cpp" />
+    <ClCompile Include="src\Engine\rpg\Player.cpp" />
+    <ClCompile Include="src\Engine\rpg\Wallet.cpp" />
+    <ClCompile Include="src\Engine\map\Area.cpp" />
+    <ClCompile Include="src\Engine\map\AreaData.cpp" />
+    <ClCompile Include="src\Engine\map\Door.cpp" />
+    <ClCompile Include="src\Engine\map\DoorData.cpp" />
+    <ClCompile Include="src\Engine\map\EntityData.cpp" />
+    <ClCompile Include="src\Engine\map\Light.cpp" />
+    <ClCompile Include="src\Engine\map\LightData.cpp" />
+    <ClCompile Include="src\Engine\map\Map.cpp" />
+    <ClCompile Include="src\Engine\map\MapData.cpp" />
+    <ClCompile Include="src\Engine\map\MapManager.cpp" />
+    <ClCompile Include="src\Engine\map\MapState.cpp" />
+    <ClCompile Include="src\Engine\map\MapStateData.cpp" />
+    <ClCompile Include="src\Engine\map\WarpArea.cpp" />
+    <ClCompile Include="src\Engine\network\BobNet.cpp" />
+    <ClCompile Include="src\Engine\network\UDPPeerConnection.cpp" />
+    <ClCompile Include="src\Engine\state\CreateNewAccount.cpp" />
+    <ClCompile Include="src\Engine\state\CreateNewAccountState.cpp" />
+    <ClCompile Include="src\Engine\state\GlowTileBackground.cpp" />
+    <ClCompile Include="src\Engine\state\KeyboardScreen.cpp" />
+    <ClCompile Include="src\Engine\state\LegalScreen.cpp" />
+    <ClCompile Include="src\Engine\state\LoggedOutState.cpp" />
+    <ClCompile Include="src\Engine\state\LoginScreen.cpp" />
+    <ClCompile Include="src\Engine\state\LoginState.cpp" />
+    <ClCompile Include="src\Engine\state\ServersHaveShutDownState.cpp" />
+    <ClCompile Include="src\Engine\state\State.cpp" />
+    <ClCompile Include="src\Engine\state\StateManager.cpp" />
+    <ClCompile Include="src\Engine\state\TitleScreenState.cpp" />
+    <ClCompile Include="src\Engine\state\YouWillBeNotifiedState.cpp" />
+    <ClCompile Include="src\Engine\text\TextManager.cpp" />
+    <ClCompile Include="src\Engine\text\TextWindow.cpp" />
+    <ClCompile Include="src\Utility\audio\Music.cpp" />
+    <ClCompile Include="src\Utility\audio\Sound.cpp" />
+    <ClCompile Include="src\Utility\BobBool.cpp" />
+    <ClCompile Include="src\Utility\BobMath.cpp" />
+    <ClCompile Include="src\Utility\BobMenu.cpp" />
+    <ClCompile Include="src\Utility\BobString.cpp" />
+    <ClCompile Include="src\Utility\BufferedImage.cpp" />
+    <ClCompile Include="src\Utility\Console.cpp" />
+    <ClCompile Include="src\Utility\ConsoleText.cpp" />
+    <ClCompile Include="src\Utility\gl\Texture.cpp" />
+    <ClCompile Include="src\Utility\Logger.cpp" />
+    <ClCompile Include="src\Puzzle\Block.cpp" />
+    <ClCompile Include="src\Puzzle\BobsGame.cpp" />
+    <ClCompile Include="src\Puzzle\GameLogic.cpp" />
+    <ClCompile Include="src\Puzzle\Grid.cpp" />
+    <ClCompile Include="src\Puzzle\Piece.cpp" />
+    <ClCompile Include="src\Puzzle\GameType.cpp" />
+    <ClCompile Include="src\Utility\Easing.cpp" />
+    <ClCompile Include="src\Utility\FileUtils.cpp" />
+    <ClCompile Include="src\Utility\AssetData.cpp" />
+    <ClCompile Include="src\Utility\audio\AudioManager.cpp" />
+    <ClCompile Include="src\Utility\BobFont.cpp" />
+    <ClCompile Include="src\Utility\Caption.cpp" />
+    <ClCompile Include="src\Utility\CaptionManager.cpp" />
+    <ClCompile Include="src\Utility\ControlsManager.cpp" />
+    <ClCompile Include="src\Utility\gl\GLUtils.cpp" />
+    <ClCompile Include="src\Utility\Color.cpp" />
+    <ClCompile Include="src\Utility\System.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="bobsgame.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\SDL2_gfx-1.0.1\SDL2_gfx-1.0.1\SDL2_gfx.pc.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

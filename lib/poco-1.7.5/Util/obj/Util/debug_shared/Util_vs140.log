@@ -1,0 +1,35 @@
+﻿  XMLConfiguration.cpp
+  WinService.cpp
+  WinRegistryKey.cpp
+  WinRegistryConfiguration.cpp
+  Validator.cpp
+  TimerTask.cpp
+  Timer.cpp
+  SystemConfiguration.cpp
+  Subsystem.cpp
+  ServerApplication.cpp
+  RegExpValidator.cpp
+  PropertyFileConfiguration.cpp
+  OptionSet.cpp
+  OptionProcessor.cpp
+  OptionException.cpp
+  OptionCallback.cpp
+  Option.cpp
+  MapConfiguration.cpp
+  LoggingSubsystem.cpp
+  LoggingConfigurator.cpp
+  Generating Code...
+  Compiling...
+  LayeredConfiguration.cpp
+  JSONConfiguration.cpp
+  IntValidator.cpp
+  IniFileConfiguration.cpp
+  HelpFormatter.cpp
+  FilesystemConfiguration.cpp
+  ConfigurationView.cpp
+  ConfigurationMapper.cpp
+  Application.cpp
+  AbstractConfiguration.cpp
+  Generating Code...
+     Creating library ..\lib\PocoUtild.lib and object ..\lib\PocoUtild.exp
+  Util_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Util\..\bin\PocoUtild.dll

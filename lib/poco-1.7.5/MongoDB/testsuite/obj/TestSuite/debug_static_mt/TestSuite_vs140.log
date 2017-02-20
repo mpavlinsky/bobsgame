@@ -1,0 +1,5 @@
+﻿  MongoDBTestSuite.cpp
+  MongoDBTest.cpp
+  Driver.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\MongoDB\testsuite\bin\static_mt\TestSuited.exe

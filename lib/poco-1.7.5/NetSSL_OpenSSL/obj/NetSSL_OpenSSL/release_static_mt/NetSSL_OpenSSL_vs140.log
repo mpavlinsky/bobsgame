@@ -1,0 +1,31 @@
+﻿  AcceptCertificateHandler.cpp
+  CertificateHandlerFactory.cpp
+  CertificateHandlerFactoryMgr.cpp
+  ConsoleCertificateHandler.cpp
+  Context.cpp
+  HTTPSClientSession.cpp
+  HTTPSSessionInstantiator.cpp
+  HTTPSStreamFactory.cpp
+  InvalidCertificateHandler.cpp
+  KeyConsoleHandler.cpp
+  KeyFileHandler.cpp
+  PrivateKeyFactory.cpp
+  PrivateKeyFactoryMgr.cpp
+  PrivateKeyPassphraseHandler.cpp
+  RejectCertificateHandler.cpp
+  SecureServerSocket.cpp
+  SecureServerSocketImpl.cpp
+  SecureSMTPClientSession.cpp
+  SecureSocketImpl.cpp
+  SecureStreamSocket.cpp
+  Generating Code...
+  Compiling...
+  SecureStreamSocketImpl.cpp
+  Session.cpp
+  SSLException.cpp
+  SSLManager.cpp
+  Utility.cpp
+  VerificationErrorArgs.cpp
+  X509Certificate.cpp
+  Generating Code...
+  NetSSL_OpenSSL_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\NetSSL_OpenSSL\..\lib\PocoNetSSLmt.lib

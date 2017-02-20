@@ -1,0 +1,27 @@
+﻿  ZipUtil.cpp
+  ZipStream.cpp
+  ZipOperation.cpp
+  ZipManipulator.cpp
+  ZipLocalFileHeader.cpp
+  ZipFileInfo.cpp
+  ZipException.cpp
+  ZipDataInfo.cpp
+  ZipCommon.cpp
+  ZipArchiveInfo.cpp
+  ZipArchive.cpp
+  SkipCallback.cpp
+  Replace.cpp
+  Rename.cpp
+  PartialStream.cpp
+  ParseCallback.cpp
+  Keep.cpp
+  Delete.cpp
+  Decompress.cpp
+  Compress.cpp
+  Generating Code...
+  Compiling...
+  AutoDetectStream.cpp
+  Add.cpp
+  Generating Code...
+     Creating library ..\lib\PocoZipd.lib and object ..\lib\PocoZipd.exp
+  Zip_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Zip\..\bin\PocoZipd.dll

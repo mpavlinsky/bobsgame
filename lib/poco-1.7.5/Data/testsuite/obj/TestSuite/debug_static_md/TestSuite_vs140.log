@@ -1,0 +1,13 @@
+﻿  TestStatementImpl.cpp
+  SessionPoolTest.cpp
+  SessionImpl.cpp
+  Preparator.cpp
+  Extractor.cpp
+  Driver.cpp
+  DataTestSuite.cpp
+  DataTest.cpp
+src\DataTest.cpp(1171): warning C4244: 'argument': conversion from 'std::streamsize' to 'unsigned int', possible loss of data
+  Connector.cpp
+  Binder.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\testsuite\bin\static_md\TestSuited.exe

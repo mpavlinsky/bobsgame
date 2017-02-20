@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="demos">
+      <UniqueIdentifier>{3DD3490F-A9E7-71C0-7269-1520DE3C6EF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demos\common">
+      <UniqueIdentifier>{E2FB400A-CE5E-D0AE-77E4-086563269C31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demos\common\glew">
+      <UniqueIdentifier>{6DDBFE06-D9F1-FC9C-2269-88BE8EBECD24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demos\common\glew\GL">
+      <UniqueIdentifier>{1C519206-08E0-1BD0-B1FE-2FCB9D6C2C76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demos\common\imgui">
+      <UniqueIdentifier>{190FFFE6-05F3-BF3C-6E53-BA8F5A56AABE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\demos\common\soloud_demo_framework.cpp">
+      <Filter>demos\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\common\glew\GL\glew.c">
+      <Filter>demos\common\glew\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\common\imgui\imgui.cpp">
+      <Filter>demos\common\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\common\imgui\imgui_demo.cpp">
+      <Filter>demos\common\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\common\imgui\imgui_draw.cpp">
+      <Filter>demos\common\imgui</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
