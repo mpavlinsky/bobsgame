@@ -1,0 +1,6 @@
+id:61
+name:AngryBall
+width:64
+height:64
+frames:1
+animation:Normal:0
