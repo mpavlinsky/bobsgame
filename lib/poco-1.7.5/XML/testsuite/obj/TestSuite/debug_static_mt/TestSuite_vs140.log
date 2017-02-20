@@ -1,0 +1,25 @@
+﻿  XMLWriterTest.cpp
+  XMLTestSuite.cpp
+  TreeWalkerTest.cpp
+  TextTest.cpp
+  SAXTestSuite.cpp
+  SAXParserTest.cpp
+  ParserWriterTest.cpp
+  NodeTest.cpp
+  NodeIteratorTest.cpp
+  NodeAppenderTest.cpp
+  NameTest.cpp
+  NamespaceSupportTest.cpp
+  NamePoolTest.cpp
+  EventTest.cpp
+  ElementTest.cpp
+  Driver.cpp
+  DOMTestSuite.cpp
+  DocumentTypeTest.cpp
+  DocumentTest.cpp
+  ChildNodesTest.cpp
+  Generating Code...
+  Compiling...
+  AttributesImplTest.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\XML\testsuite\bin\static_mt\TestSuited.exe

@@ -1,0 +1,13 @@
+﻿  TemplateCache.cpp
+  Template.cpp
+  Stringifier.cpp
+  Query.cpp
+  PrintHandler.cpp
+  Parser.cpp
+  ParseHandler.cpp
+  Object.cpp
+  JSONException.cpp
+  Handler.cpp
+  Array.cpp
+  Generating Code...
+  JSON_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\JSON\..\lib\PocoJSONmdd.lib

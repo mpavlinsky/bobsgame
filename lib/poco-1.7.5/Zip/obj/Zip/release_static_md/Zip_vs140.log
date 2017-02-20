@@ -1,0 +1,28 @@
+﻿  Add.cpp
+  AutoDetectStream.cpp
+  Compress.cpp
+  Decompress.cpp
+  Delete.cpp
+  Keep.cpp
+  ParseCallback.cpp
+  PartialStream.cpp
+  Rename.cpp
+  Replace.cpp
+  SkipCallback.cpp
+  ZipArchive.cpp
+  ZipArchiveInfo.cpp
+  ZipCommon.cpp
+  ZipDataInfo.cpp
+  ZipException.cpp
+  ZipFileInfo.cpp
+  ZipLocalFileHeader.cpp
+  ZipManipulator.cpp
+  ZipOperation.cpp
+  Generating Code...
+  Compiling...
+  ZipStream.cpp
+  ZipUtil.cpp
+  Generating Code...
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in ws2_32.lib(WS2_32.dll); second definition ignored
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  Zip_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Zip\..\lib\PocoZipmd.lib

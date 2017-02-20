@@ -1,0 +1,24 @@
+﻿  Cipher.cpp
+  CipherFactory.cpp
+  CipherImpl.cpp
+  CipherKey.cpp
+  CipherKeyImpl.cpp
+  CryptoStream.cpp
+  CryptoTransform.cpp
+  DigestEngine.cpp
+  OpenSSLInitializer.cpp
+  RSACipherImpl.cpp
+  RSADigestEngine.cpp
+  RSAKey.cpp
+  RSAKeyImpl.cpp
+  X509Certificate.cpp
+  Generating Code...
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in ws2_32.lib(WS2_32.dll); second definition ignored
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+libeay32md.lib(LIBEAY32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in ws2_32.lib(WS2_32.dll); second definition ignored
+libeay32md.lib(LIBEAY32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+ssleay32md.lib(SSLEAY32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in ws2_32.lib(WS2_32.dll); second definition ignored
+ssleay32md.lib(SSLEAY32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+Crypt32.lib(CRYPT32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in ws2_32.lib(WS2_32.dll); second definition ignored
+Crypt32.lib(CRYPT32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  Crypto_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Crypto\..\lib\PocoCryptomd.lib

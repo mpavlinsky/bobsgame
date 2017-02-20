@@ -1,0 +1,6 @@
+id:1
+name:DoorTestSprite
+width:32
+height:64
+frames:1
+animation:Frame0:0

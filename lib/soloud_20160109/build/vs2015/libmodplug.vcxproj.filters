@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ext">
+      <UniqueIdentifier>{7670880B-E279-887C-6BF5-9E7CD7FD937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ext\libmodplug">
+      <UniqueIdentifier>{41035D7A-2DD1-5080-1665-C1A602D22CE5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ext\libmodplug\src">
+      <UniqueIdentifier>{E526F39B-D10A-B4F1-3A6B-AE44266E9E73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ext\libmodplug\src\fastmix.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_669.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_abc.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_amf.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ams.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dbm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dmf.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_dsm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_far.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_it.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_j2b.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mdl.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_med.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mid.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mod.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mt2.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_mtm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_okt.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_pat.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_psm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ptm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_s3m.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_stm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_ult.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_umx.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_wav.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\load_xm.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\mmcmp.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\modplug.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\sndfile.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\sndmix.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_dsp.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_flt.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ext\libmodplug\src\snd_fx.cpp">
+      <Filter>ext\libmodplug\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

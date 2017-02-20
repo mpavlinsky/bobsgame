@@ -1,0 +1,12 @@
+﻿  TCPServerTestSuite.cpp
+  TCPServerTest.cpp
+  NetSSLTestSuite.cpp
+  HTTPSTestServer.cpp
+  HTTPSStreamFactoryTest.cpp
+  HTTPSServerTestSuite.cpp
+  HTTPSServerTest.cpp
+  HTTPSClientTestSuite.cpp
+  HTTPSClientSessionTest.cpp
+  Driver.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\NetSSL_OpenSSL\testsuite\bin\static_md\TestSuited.exe
