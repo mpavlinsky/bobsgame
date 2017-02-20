@@ -25,7 +25,7 @@ That means **no forks** except to create pull requests!
 
 ##SOURCE CODE AVAILABLE
 
-#DOWNLOAD IT RIGHT NOW WHAT IS WRONG WITH YOU
+#DOWNLOAD IT RIGHT THE HECK NOW!
 
 ##This game is actively developed. New features are being added constantly and bugs will happen.
 
@@ -67,6 +67,7 @@ It will also have the source code available on GitHub so it can grow into a stan
 
 #License
 Copyright 2017 Bob Corporation, Robert Pelloni
+bob's gameÂ® is a registered trademark of Robert Pelloni
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -74,10 +75,10 @@ Redistribution and use in source and binary forms, with or without modification,
 
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-3. You may not distribute the bob’s game® source code or binary or produce any derivative work from its source code under another name. Redistributions of source code or binary form must be named bob's game®.
+3. You may not distribute the bobâ€™s gameÂ® source code or binary or produce any derivative work from its source code under another name. Redistributions of source code or binary form must be named bob's gameÂ®.
 
 4. You may not distribute or use the source code or binary for profit or income, including revenue from advertising, streaming, tournaments, "Let's Play" videos, etc.  All redistributions and uses must be provided completely free of charge.
 
-5. You may not create and maintain a fork or unique redistribution of the bob’s game® source code except for a GitHub fork for the purpose of submitting pull requests, not to be distributed independently.  The intent of the bob’s game® source code release is so that its community may submit bug fixes and additions to the main project.
+5. You may not create and maintain a fork or unique redistribution of the bobâ€™s gameÂ® source code except for a GitHub fork for the purpose of submitting pull requests, not to be distributed independently.  The intent of the bobâ€™s gameÂ® source code release is so that its community may submit bug fixes and additions to the main project.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
