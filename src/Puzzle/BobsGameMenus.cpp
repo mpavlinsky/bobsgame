@@ -2038,7 +2038,8 @@ void BobsGame::statsMenuUpdate()
 		leaderBoardMenu->center = false;
 		leaderBoardMenu->font = BobFont::ttf_oswald_10;
 
-		populateLeaderBoardOrHighScoreBoardMenu(leaderBoardMenu, "OVERALL", "OVERALL", false, false, false, true, false, false);
+		populateLeaderBoardOrHighScoreBoardMenu(leaderBoardMenu, "OVERALL", "OVERALL", 
+			statsMenu_totalTimePlayed, statsMenu_totalBlocksCleared, statsMenu_planeswalkerPoints, statsMenu_eloScore, statsMenu_timeLasted, statsMenu_blocksCleared);
 	}
 
 
@@ -3263,18 +3264,18 @@ void BobsGame::populateLeaderBoardOrHighScoreBoardMenu(BobMenu *menu, string gam
 
 	BobsGameLeaderBoardAndHighScoreBoard *stats = nullptr;
 
-	ArrayList<BobsGameLeaderBoardAndHighScoreBoard*> &board = topPlayersByTotalTimePlayed;
+	ArrayList<BobsGameLeaderBoardAndHighScoreBoard*> *board = &topPlayersByTotalTimePlayed;
 
-	if (totalTimePlayed)board = topPlayersByTotalTimePlayed;
-	if (totalBlocksCleared)board = topPlayersByTotalBlocksCleared;
-	if (planeswalkerPoints)board = topPlayersByPlaneswalkerPoints;
-	if (eloScore)board = topPlayersByEloScore;
-	if (timeLasted)board = topGamesByTimeLasted;
-	if (blocksCleared)board = topGamesByBlocksCleared;
+	if (totalTimePlayed)board = &topPlayersByTotalTimePlayed;
+	if (totalBlocksCleared)board = &topPlayersByTotalBlocksCleared;
+	if (planeswalkerPoints)board = &topPlayersByPlaneswalkerPoints;
+	if (eloScore)board = &topPlayersByEloScore;
+	if (timeLasted)board = &topGamesByTimeLasted;
+	if (blocksCleared)board = &topGamesByBlocksCleared;
 
-	for (int i = 0; i<board.size(); i++)
+	for (int i = 0; i<board->size(); i++)
 	{
-		BobsGameLeaderBoardAndHighScoreBoard *s = board.get(i);
+		BobsGameLeaderBoardAndHighScoreBoard *s = board->get(i);
 		if (s->gameTypeUUID == gameTypeOrSequenceUUID || s->gameSequenceUUID == gameTypeOrSequenceUUID || s->isGameTypeOrSequence == gameTypeOrSequenceUUID)
 		{
 			if (s->difficultyName == difficultyString)
@@ -3367,6 +3368,7 @@ void BobsGame::populateLeaderBoardOrHighScoreBoardMenu(BobMenu *menu, string gam
 	{
 		BobsGameLeaderBoardAndHighScoreBoard::BobsGameLeaderBoardAndHighScoreBoardEntry* e = stats->entries.get(i);
 		string s = to_string(i)+") " + e->userName + " | ";
+
 
 		if (totalTimePlayed)
 		{
