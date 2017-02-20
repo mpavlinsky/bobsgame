@@ -1,0 +1,39 @@
+﻿  AcceptCertificateHandler.cpp
+  CertificateHandlerFactory.cpp
+  CertificateHandlerFactoryMgr.cpp
+  ConsoleCertificateHandler.cpp
+  Context.cpp
+  HTTPSClientSession.cpp
+  HTTPSSessionInstantiator.cpp
+  HTTPSStreamFactory.cpp
+  InvalidCertificateHandler.cpp
+  KeyConsoleHandler.cpp
+  KeyFileHandler.cpp
+  PrivateKeyFactory.cpp
+  PrivateKeyFactoryMgr.cpp
+  PrivateKeyPassphraseHandler.cpp
+  RejectCertificateHandler.cpp
+  SecureServerSocket.cpp
+  SecureServerSocketImpl.cpp
+  SecureSMTPClientSession.cpp
+  SecureSocketImpl.cpp
+  SecureStreamSocket.cpp
+  Generating Code...
+  Compiling...
+  SecureStreamSocketImpl.cpp
+  Session.cpp
+  SSLException.cpp
+  SSLManager.cpp
+  Utility.cpp
+  VerificationErrorArgs.cpp
+  X509Certificate.cpp
+  Generating Code...
+ssleay32md.lib(SSLEAY32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libeay32md.lib(LIBEAY32.dll); second definition ignored
+ssleay32md.lib(SSLEAY32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+Crypt32.lib(CRYPT32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libeay32md.lib(LIBEAY32.dll); second definition ignored
+Crypt32.lib(CRYPT32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libeay32md.lib(LIBEAY32.dll); second definition ignored
+ws2_32.lib(WS2_32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libeay32md.lib(LIBEAY32.dll); second definition ignored
+iphlpapi.lib(IPHLPAPI.DLL) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  NetSSL_OpenSSL_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\NetSSL_OpenSSL\..\lib\PocoNetSSLmd.lib

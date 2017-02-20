@@ -1,0 +1,11 @@
+﻿  Utility.cpp
+  SQLiteStatementImpl.cpp
+  SQLiteException.cpp
+  SessionImpl.cpp
+  Notifier.cpp
+  Extractor.cpp
+  Connector.cpp
+  Binder.cpp
+  Generating Code...
+  sqlite3.c
+  SQLite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\SQLite\..\..\lib\PocoDataSQLitemtd.lib

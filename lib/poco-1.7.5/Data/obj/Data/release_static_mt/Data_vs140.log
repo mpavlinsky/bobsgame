@@ -1,0 +1,41 @@
+﻿  AbstractBinder.cpp
+  AbstractBinding.cpp
+  AbstractExtraction.cpp
+  AbstractExtractor.cpp
+  AbstractPreparation.cpp
+  AbstractPreparator.cpp
+  ArchiveStrategy.cpp
+  Bulk.cpp
+  Connector.cpp
+  DataException.cpp
+  Date.cpp
+  DynamicLOB.cpp
+  Limit.cpp
+  MetaColumn.cpp
+  PooledSessionHolder.cpp
+  PooledSessionImpl.cpp
+  Position.cpp
+  Range.cpp
+  RecordSet.cpp
+  Row.cpp
+  Generating Code...
+  Compiling...
+  RowFilter.cpp
+  RowFormatter.cpp
+  RowIterator.cpp
+  Session.cpp
+  SessionFactory.cpp
+  SessionImpl.cpp
+  SessionPool.cpp
+  SessionPoolContainer.cpp
+  SimpleRowFormatter.cpp
+src\SimpleRowFormatter.cpp(71): warning C4244: 'argument': conversion from 'std::streamsize' to 'unsigned int', possible loss of data
+src\SimpleRowFormatter.cpp(88): warning C4244: 'argument': conversion from 'std::streamsize' to 'unsigned int', possible loss of data
+  SQLChannel.cpp
+  Statement.cpp
+  StatementCreator.cpp
+  StatementImpl.cpp
+  Time.cpp
+  Transaction.cpp
+  Generating Code...
+  Data_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\..\lib\PocoDatamt.lib

@@ -1,0 +1,10 @@
+﻿  CppUnitException.cpp
+  TestCase.cpp
+  TestDecorator.cpp
+  TestFailure.cpp
+  TestResult.cpp
+  TestRunner.cpp
+  TestSuite.cpp
+  TextTestResult.cpp
+  Generating Code...
+  CppUnit_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\CppUnit\..\lib\CppUnitmdd.lib

@@ -1,0 +1,25 @@
+﻿  Array.cpp
+  Binary.cpp
+  Connection.cpp
+  Cursor.cpp
+  Database.cpp
+  DeleteRequest.cpp
+  Document.cpp
+  Element.cpp
+  GetMoreRequest.cpp
+  InsertRequest.cpp
+  JavaScriptCode.cpp
+  KillCursorsRequest.cpp
+  Message.cpp
+  MessageHeader.cpp
+  ObjectId.cpp
+  QueryRequest.cpp
+  RegularExpression.cpp
+  ReplicaSet.cpp
+  RequestMessage.cpp
+  ResponseMessage.cpp
+  Generating Code...
+  Compiling...
+  UpdateRequest.cpp
+  Generating Code...
+  MongoDB_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\MongoDB\..\lib\PocoMongoDBmd.lib

@@ -1,0 +1,6 @@
+id:250
+name:ramiobob
+width:16
+height:16
+frames:6
+animation:Frame0:0

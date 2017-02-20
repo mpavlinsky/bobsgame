@@ -1,0 +1,12 @@
+﻿  Binder.cpp
+  Connector.cpp
+  Extractor.cpp
+  MySQLException.cpp
+  MySQLStatementImpl.cpp
+  ResultMetadata.cpp
+  SessionHandle.cpp
+  SessionImpl.cpp
+  StatementExecutor.cpp
+  Utility.cpp
+  Generating Code...
+  MySQL_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\MySQL\..\..\lib\PocoDataMySQLmd.lib

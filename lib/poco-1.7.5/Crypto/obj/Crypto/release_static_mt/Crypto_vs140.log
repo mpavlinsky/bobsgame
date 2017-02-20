@@ -1,0 +1,16 @@
+﻿  Cipher.cpp
+  CipherFactory.cpp
+  CipherImpl.cpp
+  CipherKey.cpp
+  CipherKeyImpl.cpp
+  CryptoStream.cpp
+  CryptoTransform.cpp
+  DigestEngine.cpp
+  OpenSSLInitializer.cpp
+  RSACipherImpl.cpp
+  RSADigestEngine.cpp
+  RSAKey.cpp
+  RSAKeyImpl.cpp
+  X509Certificate.cpp
+  Generating Code...
+  Crypto_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Crypto\..\lib\PocoCryptomt.lib

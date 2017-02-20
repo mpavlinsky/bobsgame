@@ -1,0 +1,6 @@
+id:46
+name:SquareGem
+width:64
+height:64
+frames:1
+animation:Normal:0

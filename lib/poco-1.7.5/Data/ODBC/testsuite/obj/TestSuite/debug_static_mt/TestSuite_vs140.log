@@ -1,0 +1,15 @@
+﻿  SQLExecutor.cpp
+  ODBCTestSuite.cpp
+  ODBCTest.cpp
+  ODBCSQLServerTest.cpp
+  Using SQL Server driver
+  ODBCSQLiteTest.cpp
+  ODBCPostgreSQLTest.cpp
+  Using PostgreSQL Unicode driver.
+  ODBCOracleTest.cpp
+  ODBCMySQLTest.cpp
+  ODBCDB2Test.cpp
+  ODBCAccessTest.cpp
+  Driver.cpp
+  Generating Code...
+  TestSuite_vs140.vcxproj -> C:\Users\Administrator\workspace\bobsgame\lib\poco-1.7.5\Data\ODBC\testsuite\bin\static_mt\TestSuited.exe

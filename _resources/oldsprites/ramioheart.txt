@@ -1,0 +1,6 @@
+id:251
+name:ramioheart
+width:16
+height:16
+frames:1
+animation:Frame0:0

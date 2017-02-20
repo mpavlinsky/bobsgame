@@ -1,0 +1,123 @@
+TRenderer-OpenGL_DebugFont
+v5
+r1
+cCheck dependencies
+cCompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a normal x86_64
+
+N/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/GWEN-Renderer-OpenGL_DebugFont.LinkFileList
+c00000000585F79510000000000000116
+t1482651985
+s278
+
+N/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o
+t2
+s0
+
+N/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o
+t2
+s0
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp
+c00000000585F09BF0000000000000DE8
+t1482623423
+s3560
+i"Gwen/Renderers/OpenGL_DebugFont.h"
+i"Gwen/Utility.h"
+i"Gwen/Font.h"
+i"Gwen/Texture.h"
+i<math.h>
+i"GL/glew.h"
+i"FontData.h"
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp
+c00000000585F09BF00000000000020DB
+t1482623423
+s8411
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a
+t2
+s0
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Renderers/OpenGL/DebugFont/FontData.h
+c00000000585F09BF000000000003395A
+t1482623423
+s211290
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/include/GL/glew.h
+c00000000585F09BF00000000000A638A
+t1482623423
+s680842
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/include/Gwen/Font.h
+c00000000585F09BF0000000000000294
+t1482623423
+s660
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/include/Gwen/Renderers/OpenGL_DebugFont.h
+c00000000585F09BF00000000000002FC
+t1482623423
+s764
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/include/Gwen/Texture.h
+c00000000585F09BF0000000000000325
+t1482623423
+s805
+
+N/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/include/Gwen/Utility.h
+c00000000585F09BF0000000000000DE2
+t1482623423
+s3554
+
+N/usr/include/math.h
+c00000000522437B400000000000066C2
+t1378105268
+s26306
+
+CBuild AST from /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp
+r0
+
+CBuild AST from /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese599bfd1b00fbe41^2349d0d1b00fbe41^---0#1#0#--18"Check dependencies36"9380AF5E-FFFE-4075-8B03-E3C161134533-
+
+CCompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s504344785.766532
+e504344790.117009
+r1
+xCompileC
+x/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o
+x/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Compile /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cppb247c4d1b00fbe41^f7921ed6b00fbe41^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp0000000000000000^2869"CompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o ../../../Renderers/OpenGL/OpenGL.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DNDEBUG -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -Wno-sign-conversion -iquote /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-generated-files.hmap -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-own-target-headers.hmap -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-all-target-headers.hmap -iquote /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-project-headers.hmap -I/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/include -I../../../include -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/DerivedSources/x86_64 -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/DerivedSources -F/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3 -ffast-math -MMD -MT dependencies -MF /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.d --serialize-diagnostics /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.dia -c /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/OpenGL.cpp -o /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL.o36"82448AEA-0F03-4007-A9C2-6F5DE4ECE05B-
+
+CCompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s504344785.766281
+e504344786.255020
+r1
+xCompileC
+x/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o
+x/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Compile /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp3739c4d1b00fbe41^2f1947d2b00fbe41^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp0000000000000000^2949"CompileC /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o ../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DNDEBUG -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -Wno-sign-conversion -iquote /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-generated-files.hmap -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-own-target-headers.hmap -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-all-target-headers.hmap -iquote /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/GWEN-Renderer-OpenGL_DebugFont-project-headers.hmap -I/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/include -I../../../include -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/DerivedSources/x86_64 -I/Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/DerivedSources -F/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3 -ffast-math -MMD -MT dependencies -MF /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.d --serialize-diagnostics /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.dia -c /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp -o /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/OpenGL_DebugFont.o36"9907418D-1831-40FC-A6FF-2C1BEF2E2EE3-
+
+CLibtool /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a normal x86_64
+s504344790.274820
+e504344790.303439
+r1
+xLibtool
+x/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Libtool ../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a normal x86_64a16446d6b00fbe41^e67451d6b00fbe41^---0#0#0#--750"Libtool ../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a normal x86_64    cd /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only x86_64 -L/Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3 -L../../../lib -L../../../lib/macosx -filelist /Users/bob/Documents/bobsgame/DerivedData/bobsgame/Build/Intermediates/Renderer-OpenGL_DebugFont.build/Objects-normal/x86_64/GWEN-Renderer-OpenGL_DebugFont.LinkFileList -o /Users/bob/Documents/bobsgame/lib/GWEN-master/gwen/Projects/macosx/xcode3/../../../lib/macosx/xcode3/libGWEN-Renderer-OpenGL_DebugFont.a36"F8703EDC-EF2D-49EA-BBA1-3264C734B289-
+

@@ -1,0 +1,9 @@
+id:59
+name:PacBlob
+width:64
+height:64
+frames:16
+animation:Left:0
+animation:Right:4
+animation:Up:8
+animation:Down:12
