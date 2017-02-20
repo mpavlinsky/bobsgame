@@ -1,0 +1,8 @@
+Taken from glsl.heroku.com
+I am assuming these are public domain and I can use them.
+I have made my best effort to research the origin and license.
+If this is incorrect or you don't want me using them, let me know.
+
+Please send a notice to bob@bobsgame.com, thanks!
+I'm replacing them as soon as possible with some other visualizations, 
+but I will remove them immediately if you don't want them used even as a placeholder.

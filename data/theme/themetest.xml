@@ -1,0 +1,1507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE themes PUBLIC "-//www.matthiasmann.de//TWL-Theme//EN" "http://hg.l33tlabs.org/twl/raw-file/tip/src/de/matthiasmann/twl/theme/theme.dtd">
+<themes>
+    <images file="colorCircle.png">
+        <area name="colorCircleChoppedArea" xywh="1,1,18,18" splitx="L8,R9" splity="T9,B8"/>
+        <select name="colorCircleButton">
+            <alias ref="colorCircleChoppedArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="colorCircleChoppedArea" if="hover"/>
+            <alias ref="colorCircleChoppedArea"/>
+        </select>
+    </images>
+    <images file="colorCircleGlowSharpClear.png">
+        <area name="colorCircleGlowClearChoppedArea" xywh="0,0,23,23" splitx="L11,R11" splity="T11,B11" nocenter="true" border="10" inset="0,6"/>
+        <select name="colorCircleGlowClearButton">
+            <alias ref="colorCircleGlowClearChoppedArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="colorCircleGlowClearChoppedArea" if="hover"/>
+            <alias ref="colorCircleGlowClearChoppedArea"/>
+        </select>
+	</images>
+
+    <images file="colorCircleGlowSharp.png">
+        <area name="colorCircleGlowBlackBackgroundChoppedArea" xywh="*" splitx="L11,R12" splity="T13,B13" inset="0,6" border="10"/>
+        <area name="colorCircleGlowBlackBackgroundChoppedAreaVertical" xywh="*" splitx="L11,R12" splity="T13,B13" border="10" inset="6,0"/>
+        <select name="colorCircleGlowBlackBackgroundButton">
+            <alias ref="colorCircleGlowBlackBackgroundChoppedArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="colorCircleGlowBlackBackgroundChoppedArea" if="hover"/>
+            <alias ref="colorCircleGlowBlackBackgroundChoppedArea"/>
+        </select>
+    </images>
+    <images file="greenDot.png">
+        <area name="greenDotSelected" xywh="*" if="selected|pressed"/>
+        <area name="greenDotHoverAndSelected" xywh="*" if="selected|pressed|hover"/>
+        <area name="greenDotAlways" xywh="*"/>
+    </images>
+
+
+    <images file="loadingBar.png">
+        <animation name="progressBarFullAnimation" timeSource="hover" inset="2" sizeOverwriteH="1">
+            <frames duration="100" count="16" xywh="3,3,96,14" offsety="20"/>
+        </animation>
+    </images>
+    <images file="loadingbar_small.png">
+        <area name="progressBarBackground" xywh="97,0,5,20" splitx="L2,R2" splity="T2,B2"/>
+        <animation name="progressBarAnimation" timeSource="hover" inset="2" repeatX="true">
+            <frames duration="100" count="16" xywh="0,3,16,14" offsety="20"/>
+        </animation>
+        <area name="progressImage" xywh="34,5,9,14" splitx="L4,R4" splity="T4,B4" inset="2"/>
+    </images>
+    <images file="nD_plate.png">
+        <area name="plate_white_box" xywh="0,0,350,338" splitx="L85,R86" splity="T84,B108" tint="#C8FFFFFF"/>
+        <area name="plate_white_box_flipped" xywh="*" splitx="L85,R86" splity="T84,B108" rot="180" tint="#C8FFFFFF"/>
+    </images>
+    <images file="plate_transparent.png">
+        <area name="plate_transparent_box" xywh="*" splity="T93,B82" splitx="L99,R101"/>
+        <area name="plate_transparent_box_flipped" xywh="*" splitx="L99,R101" splity="T93,B82" rot="180"/>
+    </images>
+    <images file="nD_button.png"/>
+    <images file="bobsgame_button.png"/>
+	
+    <images file="bobsgame_button_small.png">
+        <area name="bobsgameButtonSplitArea" xywh="0,0,36,36" splitx="L17,R17" splity="T11,B12"/>
+        <area name="bobsgameButtonSelectedSplitArea" xywh="0,37,36,36" splitx="L17,R17" splity="T11,B12"/>
+        <select name="bobsgameButtonBackground">
+            <alias ref="bobsgameButtonSelectedSplitArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="bobsgameButtonSelectedSplitArea" if="hover"/>
+            <alias ref="bobsgameButtonSplitArea"/>
+        </select>
+    </images>
+	
+    <images file="nD_button_small.png">
+        <area name="nDButtonSplitArea" xywh="0,0,36,36" splitx="L17,R17" splity="T11,B12"/>
+        <area name="nDButtonSelectedSplitArea" xywh="0,37,36,36" splitx="L17,R17" splity="T11,B12"/>
+        <select name="nDButtonBackground">
+            <alias ref="nDButtonSelectedSplitArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="nDButtonSelectedSplitArea" if="hover"/>
+            <alias ref="nDButtonSplitArea"/>
+        </select>
+    </images>
+    <images file="blackCursor.png">
+		 <area name="cursor" xywh="4,5,1,23"/>
+        <area name="blackCursor" xywh="*" splitx="L5,R5" splity="T5,B5"/>
+        <area name="blackCursorHorizontal" xywh="*" splitx="L5,R5" splity="T5,B5" sizeOverwriteH="25" sizeOverwriteV="40"/>
+        <area name="blackCursorVertical" xywh="*" splitx="L5,R5" splity="T5,B5" sizeOverwriteH="40" sizeOverwriteV="25"/>
+        <select name="blackCursorHorizontalButton">
+            <alias ref="blackCursorHorizontal" tint="#8500FF" if="pressed|selected" inset="0,-2"/>
+            <alias ref="blackCursorHorizontal"/>
+        </select>
+        <select name="blackCursorVerticalButton">
+            <alias ref="blackCursorVertical" tint="#8500FF" if="pressed|selected" inset="-2,0"/>
+            <alias ref="blackCursorVertical"/>
+        </select>
+        <animation name="cursorAnimation" timeSource="hover">
+            <frame duration="200" ref="cursor"/>
+            <frame duration="150" ref="none"/>
+        </animation>
+        <alias name="editfield.cursor" ref="cursorAnimation"/>
+        <alias name="editfield.selection" ref="cursor" tint="#7FFFFFFF"/>
+        <select name="focus-rectangle">
+            <alias ref="blackCursor" if="keyboardFocus+selected" inset="2,2,-2,-2"/>
+            <alias ref="blackCursor" if="keyboardFocus+pressed" inset="2,2,-2,-2"/>
+            <alias ref="blackCursor" if="keyboardFocus"/>
+            <alias ref="none"/>
+        </select>
+    </images>
+    <images file="gamePreview.png">
+        <animation name="gamePreviewAnimation" timeSource="hover">
+            <frames duration="100" count="10" xywh="0,0,64,64" offsety="64"/>
+        </animation>
+        <area name="gamePreview" xywh="0,0,64,64"/>
+    </images>
+	
+	<!--
+    <images file="keyboard_big_no_wasd_halfsize.png"/>
+    <images file="keyboard_directions_halfsize.png"/>
+    <images file="keyboard_enter_halfsize.png"/>
+    <images file="keyboard_shift_halfsize.png"/>
+    <images file="keyboard_space_halfsize.png"/>
+    <images file="keyboard_tab_halfsize.png"/>
+	-->
+	
+    <images file="keyboard_big_no_wasd_halfsize_highlighted_labeled_controls_with_zoom_with_fkeys_done.png">
+        <area name="keyboardImage" xywh="*" center="true"/>
+    </images>
+    <images file="upDownArrowButtons.png">
+        <area name="upArrowArea" xywh="0,0,48,50" center="true"/>
+        <area name="downArrowArea" xywh="0,50,48,50" center="true"/>
+        <select name="upArrowButton">
+            <alias ref="upArrowArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="upArrowArea"/>
+        </select>
+        <select name="downArrowButton">
+            <alias ref="downArrowArea" if="pressed|selected" inset="2,0,-2,0"/>
+            <alias ref="downArrowArea"/>
+        </select>
+    </images>
+
+
+
+
+
+
+
+
+
+	
+	
+    <fontDef name="normal" filename="fonts/bobsgame8.fnt" color="#00FF00" default="true">
+        <fontParam if="error" color="red"/>
+        <fontParam if="warning" color="orange"/>
+        <fontParam if="disabled" color="gray"/>
+        <fontParam if="textSelection" color="purple"/>
+    </fontDef>
+	
+	<!-- 8 -->
+	
+	<fontDef name="font8White" filename="fonts/bobsgame8.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8Black" filename="fonts/bobsgame8.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font8Green" filename="fonts/bobsgame8.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font8Purple" filename="fonts/bobsgame8.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font8Red" filename="fonts/bobsgame8.fnt" color="#FF0000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	
+	<fontDef name="font8GreenGradientBlackShadow" filename="fonts/greenGradientBlackShadow8.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font8PurpleGradientBlackShadow" filename="fonts/purpleGradientBlackShadow8.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font8GreenGradientGreenShadow" filename="fonts/greenGradientGreenShadow8.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8PurpleGradientPurpleShadow" filename="fonts/purpleGradientPurpleShadow8.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+
+	<fontDef name="font8WhiteGrayShadow1" filename="fonts/bobsgame8shadow.fnt" color="white"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8WhiteBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="white"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8BlackBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8GreenBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font8PurpleBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+		
+	<fontDef name="font8GreenPurpleHoverBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/><fontParam if="hover" color="#8500FF"/></fontDef>
+	
+	<fontDef name="font8PurpleGreenHoverBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/><fontParam if="hover" color="#00FF00"/></fontDef>
+	
+	<fontDef name="font8WhiteGreenHoverBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/><fontParam if="hover" color="#00FF00"/></fontDef>
+	
+	<fontDef name="font8WhitePurpleHoverBlackShadow" filename="fonts/whiteBlackShadow8.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/><fontParam if="hover" color="#8500FF"/></fontDef>
+
+	<!-- 11 -->
+	
+	<fontDef name="font11White" filename="fonts/11pt.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11Black" filename="fonts/11pt.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11Green" filename="fonts/11pt.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11Purple" filename="fonts/11pt.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font11WhiteBlackShadow" filename="fonts/11ptShadow.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11GreenBlackShadow" filename="fonts/11ptShadow.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11PurpleBlackShadow" filename="fonts/11ptShadow.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11BlackBlackShadow" filename="fonts/11ptShadow.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font11WhiteOutline" filename="fonts/11outlined.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11GreenOutline" filename="fonts/11outlined.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11PurpleOutline" filename="fonts/11outlined.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font11WhiteOutlineBlackShadow" filename="fonts/11outlinedShadow.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11GreenOutlineBlackShadow" filename="fonts/11outlinedShadow.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font11PurpleOutlineBlackShadow" filename="fonts/11outlinedShadow.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	
+	<fontDef name="font11GreenPurpleHoverBlackOutline" filename="fonts/11outlined.fnt" color="#00FF00">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/>
+		<fontParam if="hover" color="#8500FF"/>
+    </fontDef>
+	
+	<fontDef name="font11PurpleGreenHoverBlackOutline" filename="fonts/11outlined.fnt" color="#8500FF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/>
+		<fontParam if="hover" color="#00FF00"/>
+    </fontDef>
+	
+	<fontDef name="font11WhiteGreenHoverBlackOutline" filename="fonts/11outlined.fnt" color="#FFFFFF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/>
+		<fontParam if="hover" color="#00FF00"/>
+    </fontDef>
+	
+	<fontDef name="font11WhitePurpleHoverBlackOutline" filename="fonts/11outlined.fnt" color="#FFFFFF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/>
+		<fontParam if="hover" color="#8500FF"/>
+    </fontDef>
+	
+	<!-- 16 -->
+	
+	<fontDef name="font16White" filename="fonts/bobsgame16.fnt" color="#FFFFFF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16Black" filename="fonts/bobsgame16.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16Green" filename="fonts/bobsgame16.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16Purple" filename="fonts/bobsgame16.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+
+	<fontDef name="font16PurpleGradient" filename="fonts/purpleGradient16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+
+	<fontDef name="font16GreenGradientBlackShadow" filename="fonts/greenGradientBlackShadow16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16PurpleGradientBlackShadow" filename="fonts/purpleGradientBlackShadow16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16PurpleGradientThinBlackShadow" filename="fonts/purpleGradientThinBlackShadow16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font16GreenGradientGreenShadow" filename="fonts/greenGradientGreenShadow16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font16PurpleGradientPurpleShadow" filename="fonts/purpleGradientPurpleShadow16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font16WhiteBlackOutline" filename="fonts/whiteBlackOutline16.fnt"><fontParam if="selected" offsetX="0" offsetY="2" color="#8500FF"/></fontDef>
+	<fontDef name="font16GreenBlackOutline" filename="fonts/greenBlackOutline16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font16PurpleBlackOutline" filename="fonts/purpleBlackOutline16.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+
+	<fontDef name="font16WhiteBlackShadow" filename="fonts/whiteBlackShadow16.fnt" color="white"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16BlackBlackShadow" filename="fonts/whiteBlackShadow16.fnt" color="#000000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16PurpleBlackShadow" filename="fonts/whiteBlackShadow16.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16GreenBlackShadow" filename="fonts/whiteBlackShadow16.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font16GreenBlackShadowOutline" filename="fonts/whiteBlackShadowOutline16.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16PurpleBlackShadowOutline" filename="fonts/whiteBlackShadowOutline16.fnt" color="#8500FF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16DarkPurpleBlackShadowOutline" filename="fonts/whiteBlackShadowOutline16.fnt" color="#5500BF"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font16DarkGreenBlackShadowOutline" filename="fonts/whiteBlackShadowOutline16.fnt" color="#009000"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<fontDef name="font16GreenPurpleHoverBlackOutline" filename="fonts/whiteBlackOutline16.fnt" color="#00FF00">
+        <fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/>
+        <fontParam if="hover" color="#8500FF"/>
+    </fontDef>		
+	
+	<fontDef name="font16PurpleGreenHoverBlackOutline" filename="fonts/whiteBlackOutline16.fnt" color="#8500FF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/>
+		<fontParam if="hover" color="#00FF00"/>
+    </fontDef>
+	
+	<fontDef name="font16WhiteGreenHoverBlackOutline" filename="fonts/whiteBlackOutline16.fnt" color="#FFFFFF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#00FF00"/>
+		<fontParam if="hover" color="#00FF00"/>
+    </fontDef>
+	
+	<fontDef name="font16WhitePurpleHoverBlackOutline" filename="fonts/whiteBlackOutline16.fnt" color="#FFFFFF">
+		<fontParam if="pressed|selected" offsetX="0" offsetY="2" color="#8500FF"/>
+		<fontParam if="hover" color="#8500FF"/>
+    </fontDef>
+	<!-- 24 -->
+
+	<fontDef name="font24Green" filename="fonts/bobsgame24.fnt" color="#00FF00"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>	
+	<fontDef name="font24GreenGradientBlackShadow" filename="fonts/greenGradientBlackShadow24.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font24GreenGradientGreenShadow" filename="fonts/greenGradientGreenShadow24.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font24PurpleGradientBlackShadow" filename="fonts/purpleGradientBlackShadow24.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font24PurpleGradientPurpleShadow" filename="fonts/purpleGradientPurpleShadow24.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+	<!-- 32 -->
+
+	<fontDef name="font32GreenBlackOutline" filename="fonts/greenBlackOutline32.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+	<fontDef name="font32PurpleBlackOutline" filename="fonts/purpleBlackOutline32.fnt"><fontParam if="pressed|selected" offsetX="0" offsetY="2"/></fontDef>
+
+
+
+	<fontDef name="arial11White" filename="fonts/arial11.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="arial11Black" filename="fonts/arial11.fnt" color="#000000"></fontDef>
+
+	<fontDef name="arial12White" filename="fonts/arial12.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="arial12Black" filename="fonts/arial12.fnt" color="#000000"></fontDef>
+
+	<fontDef name="arial14White" filename="fonts/arial14.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="arial14Black" filename="fonts/arial14.fnt" color="#000000"></fontDef>
+
+	<fontDef name="arial15White" filename="fonts/arial15.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="arial15Black" filename="fonts/arial15.fnt" color="#000000"></fontDef>
+
+	<fontDef name="arial17White" filename="fonts/arial17.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="arial17Black" filename="fonts/arial17.fnt" color="#000000"></fontDef>
+
+	
+
+	
+	<fontDef name="tahoma11White" filename="fonts/tahoma11.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="tahoma11Black" filename="fonts/tahoma11.fnt" color="#000000"></fontDef>
+
+	<fontDef name="tahoma12White" filename="fonts/tahoma12.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="tahoma12Black" filename="fonts/tahoma12.fnt" color="#000000"></fontDef>
+
+	<fontDef name="tahoma14White" filename="fonts/tahoma14.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="tahoma14Black" filename="fonts/tahoma14.fnt" color="#000000"></fontDef>
+
+	<fontDef name="tahoma15White" filename="fonts/tahoma15.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="tahoma15Black" filename="fonts/tahoma15.fnt" color="#000000"></fontDef>
+
+	<fontDef name="tahoma16White" filename="fonts/tahoma16.fnt" color="#FFFFFF"></fontDef>
+	<fontDef name="tahoma16Black" filename="fonts/tahoma16.fnt" color="#000000"></fontDef>
+
+	
+
+	<!-- 
+	==================================================
+	//
+	//
+	//
+	//	defaults
+	//
+	//
+	//
+	==================================================
+	-->	
+	
+	
+	
+    <inputMapDef name="-defaultInputMap">
+        <action name="selectAll">ctrl A</action>
+        <action name="selectAll">cmd A</action>
+        <action name="cut">ctrl X</action>
+        <action name="cut">cmd X</action>
+        <action name="copy">ctrl C</action>
+        <action name="copy">cmd C</action>
+        <action name="paste">ctrl V</action>
+        <action name="paste">cmd V</action>
+    </inputMapDef>
+
+	
+    <theme name="-defaults">
+        <param name="background"><image>none</image></param>
+        <param name="overlay"><image>none</image></param>
+        <param name="font"><font>normal</font></param>
+        <param name="textAlignment"><enum type="alignment">left</enum></param>
+        <param name="minWidth"><int>0</int></param>
+        <param name="minHeight"><int>0</int></param>
+        <param name="maxWidth"><int>0</int></param>
+        <param name="maxHeight"><int>0</int></param>
+        <param name="inputMap"><inputMap>-defaultInputMap</inputMap></param>
+		<theme name="" ref="*"/>
+    </theme>
+
+    <theme name="-defaults-light">
+        <param name="background"><image>none</image></param>
+        <param name="overlay"><image>none</image></param>
+        <param name="font"><font>font8Black</font></param>
+        <param name="textAlignment"><enum type="alignment">left</enum></param>
+        <param name="minWidth"><int>0</int></param>
+        <param name="minHeight"><int>0</int></param>
+        <param name="maxWidth"><int>0</int></param>
+        <param name="maxHeight"><int>0</int></param>
+        <param name="inputMap"><inputMap>-defaultInputMap</inputMap></param>
+		<theme name="" ref="*"/>
+    </theme>
+    
+
+	
+	
+	
+	
+	<!-- 
+	==================================================
+	//
+	//
+	//
+	//	primitives
+	//
+	//
+	//
+	==================================================
+	-->	
+	
+	
+	
+
+
+	<theme name="widget" ref="-defaults">	
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+	</theme>
+
+	
+    <theme name="panel" ref="-defaults">
+        <param name="defaultGap"><dimension>5,5</dimension></param>
+        <param name="smallGap"><dimension>8,8</dimension></param>
+        <param name="mediumGap"><dimension>10,10</dimension></param>
+        <param name="largeGap"><dimension>15,15</dimension></param>
+        <param name="namedGaps"><map/></param>
+    </theme>
+	
+	
+	
+
+	
+	
+    <theme name="label" ref="-defaults">
+    </theme>
+	
+	<theme name="font8Green" ref="-defaults">
+		<param name="font"><font>font8GreenGradientGreenShadow</font></param>
+	</theme>
+
+	<theme name="font8Purple" ref="-defaults">
+		<param name="font"><font>font8PurpleGradientPurpleShadow</font></param>
+	</theme>	
+	
+	<theme name="font8WhiteNoShadow" ref="-defaults">
+		<param name="font"><font>font8White</font></param>
+	</theme>
+	
+	<theme name="font8White" ref="-defaults">
+		<param name="font"><font>font8WhiteGrayShadow1</font></param>
+	</theme>	
+
+	<theme name="font11Green" ref="-defaults">
+		<param name="font"><font>font11GreenBlackShadow</font></param>
+	</theme>
+
+	<theme name="font11Purple" ref="-defaults">
+		<param name="font"><font>font11PurpleBlackShadow</font></param>
+	</theme>	
+	
+	<theme name="font11WhiteNoShadow" ref="-defaults">
+		<param name="font"><font>font11White</font></param>
+	</theme>
+	
+	<theme name="font11White" ref="-defaults">
+		<param name="font"><font>font11WhiteBlackShadow</font></param>
+	</theme>
+	
+	<theme name="font11GreenOutline" ref="-defaults">
+		<param name="font"><font>font11GreenOutline</font></param>
+	</theme>
+
+	<theme name="font11PurpleOutline" ref="-defaults">
+		<param name="font"><font>font11PurpleOutline</font></param>
+	</theme>	
+	
+	<theme name="font11WhiteOutline" ref="-defaults">
+		<param name="font"><font>font11WhiteOutline</font></param>
+	</theme>	
+	
+	
+	<theme name="font16Green" ref="-defaults">
+		<param name="font"><font>font16GreenGradientGreenShadow</font></param>
+	</theme>
+
+	<theme name="font16Purple" ref="-defaults">
+		<param name="font"><font>font16PurpleGradientPurpleShadow</font></param>
+	</theme>	
+
+	<theme name="font16White" ref="-defaults">
+		<param name="font"><font>font16WhiteBlackShadow</font></param>
+	</theme>	
+
+	<theme name="font16GreenOutline" ref="-defaults">
+		<param name="font"><font>font16GreenBlackOutline</font></param>
+	</theme>
+
+	<theme name="font16PurpleOutline" ref="-defaults">
+		<param name="font"><font>font16PurpleBlackOutline</font></param>
+	</theme>	
+
+	<theme name="font16WhiteOutline" ref="-defaults">
+		<param name="font"><font>font16WhiteBlackOutline</font></param>
+	</theme>
+	
+	
+	
+	<theme name="fontArial11White" ref="-defaults"><param name="font"><font>arial11White</font></param></theme>
+<theme name="fontArial11Black" ref="-defaults"><param name="font"><font>arial11Black</font></param></theme>
+
+<theme name="fontArial12White" ref="-defaults"><param name="font"><font>arial12White</font></param></theme>
+<theme name="fontArial12Black" ref="-defaults"><param name="font"><font>arial12Black</font></param></theme>
+
+<theme name="fontArial14White" ref="-defaults"><param name="font"><font>arial14White</font></param></theme>
+<theme name="fontArial14Black" ref="-defaults"><param name="font"><font>arial14Black</font></param></theme>
+
+<theme name="fontArial15White" ref="-defaults"><param name="font"><font>arial15White</font></param></theme>
+<theme name="fontArial15Black" ref="-defaults"><param name="font"><font>arial15Black</font></param></theme>
+
+<theme name="fontArial17White" ref="-defaults"><param name="font"><font>arial17White</font></param></theme>
+<theme name="fontArial17Black" ref="-defaults"><param name="font"><font>arial17Black</font></param></theme>
+
+
+
+<theme name="fontTahoma11White" ref="-defaults"><param name="font"><font>tahoma11White</font></param></theme>
+<theme name="fontTahoma11Black" ref="-defaults"><param name="font"><font>tahoma11Black</font></param></theme>
+
+<theme name="fontTahoma12White" ref="-defaults"><param name="font"><font>tahoma12White</font></param></theme>
+<theme name="fontTahoma12Black" ref="-defaults"><param name="font"><font>tahoma12Black</font></param></theme>
+
+<theme name="fontTahoma14White" ref="-defaults"><param name="font"><font>tahoma14White</font></param></theme>
+<theme name="fontTahoma14Black" ref="-defaults"><param name="font"><font>tahoma14Black</font></param></theme>
+
+<theme name="fontTahoma15White" ref="-defaults"><param name="font"><font>tahoma15White</font></param></theme>
+<theme name="fontTahoma15Black" ref="-defaults"><param name="font"><font>tahoma15Black</font></param></theme>
+
+<theme name="fontTahoma16White" ref="-defaults"><param name="font"><font>tahoma16White</font></param></theme>
+<theme name="fontTahoma16Black" ref="-defaults"><param name="font"><font>tahoma16Black</font></param></theme>
+
+	
+	
+	
+    <theme name="button" ref="-defaults">
+    </theme>
+	
+	
+    <theme name="togglebutton" ref="button">
+	     <param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+        <param name="overlay"><image>greenDotSelected</image></param>
+	</theme>
+	
+	
+	
+    <theme name="checkbox" ref="-defaults">
+        <param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+        <param name="overlay"><image>greenDotSelected</image></param>
+    </theme>
+	
+	
+	
+    <theme name="radiobutton" ref="-defaults">
+        <param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+        <param name="overlay"><image>greenDotSelected</image></param>
+    </theme>
+
+	
+	
+	
+	
+		
+    <theme name="textarea" ref="-defaults">
+		<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+        <param name="fonts">
+            <map>
+                <param name="default"><font>normal</font></param>
+            </map>
+        </param>
+        <param name="images">
+            <map>
+            </map>
+        </param>
+        <param name="border"><border>4</border></param>
+    </theme>
+	
+	
+    <theme name="editfield" ref="-defaults">
+		<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+        <param name="border"><border>20</border></param>
+
+        <param name="passwordChar"><int>42</int></param>
+		
+        <param name="maxWidth"><int>32767</int></param>
+        <param name="columns"><int>20</int></param>
+		
+        <theme name="renderer" ref="-defaults"/>
+		<param name="autocompletion-height"><int>150</int></param>
+			<param name=""><image>editfield.*</image></param>
+    </theme>
+	
+	
+	
+	
+	
+	<theme name="dialoglayout" ref="-defaults">         
+		<param name="border"><border>5</border></param>
+		<param name="defaultGap"><dimension>5,5</dimension></param>
+		<param name="smallGap"><dimension>8,8</dimension></param>
+		<param name="mediumGap"><dimension>10,10</dimension></param>
+		<param name="largeGap"><dimension>15,15</dimension></param>
+		<param name="namedGaps"><map/></param>
+	</theme>
+
+
+	
+	
+	<theme name="hscrollbar" ref="-defaults">
+		<theme name="leftbutton" ref="-defaults">
+		</theme>
+		<theme name="rightbutton" ref="-defaults">
+		</theme>
+		<theme name="thumb" ref="-defaults">
+			<param name="background"><image>blackCursorHorizontalButton</image></param>
+            <param name="overlay"><image>greenDotHoverAndSelected</image></param>
+		</theme>
+		<param name="scaleThumb"><bool>false</bool></param>
+		<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+	</theme>
+	
+	
+	<theme name="vscrollbar" ref="-defaults">
+		<theme name="upbutton" ref="-defaults">
+            <param name="background"><image>upArrowButton</image></param>
+		</theme>
+		<theme name="downbutton" ref="-defaults">
+            <param name="background"><image>downArrowButton</image></param>
+		</theme>
+		<theme name="thumb" ref="-defaults">
+			<param name="background"><image>blackCursorVerticalButton</image></param>
+			<param name="overlay"><image>greenDotHoverAndSelected</image></param>
+		</theme>
+		<param name="scaleThumb"><bool>false</bool></param>
+		<param name="background"><image>colorCircleGlowBlackBackgroundChoppedAreaVertical</image></param>
+	</theme>
+	
+	
+	<theme name="scrollpane" ref="-defaults">
+		<theme name="hscrollbar" ref="hscrollbar"/>
+		<theme name="vscrollbar" ref="vscrollbar">
+        </theme>
+		<param name="hasDragButton"><bool>true</bool></param>
+		<theme name="dragButton" ref="button"/>
+		 <param name="autoScrollArea"><int>100</int></param>
+		 <param name="autoScrollSpeed"><int>100</int></param>
+		 <param name="scrollbarsAlwaysVisible"><bool>false</bool></param>
+	</theme>
+	
+	
+	
+	
+	<theme name="listbox" ref="-defaults">
+        <param name="background"><image>plate_transparent_box_flipped</image></param>
+		<theme name="display" ref="label">
+			<param name="border"><border>4</border></param>
+            <param name="font"><font>font11GreenPurpleHoverBlackOutline</font></param>
+		</theme>
+		<param name="border"><border>30,50,30,30</border></param>
+		<theme name="vscrollbar" ref="vscrollbar"/>
+        <param name="rowMajor"><bool>false</bool></param>
+        <param name="fixedCellWidth"><bool>false</bool></param>
+        <param name="fixedCellHeight"><bool>false</bool></param>
+        <param name="cellWidth"><int>200</int></param>
+        <param name="cellHeight"><int>20</int></param>
+        <param name="minDisplayedRows"><int>5</int></param>
+        <param name="minWidth"><int>20</int></param>
+        <param name="minHeight"><int>20</int></param>
+		 <param name="scrollbarsAlwaysVisible"><bool>false</bool></param>
+	</theme>
+	
+	<theme name="listbox-white" ref="listbox">
+        <param name="background"><image>plate_white_box_flipped</image></param>
+		<theme name="display" ref="label">
+			<param name="border"><border>4</border></param>
+            <param name="font"><font>font11PurpleGreenHoverBlackOutline</font></param>
+		</theme>
+		<param name="border"><border>30,50,30,30</border></param>
+		<theme name="vscrollbar" ref="vscrollbar"/>
+        <param name="rowMajor"><bool>false</bool></param>
+        <param name="fixedCellWidth"><bool>false</bool></param>
+        <param name="fixedCellHeight"><bool>false</bool></param>
+        <param name="cellWidth"><int>200</int></param>
+        <param name="cellHeight"><int>20</int></param>
+        <param name="minDisplayedRows"><int>5</int></param>
+        <param name="minWidth"><int>20</int></param>
+        <param name="minHeight"><int>20</int></param>
+		 <param name="scrollbarsAlwaysVisible"><bool>false</bool></param>
+	</theme>
+	
+	
+	<theme name="combobox" ref="panel">
+        <param name="background"><image>bobsgameButtonBackground</image></param>
+		<theme name="display" ref="label">
+			<param name="border"><border>0,15,0,0</border></param>
+            <param name="font"><font>font11GreenOutlineBlackShadow</font></param>
+		</theme>
+		<theme name="button" ref="button">
+			<param name="overlay"><image>greenDotAlways</image></param>
+            <param name="background"><image>bobsgameButtonBackground</image></param>
+		</theme>
+        <param name="minWidth"><int>250</int></param>
+		
+	</theme>
+	
+	<theme name="comboboxPopup" ref="-defaults">
+		<theme name="listbox" ref="listbox"/>
+	</theme>
+
+
+	
+	
+	
+	<theme name="combobox-white" ref="combobox">
+        <param name="background"><image>nDButtonBackground</image></param>
+		<theme name="display" ref="label">
+			<param name="border"><border>0,15,0,0</border></param>
+            <param name="font"><font>font11GreenPurpleHoverBlackOutline</font></param>
+		</theme>
+		<theme name="button" ref="button">
+			<param name="overlay"><image>greenDotAlways</image></param>
+            <param name="background"><image>nDButtonBackground</image></param>
+		</theme>
+        <param name="minWidth"><int>250</int></param>
+		
+
+	</theme>
+	
+	
+
+		
+
+		
+    <theme name="tooltipwindow" ref="-defaults">
+		<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param><!--  -->
+       
+        <param name="fadeInTime"><int>1</int></param>
+        <theme name="label" ref="-defaults">
+            <param name="font"><font>font8WhiteGrayShadow1</font></param>
+        </theme>
+		
+		<param name="border"><border>20,20,20,20</border></param>
+		<param name="defaultGap"><dimension>5,5</dimension></param>
+		<param name="smallGap"><dimension>8,8</dimension></param>
+		<param name="mediumGap"><dimension>10,10</dimension></param>
+		<param name="largeGap"><dimension>15,15</dimension></param>
+		<param name="namedGaps"><map/></param>
+    </theme>
+	
+		
+	<theme name="progressbar" ref="-defaults">
+        <param name=""><image>progressbar.*</image></param>
+        <param name="border"><border>1</border></param>
+        <param name="minWidth"><int>100</int></param>
+        <param name="maxWidth"><int>100</int></param>
+        <param name="progressImage"><image>progressBarFullAnimation</image></param>
+        <param name="background"><image>progressBarBackground</image></param>
+    </theme>
+	
+		<theme name="fpscounter" ref="-defaults">
+			<param name="tooltip"><string>Current FPS</string></param>
+		</theme>
+	
+	
+	<!-- 
+	==================================================
+	//
+	//
+	//
+	//	widget themes
+	//
+	//
+	//
+	==================================================
+	-->
+	
+	
+	
+	
+	
+
+	
+	
+
+
+
+		
+
+		
+		
+		
+		
+<!-- light button -->
+	<theme name="lightButton" ref="button">
+		<param name="background"><image>nDButtonBackground</image></param>
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font16GreenPurpleHoverBlackOutline</font></param>
+	</theme>
+		
+	
+
+<!-- dark button -->	
+		
+	<theme name="darkButton" ref="button">
+		<param name="background"><image>bobsgameButtonBackground</image></param>
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font16GreenBlackOutline</font></param>
+	</theme>
+		
+	
+
+<!-- small dark button -->	
+		
+	<theme name="smallDarkButton" ref="button">
+		<param name="background"><image>bobsgameButtonBackground</image></param>
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font11GreenOutline</font></param>
+	</theme>
+	
+	
+<!-- small light button -->	
+	<theme name="smallLightButton" ref="button">
+		<param name="background"><image>nDButtonBackground</image></param>
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font11GreenOutline</font></param>
+	</theme>
+	
+		
+<!-- light text button -->
+	<theme name="lightTextButton" ref="-defaults">
+		
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font8GreenPurpleHoverBlackShadow</font></param>
+	</theme>
+		
+	
+
+<!-- dark text button -->	
+		
+	<theme name="darkTextButton" ref="-defaults">
+		
+		<param name="border"><border>10,16,6,14</border></param>
+		<param name="font"><font>font8PurpleGreenHoverBlackShadow</font></param>
+	</theme>
+	
+	
+	
+		
+<!-- dark scrollPane -->		
+	<theme name="darkScrollPane" ref="scrollpane">
+		
+			<theme name="hscrollbar" ref="hscrollbar"/>
+			<theme name="vscrollbar" ref="vscrollbar"/>
+			<param name="hasDragButton"><bool>true</bool></param>
+			<theme name="dragButton" ref="button"/>
+			<param name="autoScrollArea"><int>100</int></param>
+			<param name="autoScrollSpeed"><int>100</int></param>
+			<param name="scrollbarsAlwaysVisible"><bool>false</bool></param>
+			 
+			<param name="font"><font>font8WhiteGrayShadow1</font></param>
+			 
+			<theme name="label" ref="-defaults">
+				<param name="font"><font>font8WhiteGrayShadow1</font></param>
+			</theme>
+			
+			
+	</theme>
+		
+<!-- light scrollPane -->
+	<theme name="lightScrollPane" ref="scrollpane">
+		
+			<theme name="hscrollbar" ref="hscrollbar"/>
+			<theme name="vscrollbar" ref="vscrollbar"/>
+			<param name="hasDragButton"><bool>true</bool></param>
+			<theme name="dragButton" ref="button"/>
+			<param name="autoScrollArea"><int>100</int></param>
+			<param name="autoScrollSpeed"><int>100</int></param>
+			<param name="scrollbarsAlwaysVisible"><bool>false</bool></param>
+			 
+			<param name="font"><font>font8Black</font></param>
+			 
+			<theme name="label" ref="-defaults">
+				<param name="font"><font>font8Black</font></param>
+			</theme>
+		
+			
+	</theme>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	<theme name="darkLayout" ref="dialoglayout">
+
+		<theme name="button" ref="lightButton"/>
+		<theme name="oppositeThemeButton" ref="darkButton"/>
+		<theme name="textButton" ref="darkTextButton"/>
+		<theme name="smallButton" ref="smallDarkButton"/>
+		
+		<param name="font"><font>font8WhiteGrayShadow1</font></param>
+		<theme name="label" ref="-defaults"><param name="font"><font>font8WhiteGrayShadow1</font></param></theme>
+		
+		
+		<!-- this is for the status labels -->
+		<theme name="descriptionLabel" ref="-defaults"><param name="font"><font>font11GreenBlackShadow</font></param><param name="textAlignment"><enum type="alignment">right</enum></param></theme>
+		
+		<!-- this is for the status labels -->
+		<theme name="valueLabel" ref="-defaults"><param name="font"><font>font11WhiteBlackShadow</font></param><param name="textAlignment"><enum type="alignment">left</enum></param></theme>
+	
+	
+		<theme name="errorLabel" ref="-defaults"><param name="font"><font>font8Red</font></param></theme>
+		<theme name="label" ref="-defaults"><param name="font"><font>font8WhiteGrayShadow1</font></param></theme>
+		<theme name="statusLabel" ref="-defaults"><param name="font"><font>font8WhiteGrayShadow1</font></param></theme>
+		<theme name="bigLabel" ref="-defaults"><param name="font"><font>font16GreenGradientGreenShadow</font></param></theme>
+		
+
+	</theme>
+	
+	
+
+		
+		
+	<theme name="lightLayout" ref="dialoglayout">
+
+			
+		<theme name="button" ref="darkButton"/>
+		<theme name="oppositeThemeButton" ref="lightButton"/>
+		<theme name="textButton" ref="lightTextButton"/>
+		<theme name="smallButton" ref="smallLightButton"/>
+		
+		<param name="font"><font>font8Black</font></param>
+		<theme name="label" ref="-defaults"><param name="font"><font>font8Black</font></param></theme>	
+		
+		<!-- this is for the status labels -->
+		<theme name="descriptionLabel" ref="-defaults"><param name="font"><font>font11PurpleOutlineBlackShadow</font></param><param name="textAlignment"><enum type="alignment">right</enum></param></theme>
+		<!-- this is for the status labels -->
+		<theme name="valueLabel" ref="-defaults"><param name="font"><font>font11BlackBlackShadow</font></param><param name="textAlignment"><enum type="alignment">left</enum></param></theme>
+
+		<theme name="errorLabel" ref="-defaults"><param name="font"><font>font8Red</font></param></theme>
+		<theme name="label" ref="-defaults"><param name="font"><font>font8Black</font></param></theme>
+		<theme name="statusLabel" ref="-defaults"><param name="font"><font>font8Black</font></param></theme>
+		<theme name="bigLabel" ref="-defaults"><param name="font"><font>font16GreenGradientGreenShadow</font></param></theme>
+		
+	
+	
+	</theme>
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+		
+<!-- dark content panel -->
+	<theme name="darkInvisibleScrollPaneContentContainerDialogLayout" ref="darkLayout">	
+
+	
+		<!-- this is for the settings box groups -->
+		<theme name="dialoglayout" ref="darkLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+		</theme>
+		
+		<!-- this is for the item list -->
+		<theme name="itemBox" ref="darkLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+
+			
+			<!-- item name -->
+			<theme name="itemLabel" ref="-defaults">
+				<param name="font"><font>font16PurpleGradientPurpleShadow</font></param>
+			</theme>
+			
+			<!-- item description -->
+			<theme name="textarea" ref="-defaults">
+				<param name="fonts">
+					<map>
+						<param name="default"><font>font8WhiteGrayShadow1</font></param>
+					</map>
+				</param>
+				<param name="images">
+					<map>
+					</map>
+				</param>
+				<param name="border"><border>0</border></param>
+			</theme>
+		</theme>	
+			
+		
+		<theme name="gameContainerDialogLayout" ref="darkLayout">
+			<param name="background"><image>plate_transparent_box</image></param>
+
+			<param name="border"><border>40</border></param>
+			<param name="defaultGap"><dimension>5,5</dimension></param>
+			<param name="smallGap"><dimension>8,8</dimension></param>
+			<param name="mediumGap"><dimension>10,10</dimension></param>
+			<param name="largeGap"><dimension>15,15</dimension></param>
+			<param name="namedGaps"><map/></param>	
+					
+			
+			<theme name="gameLabel" ref="-defaults">
+				<param name="font"><font>font24GreenGradientGreenShadow</font></param>
+			</theme>
+			
+			<theme name="priceLabel" ref="-defaults">
+				<param name="font"><font>font16GreenBlackOutline</font></param>
+			</theme>								
+			
+			<theme name="gameTextArea" ref="-defaults">
+				<param name="fonts">
+					<map>
+						<param name="default"><font>font16PurpleGradientPurpleShadow</font></param>
+					</map>
+				</param>
+				<param name="images">
+					<map>
+					</map>
+				</param>
+				<param name="border"><border>4</border></param>
+			</theme>
+	
+		</theme>
+		
+		
+		<!-- this is the keyboard image -->
+		<theme name="keyboardImagePanel" ref="panel">
+			<param name="background"><image>keyboardImage</image></param>
+		</theme>
+
+		
+		<theme name="helpLabelSmall" ref="-defaults">
+			<param name="font"><font>font8WhiteBlackShadow</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		<theme name="helpLabelBig" ref="-defaults">
+			<param name="font"><font>font16PurpleGradientPurpleShadow</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		
+		<theme name="helpLabelMedium" ref="-defaults">
+			<param name="font"><font>font11WhiteOutline</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		
+		
+		<theme name="gameControllerSetupLayout" ref="darkLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+			<theme name="label" ref="-defaults">
+				<param name="font"><font>font8WhiteGrayShadow1</font></param>
+			</theme>
+			
+
+			
+			<theme name="dialoglayout" ref="darkLayout">
+				<param name="border"><border>20</border></param>
+				<param name="background"><image>colorCircleGlowBlackBackgroundChoppedArea</image></param>
+				<theme name="label" ref="-defaults">
+					<param name="font"><font>font8WhiteGrayShadow1</font></param>
+				</theme>
+				
+				<theme name="button" ref="button">
+					<param name="background"><image>nDButtonBackground</image></param>
+					<param name="border"><border>10,16,6,14</border></param>
+					<param name="font"><font>font16GreenPurpleHoverBlackOutline</font></param>
+				</theme>
+			</theme>
+			
+			
+		</theme>	
+		
+		
+	</theme>
+
+<!-- light content panel -->
+	<theme name="lightInvisibleScrollPaneContentContainerDialogLayout" ref="lightLayout">	
+
+		<theme name="dialoglayout" ref="lightLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+		</theme>
+		
+		<!-- this is for the item list -->
+		<theme name="itemBox" ref="lightLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+			
+			<!-- item name -->
+			<theme name="itemLabel" ref="-defaults">
+				<param name="font"><font>font16GreenBlackOutline</font></param>
+			</theme>
+			
+			<!-- item description -->
+			<theme name="textarea" ref="-defaults">
+				<param name="fonts">
+					<map>
+						<param name="default"><font>font11BlackBlackShadow</font></param>
+					</map>
+				</param>
+				<param name="images">
+					<map>
+					</map>
+				</param>
+				<param name="border"><border>0</border></param>
+			</theme>
+		</theme>
+		
+		
+		
+		
+		<theme name="gameContainerDialogLayout" ref="lightLayout">
+		
+			<param name="background"><image>plate_white_box</image></param>
+
+			<param name="border"><border>40</border></param>
+			<param name="defaultGap"><dimension>5,5</dimension></param>
+			<param name="smallGap"><dimension>8,8</dimension></param>
+			<param name="mediumGap"><dimension>10,10</dimension></param>
+			<param name="largeGap"><dimension>15,15</dimension></param>
+			<param name="namedGaps"><map/></param>	
+						
+			
+			<theme name="gameLabel" ref="-defaults">
+				<param name="font"><font>font32GreenBlackOutline</font></param>
+			</theme>
+			
+			<theme name="priceLabel" ref="-defaults">
+				<param name="font"><font>font16GreenBlackShadowOutline</font></param>
+			</theme>
+			
+			<theme name="gameTextArea" ref="-defaults">
+				<param name="fonts">
+					<map>
+						<param name="default"><font>font16DarkPurpleBlackShadowOutline</font></param>
+					</map>
+				</param>
+				<param name="images">
+					<map>
+					</map>
+				</param>
+				<param name="border"><border>4</border></param>
+			</theme>
+						
+		</theme>
+		
+		
+		
+		
+		<theme name="keyboardImagePanel" ref="panel">
+			<param name="background"><image>keyboardImage</image></param>
+		</theme>
+		
+		<theme name="helpLabelSmall" ref="-defaults">
+			<param name="font"><font>font8PurpleGradientBlackShadow</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		<theme name="helpLabelBig" ref="-defaults">
+			<param name="font"><font>font16GreenBlackOutline</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		
+		<theme name="helpLabelMedium" ref="-defaults">
+			<param name="font"><font>font11WhiteOutline</font></param>
+			<param name="textAlignment"><enum type="alignment">center</enum></param>
+		</theme>
+		
+		
+		<theme name="gameControllerSetupLayout" ref="lightLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleChoppedArea</image></param>
+			<theme name="label" ref="-defaults">
+				<param name="font"><font>font8WhiteGrayShadow1</font></param>
+			</theme>
+			
+			<theme name="dialoglayout" ref="lightLayout">
+				<param name="border"><border>20</border></param>
+				<param name="background"><image>colorCircleChoppedArea</image></param>
+				<theme name="label" ref="-defaults">
+					<param name="font"><font>font8Black</font></param>
+				</theme>
+
+				<theme name="button" ref="button">
+					<param name="background"><image>bobsgameButtonBackground</image></param>
+					<param name="border"><border>10,16,6,14</border></param>
+					<param name="font"><font>font16GreenBlackOutline</font></param>
+				</theme>
+			</theme>
+			
+		</theme>	
+			
+	</theme>
+	
+	
+<!-- dark panel -->	
+	<theme name="darkPanel" ref="darkLayout">
+
+		<param name="background"><image>plate_transparent_box</image></param>
+		<param name="border"><border>40</border></param>
+		
+		<theme name="dialoglayout" ref="darkLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleGlowClearChoppedArea</image></param>
+		</theme>	
+		
+		<theme name="themedScrollPane" ref="darkScrollPane">
+			<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="darkInvisibleScrollPaneContentContainerDialogLayout">
+			
+			</theme>
+		</theme>
+		
+	</theme>
+	
+	
+	
+<!-- light panel -->	
+	<theme name="lightPanel" ref="lightLayout">
+	
+		<param name="background"><image>plate_white_box</image></param>
+		<param name="border"><border>40</border></param>
+
+		<theme name="dialoglayout" ref="lightLayout">
+			<param name="border"><border>20</border></param>
+			<param name="background"><image>colorCircleGlowClearChoppedArea</image></param>
+		</theme>
+		
+		<theme name="themedScrollPane" ref="lightScrollPane">
+			<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="lightInvisibleScrollPaneContentContainerDialogLayout">
+			
+			</theme>
+		</theme>
+	</theme>
+	
+	
+	
+<!-- invisible main menu -->
+	<theme name="darkMenuNoMainPanel" ref="darkLayout">
+
+			    
+			
+			<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="darkInvisibleScrollPaneContentContainerDialogLayout">
+				<!-- this is the panel inside the main panel that will hold the scrollpane -->
+				<theme name="subMenuPanelDialogLayout" ref="darkPanel">
+								
+				</theme>				
+			</theme>
+
+			<theme name="themedScrollPane" ref="darkScrollPane">
+			
+				
+			
+				<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="darkInvisibleScrollPaneContentContainerDialogLayout">
+				
+					<param name="background"><image>plate_transparent_box</image></param>
+					<!-- this is the panel inside the main panel that will hold the scrollpane -->
+					<theme name="subMenuPanelDialogLayout" ref="darkPanel">
+						
+					</theme>				
+				</theme>
+			</theme>
+	</theme>
+	
+	
+<!-- dark menu -->
+	<theme name="darkMenu" ref="darkLayout">
+
+			<param name="background"><image>plate_transparent_box</image></param>    
+			
+			<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="darkInvisibleScrollPaneContentContainerDialogLayout">
+				<!-- this is the panel inside the main panel that will hold the scrollpane -->
+				<theme name="subMenuPanelDialogLayout" ref="darkPanel">
+								
+				</theme>				
+			</theme>
+
+			<theme name="themedScrollPane" ref="darkScrollPane">
+				<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="darkInvisibleScrollPaneContentContainerDialogLayout">
+					<!-- this is the panel inside the main panel that will hold the scrollpane -->
+					<theme name="subMenuPanelDialogLayout" ref="darkPanel">
+									
+					</theme>				
+				</theme>
+			</theme>
+	</theme>
+
+
+<!-- light menu -->
+	<theme name="lightMenu" ref="lightLayout">
+		<param name="background"><image>plate_white_box_flipped</image></param>           
+	
+		<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="lightInvisibleScrollPaneContentContainerDialogLayout">
+			<!-- this is the panel inside the main panel that will hold the scrollpane -->
+			<theme name="subMenuPanelDialogLayout" ref="lightPanel">
+				
+			</theme>				
+		</theme>		
+
+		<theme name="themedScrollPane" ref="lightScrollPane">
+			<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="lightInvisibleScrollPaneContentContainerDialogLayout">
+				<!-- this is the panel inside the main panel that will hold the scrollpane -->
+				<theme name="subMenuPanelDialogLayout" ref="lightPanel">
+					
+				</theme>				
+			</theme>
+		</theme>
+	</theme>
+
+
+
+		
+		
+		
+	
+		
+		
+	<!-- 
+	==================================================
+	//
+	//
+	//
+	//	start menu theme
+	//
+	//
+	//
+	==================================================
+	-->	
+		
+		
+		<theme name="stuffmenu" ref="-defaults">
+		
+		</theme>
+	
+		
+		
+		<theme name="gamestore" ref="-defaults">
+		
+			<theme name="darkMenu" ref="darkMenu">
+			
+				<param name="background"><image>plate_transparent_box_flipped</image></param>
+				
+				<param name="border"><border>40</border></param>
+
+			</theme>
+		
+		
+			<theme name="lightMenu" ref="lightMenu">
+
+				<param name="background"><image>plate_white_box_flipped</image></param>
+				
+				<param name="border"><border>40</border></param>
+
+			</theme>
+
+		</theme>
+
+		
+		
+
+		<theme name="legalpanel" ref="darkMenu">
+			<theme name="button" ref="darkButton"/>
+		</theme>
+
+		<theme name="loginpanel" ref="darkMenu">
+			<theme name="button" ref="darkButton"/>
+		</theme>
+		
+		<theme name="keyboardPanel" ref="darkMenuNoMainPanel">
+			<theme name="button" ref="darkButton"/>
+			<theme name="keyboardImagePanel" ref="panel">
+				<param name="background"><image>keyboardImage</image></param>
+			</theme>
+		</theme>
+		
+		<theme name="gamechallengenotificationpanel" ref="darkLayout">
+
+		</theme>
+		
+		<theme name="createnewaccount" ref="-defaults">
+		
+		</theme>
+	
+	
+		<theme name="loginscreen" ref="-defaults">
+		
+		</theme>
+		
+
+		<theme name="legalscreen" ref="-defaults">
+
+		</theme>
+		
+		<theme name="keyboardscreen" ref="-defaults">
+
+		</theme>
+		
+		<theme name="loadingscreen" ref="-defaults">
+					
+		</theme>
+		
+		
+		
+		<theme name="playereditmenu" ref="-defaults">
+		
+		
+			<theme name="darkMenu" ref="darkMenu">
+			
+					<param name="border"><border>30</border></param>
+
+
+					<param name="background"><image>plate_transparent_box_flipped</image></param>
+					
+					<theme name="themedScrollPane" ref="darkScrollPane">
+													
+						<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="dialoglayout">	
+						
+							<param name="border"><border>20</border></param>
+
+							<theme name="errorLabel" ref="-defaults"><param name="font"><font>font8Red</font></param></theme>
+							<theme name="statusLabel" ref="-defaults"><param name="font"><font>font8WhiteGrayShadow1</font></param></theme>
+			
+							<theme name="bigLabel" ref="-defaults"><param name="font"><font>font16GreenGradientGreenShadow</font></param></theme>
+
+						
+							<theme name="listbox" ref="listbox">
+							</theme>
+							
+							<theme name="combobox" ref="combobox">
+							</theme>
+							
+							<theme name="button" ref="darkButton">
+							</theme>
+
+
+							<theme name="editfield" ref="editfield">
+								 <theme name="renderer" ref="-defaults">
+								   <param name="font"><font>font16GreenBlackOutline</font></param>
+								</theme>
+							</theme>
+
+							<theme name="label" ref="-defaults">
+								<param name="font"><font>font11WhiteBlackShadow</font></param>
+							</theme>
+							
+						</theme>
+
+					</theme>
+					
+			</theme>
+		
+		
+			<theme name="lightMenu" ref="lightMenu">
+
+			
+					<param name="border"><border>30</border></param>	
+						
+					<param name="background"><image>plate_white_box_flipped</image></param>		
+			
+					<theme name="themedScrollPane" ref="lightScrollPane">
+											
+						<theme name="invisibleScrollPaneContentContainerDialogLayout" ref="dialoglayout">	
+						
+							<param name="border"><border>20</border></param>
+
+							<theme name="errorLabel" ref="-defaults"><param name="font"><font>font8Red</font></param></theme>
+							<theme name="statusLabel" ref="-defaults"><param name="font"><font>font8Black</font></param></theme>
+							
+							<theme name="bigLabel" ref="-defaults"><param name="font"><font>font16GreenGradientGreenShadow</font></param></theme>
+											
+							<theme name="listbox" ref="listbox-white">
+							</theme>
+							
+							<theme name="combobox" ref="combobox-white">
+							</theme>
+							
+
+							
+							<theme name="button" ref="lightButton">
+							</theme>
+
+
+							<theme name="editfield" ref="editfield">
+								 <theme name="renderer" ref="-defaults">
+								   <param name="font"><font>font16GreenBlackOutline</font></param>
+								</theme>
+							</theme>
+							
+							
+							<theme name="label" ref="-defaults">
+								<param name="font"><font>font8Black</font></param>
+							</theme>
+							
+						</theme>
+
+					</theme>
+					
+			</theme>
+			
+			
+		
+		</theme>
+		
+		
+	    
+	
+</themes>

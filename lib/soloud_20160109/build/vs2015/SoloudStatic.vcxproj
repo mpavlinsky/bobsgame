@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83540317-6FB7-92BB-183D-CB71047F5E3E}</ProjectGuid>
+    <RootNamespace>SoloudStatic</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\lib\</OutDir>
+    <IntDir>debug\Debug\SoloudStatic\</IntDir>
+    <TargetName>soloud_static</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\lib\</OutDir>
+    <IntDir>release\Release\SoloudStatic\</IntDir>
+    <TargetName>soloud_static</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\src\audiosource;..\..\src\backend;..\..\src\core;..\..\src\c_api;..\..\src\filter;..\..\src\tools;..\..\src\audiosource\modplug;..\..\src\audiosource\monotone;..\..\src\audiosource\sfxr;..\..\src\audiosource\speech;..\..\src\audiosource\tedsid;..\..\src\audiosource\vic;..\..\src\audiosource\wav;..\..\src\backend\alsa;..\..\src\backend\coreaudio;..\..\src\backend\null;..\..\src\backend\openal;..\..\src\backend\opensles;..\..\src\backend\oss;..\..\src\backend\portaudio;..\..\src\backend\sdl;..\..\src\backend\sdl2_static;..\..\src\backend\sdl_static;..\..\src\backend\wasapi;..\..\src\backend\winmm;..\..\src\backend\xaudio2;..\..\src\tools\codegen;..\..\src\tools\lutgen;..\..\src\tools\resamplerlab;..\..\src\tools\tedsid2dump;..\..\include;\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;DEBUG;MODPLUG_STATIC;WITH_MODPLUG;WITH_SDL;WITH_WINMM;WITH_NULL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)soloud_static.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;DEBUG;MODPLUG_STATIC;WITH_MODPLUG;WITH_SDL;WITH_WINMM;WITH_NULL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\src\audiosource;..\..\src\backend;..\..\src\core;..\..\src\c_api;..\..\src\filter;..\..\src\tools;..\..\src\audiosource\modplug;..\..\src\audiosource\monotone;..\..\src\audiosource\sfxr;..\..\src\audiosource\speech;..\..\src\audiosource\tedsid;..\..\src\audiosource\vic;..\..\src\audiosource\wav;..\..\src\backend\alsa;..\..\src\backend\coreaudio;..\..\src\backend\null;..\..\src\backend\openal;..\..\src\backend\opensles;..\..\src\backend\oss;..\..\src\backend\portaudio;..\..\src\backend\sdl;..\..\src\backend\sdl2_static;..\..\src\backend\sdl_static;..\..\src\backend\wasapi;..\..\src\backend\winmm;..\..\src\backend\xaudio2;..\..\src\tools\codegen;..\..\src\tools\lutgen;..\..\src\tools\resamplerlab;..\..\src\tools\tedsid2dump;..\..\include;\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)soloud_static.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\src\audiosource;..\..\src\backend;..\..\src\core;..\..\src\c_api;..\..\src\filter;..\..\src\tools;..\..\src\audiosource\modplug;..\..\src\audiosource\monotone;..\..\src\audiosource\sfxr;..\..\src\audiosource\speech;..\..\src\audiosource\tedsid;..\..\src\audiosource\vic;..\..\src\audiosource\wav;..\..\src\backend\alsa;..\..\src\backend\coreaudio;..\..\src\backend\null;..\..\src\backend\openal;..\..\src\backend\opensles;..\..\src\backend\oss;..\..\src\backend\portaudio;..\..\src\backend\sdl;..\..\src\backend\sdl2_static;..\..\src\backend\sdl_static;..\..\src\backend\wasapi;..\..\src\backend\winmm;..\..\src\backend\xaudio2;..\..\src\tools\codegen;..\..\src\tools\lutgen;..\..\src\tools\resamplerlab;..\..\src\tools\tedsid2dump;..\..\include;\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;MODPLUG_STATIC;WITH_MODPLUG;WITH_SDL;WITH_WINMM;WITH_NULL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;MODPLUG_STATIC;WITH_MODPLUG;WITH_SDL;WITH_WINMM;WITH_NULL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\src\audiosource;..\..\src\backend;..\..\src\core;..\..\src\c_api;..\..\src\filter;..\..\src\tools;..\..\src\audiosource\modplug;..\..\src\audiosource\monotone;..\..\src\audiosource\sfxr;..\..\src\audiosource\speech;..\..\src\audiosource\tedsid;..\..\src\audiosource\vic;..\..\src\audiosource\wav;..\..\src\backend\alsa;..\..\src\backend\coreaudio;..\..\src\backend\null;..\..\src\backend\openal;..\..\src\backend\opensles;..\..\src\backend\oss;..\..\src\backend\portaudio;..\..\src\backend\sdl;..\..\src\backend\sdl2_static;..\..\src\backend\sdl_static;..\..\src\backend\wasapi;..\..\src\backend\winmm;..\..\src\backend\xaudio2;..\..\src\tools\codegen;..\..\src\tools\lutgen;..\..\src\tools\resamplerlab;..\..\src\tools\tedsid2dump;..\..\include;\libraries\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)soloud_static.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\audiosource\modplug\soloud_modplug.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\modplug\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\monotone\soloud_monotone.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\monotone\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\sfxr\soloud_sfxr.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\sfxr\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\speech\darray.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\speech\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\speech\klatt.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\speech\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\speech\resonator.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\speech\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\speech\soloud_speech.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\speech\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\speech\tts.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\speech\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\tedsid\sid.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\tedsid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\tedsid\soloud_tedsid.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\tedsid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\tedsid\ted.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\tedsid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\vic\soloud_vic.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\vic\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\wav\soloud_wav.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\wav\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\wav\soloud_wavstream.cpp">
+      <ObjectFileName>$(IntDir)src\audiosource\wav\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\audiosource\wav\stb_vorbis.c">
+      <ObjectFileName>$(IntDir)src\audiosource\wav\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_bassboostfilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_biquadresonantfilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_dcremovalfilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_echofilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_fftfilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_flangerfilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter\soloud_lofifilter.cpp">
+      <ObjectFileName>$(IntDir)src\filter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_audiosource.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_bus.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_3d.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_basicops.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_faderops.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_filterops.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_getters.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_setters.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_voicegroup.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_core_voiceops.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_fader.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_fft.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_fft_lut.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_file.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_filter.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\soloud_thread.cpp">
+      <ObjectFileName>$(IntDir)src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\backend\sdl\soloud_sdl.cpp">
+      <ObjectFileName>$(IntDir)src\backend\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\backend\sdl\soloud_sdl_dll.c">
+      <ObjectFileName>$(IntDir)src\backend\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\backend\winmm\soloud_winmm.cpp">
+      <ObjectFileName>$(IntDir)src\backend\winmm\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\backend\null\soloud_null.cpp">
+      <ObjectFileName>$(IntDir)src\backend\null\</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

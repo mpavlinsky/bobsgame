@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bobsgame", "bobsgame.vcxproj", "{AF7EAEC1-0865-4133-9A48-C8097F619525}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{08643FA2-6928-4F60-8E4F-83FD78C28AA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Debug|x64.ActiveCfg = Debug|Win32
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Debug|x86.ActiveCfg = Debug|Win32
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Debug|x86.Build.0 = Debug|Win32
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Release|x64.ActiveCfg = Release|Win32
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Release|x86.ActiveCfg = Release|Win32
+		{AF7EAEC1-0865-4133-9A48-C8097F619525}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

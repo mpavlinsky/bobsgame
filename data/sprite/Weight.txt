@@ -1,0 +1,6 @@
+id:53
+name:Weight
+width:128
+height:128
+frames:1
+animation:Normal:0

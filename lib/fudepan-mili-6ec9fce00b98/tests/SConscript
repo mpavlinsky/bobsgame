@@ -1,0 +1,17 @@
+Import ('env')
+
+comp = ARGUMENTS.get('STD', '11')
+
+if comp == '11':
+    env.Append(CXXFLAGS='-std=c++0x')
+elif comp == '98':
+    env.Append(CXXFLAGS='-std=c++03')
+else:
+    env.cerror("Wrong STD argument. Pass 11 or 98.")
+    import sys; sys.exit(1)
+
+name = 'mili'
+inc = env.Dir('.')
+src = env.Glob('*.cpp')
+deps = ['gmock', 'gtest', 'gtest_main']
+env.CreateTest(name, inc, src, deps)

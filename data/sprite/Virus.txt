@@ -1,0 +1,7 @@
+id:54
+name:Virus
+width:64
+height:64
+frames:5
+animation:Normal:0
+animation:Explode:4
