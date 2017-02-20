@@ -1463,7 +1463,6 @@ void TCPServerConnection::tellServerBobsGameTheGameHasEnded_S(string roomUUID, s
 //===============================================================================================
 void TCPServerConnection::sendBobsGameGameStats_S(string & statsString)
 {//===============================================================================================
-
 	connectAndAuthorizeAndQueueWriteToChannel_S(BobNet::Bobs_Game_GameStats + statsString + ":" + BobNet::endline);
 }
 
