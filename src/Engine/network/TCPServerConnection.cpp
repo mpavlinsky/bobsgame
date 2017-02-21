@@ -104,7 +104,7 @@ void TCPServerConnection::updateThreadLoop(TCPServerConnection *u)
 				{
 					_lastCheckedSessionToken = currentTime;
 
-					if (u->lastUserNameOrEmail != "" && u->lastPassword != "")u->doLogin(nullptr, nullptr, u->lastUserNameOrEmail, u->lastPassword, false);
+					if (u->getLastUserNameOrEmail_S() != "" && u->getLastPassword_S() != "")u->_doLoginNoCaptions(u->getLastUserNameOrEmail_S(), u->getLastPassword_S(), false);
 					else u->checkForSessionTokenAndLogInIfExists();
 					
 				}
@@ -1720,6 +1720,191 @@ void TCPServerConnection::incomingAddFriendByUserNameResponse(string s)
 
 
 
+bool TCPServerConnection::_doLoginNoCaptions(string &userNameOrEmail, string &password, bool stayLoggedIn)
+{ //=========================================================================================================================
+
+
+
+//
+//	if (statusLabel != nullptr) statusLabel->setText(" ");
+//	if (errorLabel != nullptr)errorLabel->setText(" ");
+//
+//	if (userNameOrEmail.find("`") != string::npos)
+//	{
+//		if (errorLabel != nullptr)errorLabel->setText("Username/Email must not contain `");
+//		return false;
+//	}
+//	if (userNameOrEmail.find(",") != string::npos)
+//	{
+//		if (errorLabel != nullptr)errorLabel->setText("Username/Email must not contain ,");
+//		return false;
+//	}
+//	if (userNameOrEmail.length() == 0)
+//	{
+//		if (errorLabel != nullptr)errorLabel->setText("Enter your username or email address.");
+//		return false;
+//	}
+//	if (password.find("`") != string::npos)
+//	{
+//		if (errorLabel != nullptr)errorLabel->setText("Password must not contain `");
+//		return false;
+//	}
+//
+//	if (password.length() == 0)
+//	{
+//		if (errorLabel != nullptr)errorLabel->setText("Please enter a password.");
+//		return false;
+//	}
+
+	setLastUserNameOrEmail_S(userNameOrEmail);
+	setLastPassword_S(password);
+
+	//if email address blank, say "please type email address"
+	//if password is blank, say "must type password"
+	//check if email address is valid
+	//may not contain `
+
+	//say "trying to connect to server"
+
+	//if (statusLabel != nullptr)statusLabel->setText("Connecting to server...");
+	//if (errorLabel != nullptr)errorLabel->setText(" ");
+	//Main::delay(20);
+
+	bool connected = getConnectedToServer_S();
+
+	if (connected == false)
+	{
+		ensureConnectedToServerThreadBlock_S();
+
+		//-------------------------------
+		//check to see if connected every 1 second
+		//when connected, proceed.
+		//-------------------------------
+		int tries = 0;
+		while (connected == false)
+		{
+			connected = getConnectedToServer_S();
+
+			if (connected == false)
+			{
+				tries++;
+
+				//make dots cycle
+//				string dots = "";
+//				for (int i = 0; i < tries % 4; i++)
+//				{
+//					dots += ".";
+//				}
+				//if (statusLabel != nullptr)statusLabel->setText(string("Connecting to server") + dots);
+				//if (errorLabel != nullptr)errorLabel->setText(" ");
+
+
+				if (tries > 10)
+				{
+					tries = 0;
+					//if (statusLabel != nullptr)statusLabel->setText(" ");
+					//if (errorLabel != nullptr)errorLabel->setText("Could not connect to server.");
+					return false;
+				}
+				this_thread::sleep_for(chrono::milliseconds(500));
+				//Main::delay(500);
+
+			}
+		}
+	}
+
+	if (connected == true)
+	{
+		//if (statusLabel != nullptr) statusLabel->setText("Connected! Checking login...");
+		//if (errorLabel != nullptr)errorLabel->setText(" ");
+		//Main::delay(20);
+		this_thread::sleep_for(chrono::milliseconds(20));
+	}
+
+	sendLoginRequest(userNameOrEmail, password, false);// sendStatsToggleButton->isActive());
+
+
+	//-------------------------------
+	//check to see if password response every 1 second
+	//-------------------------------
+
+	int passwordTries = 0;
+	bool gotResponse = false;
+	while (gotResponse == false)
+	{
+		//_checkForIncomingTraffic();
+		gotResponse = getGotLoginResponse_S();
+
+		if (gotResponse == false)
+		{
+			passwordTries++;
+			if (passwordTries > 10)
+			{
+				passwordTries = 0;
+				//if (statusLabel != nullptr) statusLabel->setText(" ");
+				//if (errorLabel != nullptr)errorLabel->setText("Timed out validating password. Please try again.");
+				return false;
+			}
+
+			this_thread::sleep_for(chrono::milliseconds(100));
+			//Main::delay(1000);
+			
+
+		}
+	}
+
+	//we have the response, now lets see if it was a valid login (two steps)
+	bool passValid = getWasLoginResponseValid_S();
+
+	//reset the response state in case we need to try again
+	setGotLoginResponse_S(false);
+
+	if (passValid)
+	{
+		//if (statusLabel != nullptr) statusLabel->setText("Login successful!");
+		//if (errorLabel != nullptr)errorLabel->setText(" ");
+		//Main::delay(1000);
+
+		//-------------------------------------------------------
+
+		//if (stayLoggedIn)
+		{
+
+			//FileUtils::writeSessionTokenToCache(getUserID_S(), getSessionToken_S(), stayLoggedIn);
+			//log.debug("Wrote session token");
+			//String temp = Main.cacheManager.readSessionTokenFromCache();
+			//log.debug("Read session: "+temp);
+			//Main.cacheManager.deleteSessionTokenFromCache();
+			//temp = Main.cacheManager.readSessionTokenFromCache();
+			//log.debug("Deleted session: "+temp);
+
+		}
+
+		//-------------------------------------------------------
+
+
+		//setEnabled(false);
+		//setActivated(false);
+
+		return true;
+	}
+	else
+	{
+
+		//delete session cookie if there is one
+		//FileUtils::deleteSessionTokenFromCache();
+		//log.debug("Deleted session token if existed");
+
+		//say "password wrong or account doesn't exist"
+		//if (statusLabel != nullptr) statusLabel->setText("");// If you just signed up, please check your email and click the verification link.");
+		//if (errorLabel != nullptr) errorLabel->setText("Password incorrect, account doesn't exist, or account isn't verified yet.");
+
+		return false;
+	}
+
+}
+
+
 bool TCPServerConnection::doLogin(Caption *statusLabel, Caption *errorLabel, string &userNameOrEmail, string &password, bool stayLoggedIn)
 { //=========================================================================================================================
 
@@ -1756,8 +1941,8 @@ bool TCPServerConnection::doLogin(Caption *statusLabel, Caption *errorLabel, str
 		return false;
 	}
 
-	lastUserNameOrEmail = userNameOrEmail;
-	lastPassword = password;
+	setLastUserNameOrEmail_S(userNameOrEmail);
+	setLastPassword_S(password);
 
 	//if email address blank, say "please type email address"
 	//if password is blank, say "must type password"
