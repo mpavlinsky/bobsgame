@@ -104,9 +104,12 @@ void TCPServerConnection::updateThreadLoop(TCPServerConnection *u)
 				{
 					_lastCheckedSessionToken = currentTime;
 
-					if (u->getLastUserNameOrEmail_S() != "" && u->getLastPassword_S() != "")u->_doLoginNoCaptions(u->getLastUserNameOrEmail_S(), u->getLastPassword_S(), false);
+					string userName = u->getLastUserNameOrEmail_S();
+					string pass = u->getLastPassword_S();
+
+					if (userName != "" && pass != "")u->_doLoginNoCaptions(userName, pass, false);
 					else u->checkForSessionTokenAndLogInIfExists();
-					
+
 				}
 			}
 
@@ -142,7 +145,7 @@ void TCPServerConnection::updateThreadLoop(TCPServerConnection *u)
 	}
 
 }
-	
+
 //===============================================================================================
 void TCPServerConnection::_sendKeepAlivePing()
 {//===============================================================================================
@@ -201,7 +204,7 @@ void TCPServerConnection::_getInitialGameSave()
 
 				_checkInitialGameSaveReceivedDelayTime = currentTime;
 				sendInitialGameSaveRequest();
-				
+
 			}
 			else
 			{
@@ -258,7 +261,7 @@ void TCPServerConnection::_checkForIncomingTraffic()
 
 		while (numReady > 0)
 		{
-			
+
 			int rd = SDLNet_SocketReady(getSocket_S());
 
 			if (rd < 0)
@@ -266,7 +269,7 @@ void TCPServerConnection::_checkForIncomingTraffic()
 				threadLogWarn_S("SDLNet_TCP_Recv Error: " + string(SDLNet_GetError()) + string(SDL_GetError()));
 				SDL_ClearError();
 			}
-			else 
+			else
 			while (rd > 0)
 			{
 				rd--;
@@ -296,7 +299,7 @@ void TCPServerConnection::_checkForIncomingTraffic()
 						delete[] buf;
 				}
 			}
-			
+
 
 			numReady = SDLNet_CheckSockets(getSocketSet_S(), 0);
 			if (numReady < 0)
@@ -309,7 +312,7 @@ void TCPServerConnection::_checkForIncomingTraffic()
 		while (packetsToProcess.size() > 0)
 		{
 
-		
+
 			string *sp = packetsToProcess.front();
 			packetsToProcess.pop();
 			string s = *sp;
@@ -322,7 +325,7 @@ void TCPServerConnection::_checkForIncomingTraffic()
 				s = *sp;
 				_truncatedPacketString = "";
 			}
-			
+
 
 			if (s.find(BobNet::endline) == string::npos)
 			{
@@ -491,8 +494,8 @@ bool TCPServerConnection::ensureConnectedToServerThreadBlock_S()
 				}
 
 			}
-			
-			
+
+
 			//wait for load balancer to respond (we are connected to a server)
 
 
@@ -536,7 +539,7 @@ bool TCPServerConnection::ensureConnectedToServerThreadBlock_S()
 
 
 		//disconnecting from the LB will set the address to null again, so we store it.
-	
+
 		if(getSocketIsOpen_S())
 		{
 			//close the connection to the load balancer
@@ -563,7 +566,7 @@ bool TCPServerConnection::ensureConnectedToServerThreadBlock_S()
 				threadLogDebug_S("SDLNet_TCP_DelSocket: " + string(SDLNet_GetError()) + string(SDL_GetError()));
 				SDL_ClearError();
 			}
-			
+
 			setSocketAddedToSet_S(false);
 		}
 
@@ -671,85 +674,85 @@ bool TCPServerConnection::messageReceived(string &s)// ChannelHandlerContext* ct
 		incomingServerIPAddressResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Login_Response))
 	{
 		incomingLoginResponse(s);
 		return true;
 	}
-	
+
 //	if (String::startsWith(s, BobNet::Facebook_Login_Response))
 //	{
 //		incomingFacebookCreateAccountOrLoginResponse(s);
 //		return true;
 //	}
-	
+
 	if (String::startsWith(s, BobNet::Reconnect_Response))
 	{
 		incomingReconnectResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Tell_Client_Their_Session_Was_Logged_On_Somewhere_Else))
 	{
 		incomingSessionWasLoggedOnSomewhereElse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Tell_Client_Servers_Are_Shutting_Down))
 	{
 		incomingServersAreShuttingDown(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Tell_Client_Servers_Have_Shut_Down))
 	{
 		incomingServersHaveShutDown(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Password_Recovery_Response))
 	{
 		incomingPasswordRecoveryResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Create_Account_Response))
 	{
 		incomingCreateAccountResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Initial_GameSave_Response))
 	{
 		incomingInitialGameSaveResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Encrypted_GameSave_Update_Response))
 	{
 		incomingGameSaveUpdateResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Update_Facebook_Account_In_DB_Response))
 	{
 		incomingUpdateFacebookAccountInDBResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Online_Friends_List_Response))
 	{
 		incomingOnlineFriendsListResponse(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Friend_Is_Online_Notification))
 	{
 		incomingFriendOnlineNotification(s);
 		return true;
 	}
-	
+
 	if (String::startsWith(s, BobNet::Add_Friend_By_UserName_Response))
 	{
 		incomingAddFriendByUserNameResponse(s);
@@ -1049,7 +1052,7 @@ void TCPServerConnection::incomingReconnectResponse(string s)
 		{
 			log.error("Could not parse userID in reconnect response");
 		}
-		
+
 
 		s = s.substr(s.find("`") + 1); //sessionToken`
 		string sessionToken = s.substr(0, s.find("`"));
@@ -1074,13 +1077,13 @@ void TCPServerConnection::incomingSessionWasLoggedOnSomewhereElse(string s)
 }
 
 void TCPServerConnection::incomingServersAreShuttingDown(string s)
-{ 
+{
 
 	Main::mainObject->serversAreShuttingDown = true;
 }
 
 void TCPServerConnection::incomingServersHaveShutDown(string s)
-{ 
+{
 
 	Main::mainObject->stateManager->setState(Main::mainObject->serversHaveShutDownState);
 }
@@ -1173,7 +1176,7 @@ void TCPServerConnection::incomingGameSaveUpdateResponse(string s)
 	s = s.substr(s.find(":") + 1); //id,blob
 	int gameSaveID = -1;
 
-	
+
 	try
 	{
 		gameSaveID = stoi(s.substr(0, s.find(",")));
@@ -1277,12 +1280,12 @@ void TCPServerConnection::incomingCreateAccountResponse(string s)
 
 
 void TCPServerConnection::sendPasswordRecoveryRequest(string email)
-{ 
+{
 	connectAndWriteToChannelBeforeAuthorization_S(BobNet::Password_Recovery_Request + string("`") + email + string("`") + BobNet::endline);
 }
 
 void TCPServerConnection::incomingPasswordRecoveryResponse(string s)
-{ 
+{
   //s = s.substring(s.indexOf(":")+1);
 
 	setGotPasswordRecoveryResponse_S(true);
@@ -1293,7 +1296,7 @@ void TCPServerConnection::incomingPasswordRecoveryResponse(string s)
 
 
 void TCPServerConnection::sendUpdateFacebookAccountInDBRequest_S()
-{ 
+{
 	connectAndAuthorizeAndQueueWriteToChannel_S(BobNet::Update_Facebook_Account_In_DB_Request + BobNet::endline);
 }
 
@@ -1487,7 +1490,7 @@ void TCPServerConnection::incomingBobsGameUserStatsForSpecificGameAndDifficulty(
 		{
 			BobsGame::userStatsPerGameAndDifficulty.removeAt(i);
 			BobsGame::userStatsPerGameAndDifficulty.insert(i, gameStats);
-			delete temp; 
+			delete temp;
 			return;
 		}
 	}
@@ -1496,7 +1499,7 @@ void TCPServerConnection::incomingBobsGameUserStatsForSpecificGameAndDifficulty(
 //===============================================================================================
 void addToLeaderboard(ArrayList<BobsGameLeaderBoardAndHighScoreBoard*> &boardArray, BobsGameLeaderBoardAndHighScoreBoard *leaderBoard)
 {//===============================================================================================
-	
+
 	for (int i = 0; i<boardArray.size(); i++)
 	{
 		BobsGameLeaderBoardAndHighScoreBoard *temp = boardArray.get(i);
@@ -1848,7 +1851,7 @@ bool TCPServerConnection::_doLoginNoCaptions(string &userNameOrEmail, string &pa
 
 			this_thread::sleep_for(chrono::milliseconds(100));
 			//Main::delay(1000);
-			
+
 
 		}
 	}
@@ -1910,7 +1913,7 @@ bool TCPServerConnection::doLogin(Caption *statusLabel, Caption *errorLabel, str
 
 
 
-	
+
 	if (statusLabel != nullptr) statusLabel->setText(" ");
 	if (errorLabel != nullptr)errorLabel->setText(" ");
 
@@ -1982,7 +1985,7 @@ bool TCPServerConnection::doLogin(Caption *statusLabel, Caption *errorLabel, str
 				}
 				if (statusLabel != nullptr)statusLabel->setText(string("Connecting to server") + dots);
 				if (errorLabel != nullptr)errorLabel->setText(" ");
-				
+
 
 				if (tries > 10)
 				{
@@ -2183,7 +2186,7 @@ bool TCPServerConnection::doCreateAccount(Caption *statusLabel, Caption *errorLa
 			}
 			statusLabel->setText(string("Connecting to server") + dots);
 			errorLabel->setText(" ");
-			
+
 
 			if (tries > 10)
 			{
@@ -2235,7 +2238,7 @@ bool TCPServerConnection::doCreateAccount(Caption *statusLabel, Caption *errorLa
 			setGotCreateAccountResponse_S("");
 			return false;
 		}
-		
+
 
 		if (gotResponse == false)
 		{
@@ -2474,14 +2477,14 @@ bool TCPServerConnection::doForgotPassword(Caption *statusLabel, Caption *errorL
 				}
 				statusLabel->setText(string("Connecting to server") + dots);
 				errorLabel->setText(" ");
-				
+
 
 				if (tries > 10)
 				{
 					tries = 0;
 					statusLabel->setText("Could not connect to server. Is your internet working?");
 					errorLabel->setText(" ");
-					
+
 					return false;
 				}
 
@@ -2530,7 +2533,7 @@ bool TCPServerConnection::doForgotPassword(Caption *statusLabel, Caption *errorL
 	//say "an email was sent if the account was registered"
 	statusLabel->setText("If the account exists, a recovery email was sent. Please check your email.");
 	errorLabel->setText(" ");
-	
+
 	return true;
 
 }
@@ -2578,7 +2581,7 @@ bool TCPServerConnection::linkFacebookAccount(Caption *statusLabel, Caption *err
 
 	//if we have facebook accessToken already, let's not bother the user
 
-	
+
 
 
 
@@ -2741,7 +2744,7 @@ bool TCPServerConnection::doAddFriendByUsername(Caption *statusLabel, Caption *e
 	{
 		statusLabel->setText("Connected! Searching for friend...");
 		errorLabel->setText(" ");
-		
+
 	}
 
 	sendAddFriendByUserNameRequest_S(friendUserName);
@@ -2763,7 +2766,7 @@ bool TCPServerConnection::doAddFriendByUsername(Caption *statusLabel, Caption *e
 
 			statusLabel->setText("Friend was added!");
 			errorLabel->setText(" ");
-			
+
 			return true;
 		}
 		if (response == "Failed")
@@ -2772,7 +2775,7 @@ bool TCPServerConnection::doAddFriendByUsername(Caption *statusLabel, Caption *e
 			gotResponse = true;
 			statusLabel->setText(" ");
 			errorLabel->setText("Could not add friend. Username could not be found.");
-			
+
 			return false;
 		}
 
