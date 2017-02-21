@@ -1473,8 +1473,8 @@ void BobsGame::networkMultiplayerLobbyMenuUpdate()
 						{
 							FileUtils::deleteSessionTokenFromCache();
 							getServerConnection()->setNotAuthorizedOnServer_S();
-							getServerConnection()->lastUserNameOrEmail = "";
-							getServerConnection()->lastPassword = "";
+							getServerConnection()->setLastUserNameOrEmail_S("");
+							getServerConnection()->setLastPassword_S("");
 							leaveMenu = true;
 							loginMenuShowing = true;
 						}

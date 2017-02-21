@@ -415,8 +415,40 @@ public:
 	//------------------------------------
 
 
-	string lastUserNameOrEmail = "";
-	string lastPassword = "";
+
+	//------------------------------------
+private:
+	string _lastUserNameOrEmail = "";
+	mutex _lastUserNameOrEmail_Mutex;
+public:
+	void setLastUserNameOrEmail_S(string s)
+	{
+		lock_guard<mutex> lock(_lastUserNameOrEmail_Mutex);
+		_lastUserNameOrEmail = s;
+	}
+	string getLastUserNameOrEmail_S()
+	{
+		lock_guard<mutex> lock(_lastUserNameOrEmail_Mutex);
+		return _lastUserNameOrEmail;
+	}
+	//------------------------------------
+
+	//------------------------------------
+private:
+	string _lastPassword = "";
+	mutex _lastPassword_Mutex;
+public:
+	void setLastPassword_S(string s)
+	{
+		lock_guard<mutex> lock(_lastPassword_Mutex);
+		_lastPassword = s;
+	}
+	string getLastPassword_S()
+	{
+		lock_guard<mutex> lock(_lastPassword_Mutex);
+		return _lastPassword;
+	}
+	//------------------------------------
 
 
 	void setNotAuthorizedOnServer_S()
@@ -846,6 +878,7 @@ public:
 	string addFriendByUserNameResponse = "";
 
 
+	bool _doLoginNoCaptions(string &userNameOrEmail, string &password, bool stayLoggedIn);
 	bool doLogin(Caption *statusLabel, Caption *errorLabel, string &userNameOrEmail, string &password, bool stayLoggedIn);
 	bool doCreateAccount(Caption *statusLabel, Caption *errorLabel, string &userName, string &email, string &password, string &confirmPassword);
 	bool checkForSessionTokenAndLogInIfExists();
