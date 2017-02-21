@@ -497,8 +497,9 @@ void BobsGame::startScreenMenuUpdate()
 		infoMenu->center = false;
 		infoMenu->font = BobFont::ttf_oswald_10;
 		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
-		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs.  I rely on your feedback.");
-		infoMenu->addInfo("Please report problems or crashes to bugs@bobsgame.com or ", "Open Forum");
+		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs.");
+		infoMenu->addInfo("I have no testers and I rely on your feedback, it is hard to test everything.");
+		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
 		infoMenu->addInfo("If there are no games the server might be overloaded, wait a bit or restart a few times.");
 		infoMenu->addInfo("Currently working on: Android/iOS ports.");
 	}
