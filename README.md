@@ -21,6 +21,8 @@ That means **no forks** except to create pull requests!
 
 ##COMPLETELY FREE
 
+##WRITTEN FROM SCRATCH IN C++
+
 ##SOURCE CODE AVAILABLE
 
 #DOWNLOAD IT RIGHT NOW!
