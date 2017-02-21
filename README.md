@@ -75,7 +75,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 3. You may not distribute the bob’s game® source code or binary or produce any derivative work from its source code under another name. Redistributions of source code or binary form must be named bob's game®.
 
-4. You may not distribute or use the source code or binary for profit or income, including revenue from advertising, streaming, tournaments, "Let's Play" videos, etc.  All redistributions and uses must be provided completely free of charge.
+4. You may not distribute or use the source code or binary for profit or income, including revenue from advertising, tournaments, etc.  All redistributions and uses must be provided completely free of charge. "Let's Play" videos or other streaming videos are exempt and may include advertising revenue.
 
 5. You may not create and maintain a fork or unique redistribution of the bob’s game® source code except for a GitHub fork for the purpose of submitting pull requests, not to be distributed independently.  The intent of the bob’s game® source code release is so that its community may submit bug fixes and additions to the main project.
 
