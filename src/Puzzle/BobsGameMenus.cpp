@@ -1215,15 +1215,15 @@ void BobsGame::loginMenuUpdate()
 		loginMenu->cursorPosition = loginMenuCursorPosition;
 	}
 
-	int mx = getControlsManager()->getMouseX();
-	int my = getControlsManager()->getMouseY();
-
-	if (mx != lastMX || my != lastMY)
-	{
-		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
-		lastMX = mx;
-		lastMY = my;
-	}
+//	int mx = getControlsManager()->getMouseX();
+//	int my = getControlsManager()->getMouseY();
+//
+//	if (mx != lastMX || my != lastMY)
+//	{
+//		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+//		lastMX = mx;
+//		lastMY = my;
+//	}
 
 	if (getControlsManager()->miniGame_UP_Pressed())
 	{
@@ -1239,8 +1239,11 @@ void BobsGame::loginMenuUpdate()
 		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
 	}
 
+	int mx = 0;
+	int my = 0;
 	bool confirm = getControlsManager()->miniGame_CONFIRM_Pressed();//, clicked, mx, my
-	bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
+	//bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
+	bool clicked = false;
 
 	if (confirm || clicked || (getControlsManager()->miniGame_LEFT_Pressed() || getControlsManager()->miniGame_RIGHT_Pressed()))
 	{
@@ -1398,15 +1401,15 @@ void BobsGame::createAccountMenuUpdate()
 		createAccountMenu->add("Return to login screen");
 	}
 	
-	int mx = getControlsManager()->getMouseX();
-	int my = getControlsManager()->getMouseY();
-
-	if(mx!=lastMX || my !=lastMY)
-	{
-		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
-		lastMX = mx;
-		lastMY = my;
-	}
+//	int mx = getControlsManager()->getMouseX();
+//	int my = getControlsManager()->getMouseY();
+//
+//	if(mx!=lastMX || my !=lastMY)
+//	{
+//		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+//		lastMX = mx;
+//		lastMY = my;
+//	}
 
 	if (getControlsManager()->miniGame_UP_Pressed())
 	{
@@ -1458,7 +1461,11 @@ void BobsGame::createAccountMenuUpdate()
 	bool leaveMenu = false;
 
 	bool confirm = getControlsManager()->miniGame_CONFIRM_Pressed();//, clicked, mx, my
-	bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
+	//bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
+
+	bool clicked = false;
+	int mx = 0;
+	int my = 0;
 
 	if (confirm || clicked)
 	{
