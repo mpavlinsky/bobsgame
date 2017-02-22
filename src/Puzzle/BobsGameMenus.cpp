@@ -12,7 +12,7 @@ void BobsGame::setupMenus()
 
 	super::setupMenus();
 
-	numTitleMenuTextureFrames = 25;//91; //139;//with quotes
+	numTitleMenuTextureFrames = 22;//;//91; //139;//with quotes
 
 }
 
@@ -348,6 +348,7 @@ void BobsGame::titleMenuUpdate()
 	{
 		titleMenu = new BobMenu(this, "");
 		titleMenu->spacing = 1.2f;
+		titleMenu->font = BobFont::ttf_oswald_24;
 
 		titleMenu->addInfo("Connecting to server...","Login");
 		titleMenu->add("Play Offline");
@@ -367,8 +368,13 @@ void BobsGame::titleMenuUpdate()
 		}
 		else
 		{
-			titleMenu->getMenuItemByID("Login")->setText("Login Or Create Account");
-			titleMenu->getMenuItemByID("Login")->info = false;
+			if (titleMenu->getMenuItemByID("Login")->info)
+			{
+				titleMenu->getMenuItemByID("Login")->setText("Login Or Create Account");
+				titleMenu->getMenuItemByID("Login")->info = false;
+				titleMenu->getMenuItemByID("Login")->setColor(BobMenu::menuColor);
+				titleMenu->setSelectedID("Login");
+			}
 		}
 
 		if (getServerConnection()->getAuthorizedOnServer_S())
@@ -398,8 +404,11 @@ void BobsGame::titleMenuUpdate()
 
 		if (titleMenu->isSelectedID("Login", clicked, mx, my))
 		{
-			loginMenuShowing = true;
-			leaveMenu = true;
+			if (titleMenu->getMenuItemByID("Login")->info == false)
+			{
+				loginMenuShowing = true;
+				leaveMenu = true;
+			}
 		}
 
 		if (titleMenu->isSelectedID("Play Offline", clicked, mx, my))
@@ -497,8 +506,7 @@ void BobsGame::startScreenMenuUpdate()
 		infoMenu->center = false;
 		infoMenu->font = BobFont::ttf_oswald_10;
 		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
-		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs.");
-		infoMenu->addInfo("I have no testers and I rely on your feedback, it is hard to test everything.");
+		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs. I rely on your feedback!");
 		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
 		infoMenu->addInfo("If there are no games the server might be overloaded, wait a bit or restart a few times.");
 		infoMenu->addInfo("Currently working on: Android/iOS ports.");
@@ -1215,15 +1223,15 @@ void BobsGame::loginMenuUpdate()
 		loginMenu->cursorPosition = loginMenuCursorPosition;
 	}
 
-//	int mx = getControlsManager()->getMouseX();
-//	int my = getControlsManager()->getMouseY();
-//
-//	if (mx != lastMX || my != lastMY)
-//	{
-//		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
-//		lastMX = mx;
-//		lastMY = my;
-//	}
+	int mx = getControlsManager()->getMouseX();
+	int my = getControlsManager()->getMouseY();
+
+	if (mx != lastMX || my != lastMY)
+	{
+		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+		lastMX = mx;
+		lastMY = my;
+	}
 
 	if (getControlsManager()->miniGame_UP_Pressed())
 	{
@@ -1239,11 +1247,9 @@ void BobsGame::loginMenuUpdate()
 		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
 	}
 
-	int mx = 0;
-	int my = 0;
+
 	bool confirm = getControlsManager()->miniGame_CONFIRM_Pressed();//, clicked, mx, my
-	//bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
-	bool clicked = false;
+	bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
 
 	if (confirm || clicked || (getControlsManager()->miniGame_LEFT_Pressed() || getControlsManager()->miniGame_RIGHT_Pressed()))
 	{
@@ -1320,6 +1326,9 @@ void BobsGame::loginMenuUpdate()
 
 	if (leaveMenu)
 	{
+		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+		getControlsManager()->text = "";
+
 		loginMenuShowing = false;
 
 		if (loginMenu != nullptr)
@@ -1396,20 +1405,20 @@ void BobsGame::createAccountMenuUpdate()
 		createAccountMenu->add("Username: " + userNameText, "Username");
 		createAccountMenu->add("Email: " + emailText, "Email");
 		createAccountMenu->add("Password: " + passwordStarsText, "Password");
-		createAccountMenu->add("Confirm: " + confirmPasswordStarsText, "Confirm");
+		createAccountMenu->add("Confirm password: " + confirmPasswordStarsText, "Confirm");
 		createAccountMenu->add("Create account");
 		createAccountMenu->add("Return to login screen");
 	}
 	
-//	int mx = getControlsManager()->getMouseX();
-//	int my = getControlsManager()->getMouseY();
-//
-//	if(mx!=lastMX || my !=lastMY)
-//	{
-//		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
-//		lastMX = mx;
-//		lastMY = my;
-//	}
+	int mx = getControlsManager()->getMouseX();
+	int my = getControlsManager()->getMouseY();
+
+	if(mx!=lastMX || my !=lastMY)
+	{
+		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+		lastMX = mx;
+		lastMY = my;
+	}
 
 	if (getControlsManager()->miniGame_UP_Pressed())
 	{
@@ -1455,18 +1464,13 @@ void BobsGame::createAccountMenuUpdate()
 		confirmPasswordText = getControlsManager()->text;
 		confirmPasswordStarsText = "";
 		for (int i = 0; i < (int)confirmPasswordText.length(); i++)confirmPasswordStarsText += "*";
-		createAccountMenu->getMenuItemByID("Confirm")->setText("Confirm: " + confirmPasswordStarsText);
+		createAccountMenu->getMenuItemByID("Confirm")->setText("Confirm password: " + confirmPasswordStarsText);
 	}
 
 	bool leaveMenu = false;
 
 	bool confirm = getControlsManager()->miniGame_CONFIRM_Pressed();//, clicked, mx, my
-	//bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
-
-	bool clicked = false;
-	int mx = 0;
-	int my = 0;
-
+	bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
 	if (confirm || clicked)
 	{
 		if (createAccountMenu->isSelectedID("Create account", clicked, mx, my))
@@ -1495,6 +1499,9 @@ void BobsGame::createAccountMenuUpdate()
 
 	if (leaveMenu)
 	{
+		if (textStarted) { SDL_StopTextInput(); textStarted = false; }
+		getControlsManager()->text = "";
+
 		createAccountMenuShowing = false;
 
 		if(createAccountMenu != nullptr)

@@ -459,15 +459,15 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		float tx0 = 0;
 		float tx1 = (float)(graphic->getImageWidth()) / (float)(graphic->getTextureWidth());
 		float ty0 = 0;
-		float ty1 = (float)((float)(graphic->getImageHeight()) / (float)(graphic->getTextureHeight()));
+		float ty1 = (float)((float)(graphic->getImageHeight()) / (float)(graphic->getTextureHeight()))-0.01;
 
 		float ratio = (float)(graphicWidth) / (float)(graphic->getImageWidth());
 
 		float sx0 = (float)((int)((getEngine()->getWidth() - graphicWidth) / 2));
-		float sx1 = (float)((int)(sx0 + graphicWidth));
+		float sx1 = (float)floor((int)(sx0 + graphicWidth));
 
 		float sy0 = (float)graphicYStartPosition;
-		float sy1 = (float)((int)(sy0 + (float)(graphic->getImageHeight() * ratio)));
+		float sy1 = (float)floor((int)(sy0 + (float)(graphic->getImageHeight() * ratio)));
 
 		y = (int)(sy1 + 40);
 
