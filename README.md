@@ -5,7 +5,7 @@ That means **no forks** except to create pull requests!
 --
 
 #*bob's game* is:
-##A MULTIPLAYER *INFINITE PUZZLE GAME*
+##*THE GREATEST PUZZLE GAME EVER MADE*
 
 ##EVERY PUZZLE GAME IN ONE
 
@@ -20,6 +20,8 @@ That means **no forks** except to create pull requests!
 ##MIXED MODE ONLINE/LOCAL MULTIPLAYER
 
 ##COMPLETELY FREE
+
+##WRITTEN FROM SCRATCH IN C++
 
 ##SOURCE CODE AVAILABLE
 
