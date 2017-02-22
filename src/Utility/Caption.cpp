@@ -246,7 +246,43 @@ void Caption::initTTF(Engine* g, float screenX, float screenY, long long ticks, 
 	if(textBGColor!=BobColor::clear)surface = TTF_RenderText_Shaded(ttfFont, this->text.c_str(), textSDLColor, bgSDLColor);
 	else surface = TTF_RenderText_Blended(ttfFont, this->text.c_str(), textSDLColor);// , bgSDLColor);
 
-	if(surface==NULL || surface ==nullptr)
+//	TTF_SetFontOutline(ttfFont, 2);
+//
+//	// render text and text outline 
+//	SDL_Color white = { 0xFF, 0xFF, 0xFF };
+//	SDL_Color black = { 0x00, 0x00, 0x00 };
+//	SDL_Surface *bg_surface = TTF_RenderText_Blended(font_outline, text, black);
+//	SDL_Surface *fg_surface = TTF_RenderText_Blended(font, text, white);
+//	SDL_Rect rect = { OUTLINE_SIZE, OUTLINE_SIZE, fg_surface->w, fg_surface->h };
+//
+//	// blit text onto its outline 
+//	SDL_SetSurfaceBlendMode(fg_surface, SDL_BLENDMODE_BLEND);
+//	SDL_BlitSurface(fg_surface, NULL, bg_surface, &rect);
+//	SDL_FreeSurface(fg_surface);
+
+	//another way
+//	TTF_SetFontOutline(font_outline, 2);
+//	SDL_Color white = { 0xFF, 0xFF, 0xFF };
+//	SDL_Color black = { 0x00, 0x00, 0x00 };
+//	SDL_Surface *black_text_surface = TTF_RenderText_Blended
+//	(font_outline, text, black);
+//	SDL_Surface *white_text_surface = TTF_RenderText_Blended(font, text,
+//		white);
+//	SDL_TextureID black_text = SDL_CreateTextureFromSurface(0,
+//		black_text_surface);
+//	SDL_TextureID white_text = SDL_CreateTextureFromSurface(0,
+//		white_text_surface);
+//	SDL_Rect black_rect = { x, y, black_text_surface->w,
+//		black_text_surface->h };
+//	SDL_Rect white_rect = { x + 2, y + 2, white_text_surface->w,
+//		white_text_surface->h };
+//	SDL_RenderCopy(black_text, NULL, &black_rect);
+//	SDL_RenderCopy(white_text, NULL, &white_rect);
+//	SDL_FreeSurface(black_text_surface); SDL_FreeSurface
+//	(white_text_surface);
+//	SDL_DestroyTexture(black_text); SDL_DestroyTexture(white_text);
+
+	if(surface == NULL || surface == nullptr)
 	{
 		log.error("surface is null");
 	}
