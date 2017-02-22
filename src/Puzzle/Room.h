@@ -119,6 +119,7 @@ public:
 			"," + to_string(maxPlayers) +
 			"," + to_string((int)privateRoom) +
 			"," + to_string((int)tournamentRoom) +
+			"," + multiplayer_SelectedDifficultyName +
 			"," + to_string((int)multiplayer_AllowDifferentDifficulties) +
 			"," + to_string((int)multiplayer_AllowDifferentGameSequences) +
 			"," + to_string((int)multiplayer_GameEndsWhenOnePlayerRemains) +
@@ -164,6 +165,8 @@ public:
 		s = s.substr(s.find(",") + 1);
 		string tournamentRoomString = s.substr(0, s.find(","));
 		s = s.substr(s.find(",") + 1);
+		string multiplayer_SelectedDifficultyNameString = s.substr(0, s.find(","));
+		s = s.substr(s.find(",") + 1);		
 		string multiplayer_AllowDifferentDifficultiesString = s.substr(0, s.find(","));
 		s = s.substr(s.find(",") + 1);
 		string multiplayer_AllowDifferentGameSequencesString = s.substr(0, s.find(","));
@@ -257,6 +260,8 @@ public:
 			BobsGame::log.error("Could not parse tournamentRoom");
 			return nullptr;
 		}
+
+		newRoom->multiplayer_SelectedDifficultyName = multiplayer_SelectedDifficultyNameString;
 
 		try
 		{
