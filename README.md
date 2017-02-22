@@ -67,6 +67,7 @@ It will also have the source code available on GitHub so it can grow into a stan
 
 #License
 Copyright 2017 Bob Corporation, Robert Pelloni
+
 bob's game® is a registered trademark of Robert Pelloni
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
