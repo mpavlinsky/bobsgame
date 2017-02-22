@@ -26,7 +26,7 @@ public:
 
 	//gl draw ratio fit between height or width
 
-	TTF_Font *font = BobFont::ttf_oswald_16;
+	TTF_Font *font = BobFont::ttf_oswald_24;
 
 	static BobColor* menuColor;
 	static BobColor* disabledMenuColor;
