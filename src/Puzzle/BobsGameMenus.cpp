@@ -348,7 +348,7 @@ void BobsGame::titleMenuUpdate()
 	{
 		titleMenu = new BobMenu(this, "");
 		titleMenu->spacing = 1.2f;
-		titleMenu->font = BobFont::ttf_oswald_24;
+
 
 		titleMenu->addInfo("Connecting to server...","Login");
 		titleMenu->add("Play Offline");
@@ -479,6 +479,7 @@ void BobsGame::startScreenMenuUpdate()
 	{
 		startScreenMenu = new BobMenu(this, "");
 		startScreenMenu->spacing = 1.2f;
+
 		//pressEnterCaption = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y-60, -1, "Press Enter to begin", BobFont::ttf_oswald_24, infoColor, clearColor, RenderOrder::OVER_GUI);
 		//pressEnterCaption->flashing = true;
 		//pressEnterCaption->flashingTicksPerFlash = 3000;
@@ -1216,8 +1217,10 @@ void BobsGame::loginMenuUpdate()
 		loginMenu->add("Password: " + passwordStarsText, "Password", BobMenu::statusColor);
 		loginMenu->add("Stay logged in: Yes", "Stay logged in");
 		loginMenu->add("Log in");
+		loginMenu->addInfo(" ");
 		loginMenu->add("Create new account");
 		loginMenu->add("Forgot password");
+		loginMenu->addInfo(" ");
 		loginMenu->add("Return to title screen");
 
 		loginMenu->cursorPosition = loginMenuCursorPosition;
@@ -1407,6 +1410,7 @@ void BobsGame::createAccountMenuUpdate()
 		createAccountMenu->add("Password: " + passwordStarsText, "Password");
 		createAccountMenu->add("Confirm password: " + confirmPasswordStarsText, "Confirm");
 		createAccountMenu->add("Create account");
+		createAccountMenu->addInfo(" ");
 		createAccountMenu->add("Return to login screen");
 	}
 	

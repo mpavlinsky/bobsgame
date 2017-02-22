@@ -515,7 +515,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 					if (lowestHeight >= endY && menuItemsToShow == 0)
 					{
 						menuItemsToShow = visibleMenuItems.size() - 3;
-						if (menuItemsToShow <= 0)menuItemsToShow = 1;
+						if (menuItemsToShow <= 0) { menuItemsToShow = 1; y = endY - (c->getHeight()+20); }
 					}
 				}
 			}
@@ -768,6 +768,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 				float sy0 = upArrowY;
 				float sy1 = sy0 + 16;
 
+				if (cursorInOutToggle)sy1 -= 1;
 				if (cursorInOutToggle)sy0 -= 1;
 
 				GLUtils::drawTexture(t, 0, 1, 0, 1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_NEAREST);
@@ -786,6 +787,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 				float sy0 = downArrowY;
 				float sy1 = sy0 + 16;
 
+				if (cursorInOutToggle)sy1 += 1;
 				if (cursorInOutToggle)sy0 += 1;
 
 				GLUtils::drawTexture(t, 0, 1, 0, 1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_NEAREST);
