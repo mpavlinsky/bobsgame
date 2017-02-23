@@ -1733,7 +1733,7 @@ void BobsGame::loadGameTypesFromXML()
 					*s = gt;
 
 					if(i==0)s->builtInType = true;
-					if(i==1)s->builtInType = false;
+					if(i==1) { s->builtInType = false; s->creatorUserName = "(You)"; }
 					if(i==2)s->downloaded = true;
 
 
@@ -1822,7 +1822,7 @@ void BobsGame::loadGameSequencesFromXML()
 					*s = gs;
 
 					if (i == 0)s->builtInType = true;
-					if (i == 1)s->builtInType = false;
+					if (i == 1) { s->builtInType = false; s->creatorUserName = "(You)"; }
 					if (i == 2)s->downloaded = true;
 
 					loadedGameSequences.add(s);
