@@ -472,7 +472,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		y = (int)(sy1 + 40);
 
 
-		GLUtils::drawTexture(graphic, tx0, tx1, ty0, ty1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_NEAREST);
+		GLUtils::drawTexture(graphic, tx0, tx1, ty0, ty1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_LINEAR);
 	}
 
 	if (returnBottomOfGraphic != nullptr)*returnBottomOfGraphic = y;
