@@ -510,7 +510,7 @@ void BobsGame::startScreenMenuUpdate()
 		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
 		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs. I rely on your feedback!");
 		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
-		infoMenu->addInfo("There are no built in games, it downloads them! If there are no games the server might be overloaded, wait a bit or restart a few times.");
+		infoMenu->addInfo("There are no built in games, they are downloaded. If no games show in the menu the server might be overloaded, wait a bit or restart a few times.");
 		infoMenu->addInfo("Currently working on: Better leaderboards, Android/iOS ports.");
 	}
 
