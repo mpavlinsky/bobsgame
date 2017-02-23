@@ -26,7 +26,9 @@ public:
 
 	//gl draw ratio fit between height or width
 
-	TTF_Font *font = BobFont::ttf_oswald_16;
+	TTF_Font *font = BobFont::ttf_18;
+
+
 
 	static BobColor* menuColor;
 	static BobColor* disabledMenuColor;
@@ -37,9 +39,12 @@ public:
 	static BobColor* errorColor;
 	static BobColor* bgColor;
 
+	BobColor* defaultMenuColor = nullptr;
+
+
 	Caption* titleCaption = nullptr;
 	
-
+	bool outline = true;
 
 	int cursorPosition = 0;
 	static BobTexture* rectangleCursorTexture;
@@ -89,7 +94,7 @@ public:
 		~MenuItem();
 		void setYesNo(bool yesNo);
 		void toggle();
-		void setColor(BobColor* color);
+		void setColor(BobColor* color, bool outline = true);
 		void setText(string s);
 	};
 
@@ -109,8 +114,8 @@ public:
 
 	void up(bool noSound = false);
 	void down(bool noSound = false);
-	MenuItem* addInfo(string caption, string id = "", BobColor *color = infoColor);
-	virtual MenuItem* add(string caption, string id = "", BobColor *color = menuColor);
+	MenuItem* addInfo(string caption, string id = "", BobColor *color = nullptr);
+	virtual MenuItem* add(string caption, string id = "", BobColor *color = nullptr);
 	virtual MenuItem* addYesNo(string caption, bool yesNo);
 
 	int getAmountOfMenuItems();

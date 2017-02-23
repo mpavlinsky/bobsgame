@@ -669,7 +669,7 @@ void GLUtils::initGL(char* windowName)
 			log.warn("FBO not supported.");
 
 			log.info("This game requires a newer graphics card that supports FBO.");
-			Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "This game requires a newer graphics card that supports FBO.", BobFont::ttf_oswald_12, BobColor::white, BobColor::black);
+			Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "This game requires a newer graphics card that supports FBO.", BobFont::ttf_12, BobColor::white, BobColor::black);
 
 			System::updateRenderTimers();
 			System::updateDebugInfo();

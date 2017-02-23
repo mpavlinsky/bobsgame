@@ -34,6 +34,7 @@ public:
 	string text = "";
 	BobFont* font = BobFont::font_normal_8;
 	TTF_Font* ttfFont = nullptr;
+	bool outline = false;
 
 private:
 	BobColor* textBGColor = BobColor::black;
@@ -118,12 +119,13 @@ public:
 
 
 	Caption(Engine* g, float screenX, float screenY, int ticks, const string& text, BobFont* font = BobFont::font_normal_8_outlined, BobColor* textColor = BobColor::black, BobColor* textAAColor=nullptr, BobColor* textBGColor = BobColor::clear, RenderOrder layer = RenderOrder::ABOVE_TOP, float scale=1, int maxWidth=0, Entity* entity = nullptr, Area* area = nullptr, bool fadeLetterColorTowardsTop = false, bool centerTextOnMultipleLines = false);
-	Caption(Engine* g, float screenX, float screenY, int ticks, const string& text, TTF_Font* ttfFont = BobFont::ttf_oswald_16, BobColor* textColor = BobColor::black, BobColor* textBGColor = BobColor::clear, RenderOrder layer = RenderOrder::ABOVE_TOP, float scale=1, Entity* entity = nullptr, Area* area = nullptr);
+	Caption(Engine* g, float screenX, float screenY, int ticks, const string& text, TTF_Font* ttfFont = BobFont::ttf_16, BobColor* textColor = BobColor::black, BobColor* textBGColor = BobColor::clear, RenderOrder layer = RenderOrder::ABOVE_TOP, float scale=1, Entity* entity = nullptr, Area* area = nullptr, bool outline = false);
+	Caption(Engine* g, float screenX, float screenY, int ticks, const string& text, TTF_Font* ttfFont = BobFont::ttf_16, BobColor* textColor = BobColor::black, RenderOrder layer = RenderOrder::ABOVE_TOP, bool outline = false);
 
 	void setText(const string& text, bool force = false);
 	BobColor* getTextColor();
 	void setTextColor(BobColor* fg, BobColor* aa = nullptr, BobColor* bg = nullptr);
-	void initTTF(Engine* g, float screenX, float screenY, long long ticks, const string& text, TTF_Font* font, BobColor* textColor, BobColor* textBGColor, RenderOrder layer, float scale, Entity* entity, Area* area);
+	void initTTF(Engine* g, float screenX, float screenY, long long ticks, const string& text, TTF_Font* font, BobColor* textColor, BobColor* textBGColor, RenderOrder layer, float scale, Entity* entity, Area* area, bool outline);
 	void init(Engine* g, float screenX, float screenY, long long ticks, const string& text, BobFont* font, BobColor* textColor, BobColor* textAAColor, BobColor* textBGColor, RenderOrder layer, float scale, int maxWidth, Entity* entity, Area* area, bool fadeLetterColorTowardsTop, bool centerTextOnMultipleLines);
 	virtual void render();
 private:

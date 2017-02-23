@@ -47,13 +47,13 @@ GameLogic::GameLogic(Engine* g, long long seed)
 
 	captionTextColor = BobColor::white;
 	captionBGColor = BobColor::clear;
-	captionFont = BobFont::ttf_oswald_16;
+	captionFont = BobFont::ttf_16;
 
 	announcementCaptionTextColor = BobColor::white;
 	announcementCaptionBGColor = BobColor::clear;
-	announcementCaptionFont = BobFont::ttf_oswald_32;
-	resultCaptionFont = BobFont::ttf_oswald_64;
-	mediumCaptionFont = BobFont::ttf_oswald_16;
+	announcementCaptionFont = BobFont::ttf_32;
+	resultCaptionFont = BobFont::ttf_64;
+	mediumCaptionFont = BobFont::ttf_16;
 
 
 

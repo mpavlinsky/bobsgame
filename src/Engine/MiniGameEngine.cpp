@@ -386,13 +386,13 @@ void MiniGameEngine::multiplayerScreenUpdate()
 			UDPPeerConnection* f = onlineFriends.get(i);
 			int y = (onlineFriendCaptions->size() + 1) * 20;
 
-			Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, f->getFriendData_S().characterName, BobFont::ttf_oswald_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
+			Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, f->getFriendData_S().characterName, BobFont::ttf_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
 			onlineFriendCaptions->add(c);
 		}
 
 
 		int y = (onlineFriendCaptions->size() + 1) * 20;
-		Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Cancel", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
+		Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Cancel", BobFont::ttf_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
 		onlineFriendCaptions->add(c);
 	}
 
@@ -540,12 +540,12 @@ void MiniGameEngine::waitingForFriendScreenUpdate()
 		//waitingForFriendCaptions = new ArrayList<Caption*>();
 
 		int y = (waitingForFriendCaptions->size() + 1) * 20;
-		Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Sending game request...", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
+		Caption* c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Sending game request...", BobFont::ttf_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
 		waitingForFriendCaptions->add(c);
 
 
 		y = (waitingForFriendCaptions->size() + 1) * 20;
-		c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Cancel", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
+		c = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, "Cancel", BobFont::ttf_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
 		waitingForFriendCaptions->add(c);
 	}
 
@@ -559,7 +559,7 @@ void MiniGameEngine::waitingForFriendScreenUpdate()
 
 			if (ticksPassed > 15000)
 			{
-				getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 3000, "Timed out.", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
+				getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 3000, "Timed out.", BobFont::ttf_16, BobColor::white, BobColor::clear, RenderOrder::OVER_GUI);
 			}
 
 
@@ -604,7 +604,7 @@ void MiniGameEngine::waitingForFriendScreenUpdate()
 				{
 					waitingForFriendScreenShowing = false;
 
-					getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 5000, "Challenge Accepted!", BobFont::ttf_oswald_16, BobColor::green, BobColor::clear, RenderOrder::OVER_GUI);
+					getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 5000, "Challenge Accepted!", BobFont::ttf_16, BobColor::green, BobColor::clear, RenderOrder::OVER_GUI);
 				}
 
 
@@ -613,7 +613,7 @@ void MiniGameEngine::waitingForFriendScreenUpdate()
 					titleMenuShowing = true;
 					waitingForFriendScreenShowing = false;
 
-					getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 5000, "Challenge Declined", BobFont::ttf_oswald_16, BobColor::red, BobColor::clear, RenderOrder::OVER_GUI);
+					getCaptionManager()->newManagedCaption(Caption::CENTERED_SCREEN, 0, 5000, "Challenge Declined", BobFont::ttf_16, BobColor::red, BobColor::clear, RenderOrder::OVER_GUI);
 
 					this->connection = nullptr;
 					//Java to C++ Converter converted the original 'null' assignment to a call to 'delete', but you should review memory allocation of all pointer variables in the converted code:

@@ -1248,7 +1248,7 @@ void Main::checkVersion()
 				//((Engine*)(getMain()->stateManager->getState()))->captionManager->newManagedCaption((int)(Caption::CENTERED_SCREEN), 0, 5000, "Update installed!", BobFont::ttf_oswald_32, BobColor::green, BobColor::clear, RenderOrder::OVER_GUI);
 				//doesn't go away because we're not updating captionManager??
 
-				Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "Update installed!", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear);
+				Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "Update installed!", BobFont::ttf_16, BobColor::white, BobColor::clear);
 
 				for (int i = 0; i < 40; i++)
 				{
@@ -1371,7 +1371,7 @@ void Main::checkVersion()
 
 
 			//Caption* c = ((Engine*)(getMain()->stateManager->getState()))->captionManager->newManagedCaption((int)(Caption::CENTERED_SCREEN), 0, -1, "Update available! Press Space to download, Esc to skip.", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear);
-			Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "Update available! Press Space to download, Esc to skip.", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear);
+			Caption* c = new Caption(nullptr, (int)(Caption::CENTERED_SCREEN), 0, -1, "Update available! Press Space to download, Esc to skip.", BobFont::ttf_16, BobColor::white, BobColor::clear);
 			System::updateRenderTimers();
 			System::updateDebugInfo();
 			System::updateUpdateTimers();
@@ -1406,7 +1406,7 @@ void Main::checkVersion()
 			//put caption in middle of screen, updating, press esc to skip
 			log.info("Downloading update...");
 			//c = ((Engine*)(getMain()->stateManager->getState()))->captionManager->newManagedCaption((int)(Caption::CENTERED_SCREEN), 0, -1, "Downloading update...", BobFont::ttf_oswald_32, BobColor::white, BobColor::clear);
-			c = new Caption(nullptr,(int)(Caption::CENTERED_SCREEN), 0, -1, "Downloading update...", BobFont::ttf_oswald_16, BobColor::white, BobColor::clear);
+			c = new Caption(nullptr,(int)(Caption::CENTERED_SCREEN), 0, -1, "Downloading update...", BobFont::ttf_16, BobColor::white, BobColor::clear);
 			//Caption* c = ((Engine*)(getMain()->stateManager->getState()))->captionManager->newManagedCaption((int)(Caption::CENTERED_SCREEN), 0, -1, "Downloading update...", BobFont::ttf_oswald_32, Color::white, Color::black,RenderOrder::OVER_GUI);
 
 			glClear(GL_COLOR_BUFFER_BIT);
