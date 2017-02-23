@@ -49,8 +49,8 @@ void BobMenu::MenuItem::setYesNo(bool yesNo)
 		//if (yesNo)value = "Yes";
 		//else value = "   ";
 		//if (caption != nullptr)caption->replaceText("(" + value + ") " + captionText);
-		if (yesNo == false) {setColor(disabledMenuColor);}
-		else {setColor(menuColor);}
+		if (yesNo == false) {setColor(disabledMenuColor, true);}
+		else {setColor(menuColor,true);}
 		
 	}
 }
@@ -62,8 +62,12 @@ void BobMenu::MenuItem::toggle()
 }
 
 //=========================================================================================================================
-void BobMenu::MenuItem::setColor(BobColor* color)
+void BobMenu::MenuItem::setColor(BobColor* color, bool outline)
 {//=========================================================================================================================
+
+	if (color == disabledMenuColor || color == infoColor)caption->outline = false;
+	else caption->outline = outline;
+
 	caption->setTextColor(color);
 	this->color = color;
 
@@ -106,7 +110,7 @@ BobMenu::BobMenu(Engine *g, string title)
 	cursorInOutToggleTicks = 0;
 	cursorInOutToggle = false;
 
-	if (menuColor == nullptr)menuColor = BobColor::darkGray;
+	if (menuColor == nullptr)menuColor = BobColor::lighterGray;
 	if (disabledMenuColor == nullptr)disabledMenuColor = BobColor::lightGray;
 	if (warningMenuColor == nullptr)warningMenuColor = BobColor::lightRed;
 	if (clearColor == nullptr)clearColor = BobColor::clear;
@@ -115,9 +119,12 @@ BobMenu::BobMenu(Engine *g, string title)
 	if (errorColor == nullptr)errorColor = BobColor::lightRed;
 	if (bgColor == nullptr)bgColor = BobColor::white;
 
+
+	if (defaultMenuColor == nullptr)defaultMenuColor = menuColor;
+
 	if (title != "")
 	{
-		titleCaption = new Caption(e,Caption::CENTERED_X, 0, -1, title, BobFont::ttf_oswald_32, menuColor, BobColor::clear, RenderOrder::OVER_GUI);
+		titleCaption = new Caption(e,Caption::CENTERED_X, 0, -1, title, BobFont::ttf_32, menuColor, RenderOrder::OVER_GUI, outline);
 	}
 
 	activeMenus.add(this);
@@ -251,8 +258,11 @@ void BobMenu::down(bool noSound)
 //=========================================================================================================================
 BobMenu::MenuItem* BobMenu::addInfo(string caption, string id, BobColor *color)
 {//=========================================================================================================================
+
+	if (color == nullptr)color = infoColor;
+
 	MenuItem *m = new MenuItem();
-	m->caption = new Caption(e, Caption::CENTERED_X, 0, -1, caption, font, color, BobColor::clear, RenderOrder::OVER_GUI);
+	m->caption = new Caption(e, Caption::CENTERED_X, 0, -1, caption, font, color, RenderOrder::OVER_GUI, false);
 	m->captionText = caption;
 	m->color = color;
 	m->id = id;
@@ -270,8 +280,11 @@ BobMenu::MenuItem* BobMenu::addInfo(string caption, string id, BobColor *color)
 //=========================================================================================================================
 BobMenu::MenuItem* BobMenu::add(string caption, string id, BobColor *color)
 {//=========================================================================================================================
+
+	if (color == nullptr)color = defaultMenuColor;
+
 	MenuItem *m = new MenuItem();
-	m->caption = new Caption(e, Caption::CENTERED_X, 0, -1, caption, font, color, BobColor::clear, RenderOrder::OVER_GUI);
+	m->caption = new Caption(e, Caption::CENTERED_X, 0, -1, caption, font, color, RenderOrder::OVER_GUI, outline);
 	m->captionText = caption;
 	m->color = color;
 	if (id == "")id = caption;
@@ -294,8 +307,8 @@ BobMenu::MenuItem* BobMenu::addYesNo(string caption, bool yesNo)
 	
 	m->isYesNoType = true;
 	m->yesNoValue = yesNo;
-	if (yesNo == false)m->setColor(disabledMenuColor);
-	else m->setColor(menuColor);
+	if (yesNo == false)m->setColor(disabledMenuColor,outline);
+	else m->setColor(menuColor,outline);
 	return m;
 }
 
@@ -647,7 +660,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		//draw transparent cursor rectangle
 		//interpolate cursor rectangle location
 		//pulse fade
-		//menuItems.get(cursorPosition)->caption->setTextColor(BobColor::white);
+		if(menuItems.get(cursorPosition)->info==false)menuItems.get(cursorPosition)->caption->setTextColor(BobColor::green);
 
 
 		if (areAllMenusDisabled() == false && drawCursor)
@@ -726,7 +739,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		for (int i = 0; i < menuItems.size(); i++)
 		{
 			MenuItem *m = menuItems.get(i);
-			//if (i != cursorPosition)m->setColor(m->color);
+			if (i != cursorPosition)m->caption->setTextColor(m->color);
 			Caption *c = m->caption;
 			c->update();
 			c->render();

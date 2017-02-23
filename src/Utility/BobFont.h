@@ -21,17 +21,28 @@ public:
 	static u8* font_Palette_ByteArray;
 
 
-	static TTF_Font* ttf_bobsgame_8;// = nullptr;
-	static TTF_Font* ttf_bobsgame_16;// = nullptr;
-	static TTF_Font* ttf_oswald_8;// = nullptr;
-	static TTF_Font* ttf_oswald_10;// = nullptr;
-	static TTF_Font* ttf_oswald_12;// = nullptr;
-	static TTF_Font* ttf_oswald_16;// = nullptr;
-	static TTF_Font* ttf_oswald_24;// = nullptr;
-	static TTF_Font* ttf_oswald_32;// = nullptr;
-	static TTF_Font* ttf_oswald_48;// = nullptr;
-	static TTF_Font* ttf_oswald_64;// = nullptr;
-
+	static TTF_Font* ttf_bobsgame_8;
+	static TTF_Font* ttf_bobsgame_16;
+	static TTF_Font* ttf_8; 
+	static TTF_Font* ttf_10;
+	static TTF_Font* ttf_12;
+	static TTF_Font* ttf_14;
+	static TTF_Font* ttf_16;
+	static TTF_Font* ttf_18;
+	static TTF_Font* ttf_24;
+	static TTF_Font* ttf_32;
+	static TTF_Font* ttf_48;
+	static TTF_Font* ttf_64;
+	static TTF_Font* ttf_outline_8; 
+	static TTF_Font* ttf_outline_10;
+	static TTF_Font* ttf_outline_12;
+	static TTF_Font* ttf_outline_14;
+	static TTF_Font* ttf_outline_16;
+	static TTF_Font* ttf_outline_18;
+	static TTF_Font* ttf_outline_24;
+	static TTF_Font* ttf_outline_32;
+	static TTF_Font* ttf_outline_48;
+	static TTF_Font* ttf_outline_64;
 
 
 	string filename;

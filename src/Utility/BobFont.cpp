@@ -14,15 +14,26 @@ Logger BobFont::log = Logger("BobFont");
 
 TTF_Font* BobFont::ttf_bobsgame_8 = nullptr;
 TTF_Font* BobFont::ttf_bobsgame_16 = nullptr;
-TTF_Font* BobFont::ttf_oswald_8 = nullptr;
-TTF_Font* BobFont::ttf_oswald_10 = nullptr;
-TTF_Font* BobFont::ttf_oswald_12 = nullptr;
-TTF_Font* BobFont::ttf_oswald_16 = nullptr;
-TTF_Font* BobFont::ttf_oswald_24 = nullptr;
-TTF_Font* BobFont::ttf_oswald_32 = nullptr;
-TTF_Font* BobFont::ttf_oswald_48 = nullptr;
-TTF_Font* BobFont::ttf_oswald_64 = nullptr;
-
+TTF_Font* BobFont::ttf_8 = nullptr;
+TTF_Font* BobFont::ttf_10 = nullptr;
+TTF_Font* BobFont::ttf_12 = nullptr;
+TTF_Font* BobFont::ttf_14 = nullptr;
+TTF_Font* BobFont::ttf_16 = nullptr;
+TTF_Font* BobFont::ttf_18 = nullptr;
+TTF_Font* BobFont::ttf_24 = nullptr;
+TTF_Font* BobFont::ttf_32 = nullptr;
+TTF_Font* BobFont::ttf_48 = nullptr;
+TTF_Font* BobFont::ttf_64 = nullptr;
+TTF_Font* BobFont::ttf_outline_8 = nullptr;
+TTF_Font* BobFont::ttf_outline_10 = nullptr;
+TTF_Font* BobFont::ttf_outline_12 = nullptr;
+TTF_Font* BobFont::ttf_outline_14 = nullptr;
+TTF_Font* BobFont::ttf_outline_16 = nullptr;
+TTF_Font* BobFont::ttf_outline_18 = nullptr;
+TTF_Font* BobFont::ttf_outline_24 = nullptr;
+TTF_Font* BobFont::ttf_outline_32 = nullptr;
+TTF_Font* BobFont::ttf_outline_48 = nullptr;
+TTF_Font* BobFont::ttf_outline_64 = nullptr;
 
 
 BobFont* BobFont::font_32 = nullptr;
@@ -80,17 +91,37 @@ void BobFont::initFonts()
 	string path = Main::getPath();
 	ttf_bobsgame_8 = TTF_OpenFont(string(path+"data/fonts/bobsgame.ttf").c_str(), 8);
 	ttf_bobsgame_16 = TTF_OpenFont(string(path + "data/fonts/bobsgame.ttf").c_str(), 16);
-	ttf_oswald_8 = TTF_OpenFont(string(path + "data/fonts/OpenSans-Bold.ttf").c_str(), 8);
-	ttf_oswald_10 = TTF_OpenFont(string(path + "data/fonts/OpenSans-Bold.ttf").c_str(), 10);
-	ttf_oswald_12 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 12);
-	ttf_oswald_16 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 16);
-	ttf_oswald_24 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 24);
-	ttf_oswald_32 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 32);
-	ttf_oswald_48 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 48);
-	ttf_oswald_64 = TTF_OpenFont(string(path+"data/fonts/OpenSans-Bold.ttf").c_str(), 64);
+			  ttf_8 =  TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 8);
+			  ttf_10 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 10);
+			  ttf_12 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 12);
+			  ttf_14 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 14);
+			  ttf_16 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 16);
+			  ttf_18 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 18);
+			  ttf_24 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 24);
+			  ttf_32 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 32);
+			  ttf_48 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 48);
+			  ttf_64 = TTF_OpenFont(string(path+"data/fonts/Muli-Bold.ttf").c_str(), 64);
+	ttf_outline_8  = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 8);
+	ttf_outline_10 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 10);
+	ttf_outline_12 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 12);
+	ttf_outline_14 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 14);
+	ttf_outline_16 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 16);
+	ttf_outline_18 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 18);
+	ttf_outline_24 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 24);
+	ttf_outline_32 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 32);
+	ttf_outline_48 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 48);
+	ttf_outline_64 = TTF_OpenFont(string(path + "data/fonts/Muli-Bold.ttf").c_str(), 64);
 
-
-	
+	TTF_SetFontOutline(ttf_outline_8 , 1);
+	TTF_SetFontOutline(ttf_outline_10, 1);
+	TTF_SetFontOutline(ttf_outline_12, 1);
+	TTF_SetFontOutline(ttf_outline_14, 1);
+	TTF_SetFontOutline(ttf_outline_16, 1);
+	TTF_SetFontOutline(ttf_outline_18, 1);
+	TTF_SetFontOutline(ttf_outline_24, 1);
+	TTF_SetFontOutline(ttf_outline_32, 1);
+	TTF_SetFontOutline(ttf_outline_48, 1);
+	TTF_SetFontOutline(ttf_outline_64, 1);
 
 	//FreeTypeFontGenerator *generator = new FreeTypeFontGenerator(Gdx::files::internal("fonts/OpenSans-Regular.ttf"));
 	//BitmapFont *font12 = generator->generateFont(12); // font size 12 pixels

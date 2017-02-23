@@ -452,7 +452,7 @@ void BobsGame::titleMenuRender()
 
 	if (t != nullptr)
 	{
-		titleMenu->setGraphic(t, getWidth() / 3*2, getHeight() / 7);
+		titleMenu->setGraphic(t, getWidth() / 3*2, getHeight() / 10);
 		titleMenu->render();
 	}
 
@@ -505,12 +505,13 @@ void BobsGame::startScreenMenuUpdate()
 	{
 		infoMenu = new BobMenu(this, "");
 		infoMenu->center = false;
-		infoMenu->font = BobFont::ttf_oswald_10;
+		infoMenu->font = BobFont::ttf_10;
+		infoMenu->outline = false;
 		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
 		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs. I rely on your feedback!");
 		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
-		infoMenu->addInfo("If there are no games the server might be overloaded, wait a bit or restart a few times.");
-		infoMenu->addInfo("Currently working on: Android/iOS ports.");
+		infoMenu->addInfo("There are no built in games, it downloads them! If there are no games the server might be overloaded, wait a bit or restart a few times.");
+		infoMenu->addInfo("Currently working on: Better leaderboards, Android/iOS ports.");
 	}
 
 
@@ -529,7 +530,8 @@ void BobsGame::startScreenMenuUpdate()
 	{
 		forumMenu = new BobMenu(this, "");
 		forumMenu->center = false;
-		forumMenu->font = BobFont::ttf_oswald_10;
+		forumMenu->font = BobFont::ttf_10;
+		forumMenu->outline = false;
 		forumMenu->addInfo("https://bobsgame.com/forum", "Open Forum",BobColor::lightBlue);
 	}
 
@@ -700,7 +702,7 @@ void BobsGame::startScreenMenuRender()
 
 	if (t != nullptr)
 	{
-		startScreenMenu->setGraphic(t, getWidth()/3*2, getHeight() / 7);
+		startScreenMenu->setGraphic(t, getWidth()/3*2, getHeight() / 10);
 		startScreenMenu->render();
 	}
 
@@ -775,7 +777,7 @@ void BobsGame::gettingGamesFromServerMenuRender()
 
 	if (t != nullptr)
 	{
-		gettingGamesFromServerMenu->setGraphic(t, getWidth()/3*2, getHeight() / 7);
+		gettingGamesFromServerMenu->setGraphic(t, getWidth()/3*2, getHeight() / 10);
 		gettingGamesFromServerMenu->render();
 	}
 
@@ -1205,8 +1207,8 @@ void BobsGame::loginMenuUpdate()
 
 	int y = (int)(getHeight() / 4 * 3);
 
-	if (statusLabel == nullptr)statusLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_oswald_16, BobMenu::statusColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
-	if (errorLabel == nullptr)errorLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_oswald_16, BobMenu::errorColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+	if (statusLabel == nullptr)statusLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_16, BobMenu::statusColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+	if (errorLabel == nullptr)errorLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_16, BobMenu::errorColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 
 
 	if (loginMenu == nullptr)
@@ -1392,8 +1394,8 @@ void BobsGame::createAccountMenuUpdate()
 	{
 		int y = (int)(getHeight() / 4 * 3);
 
-		if (statusLabel == nullptr)statusLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_oswald_16, BobMenu::statusColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
-		if (errorLabel == nullptr)errorLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_oswald_16, BobMenu::errorColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+		if (statusLabel == nullptr)statusLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_16, BobMenu::statusColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+		if (errorLabel == nullptr)errorLabel = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, y, -1, " ", BobFont::ttf_16, BobMenu::errorColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 
 		if (userNameOrEmailText.length()>0)
 		{
@@ -1855,7 +1857,7 @@ void BobsGame::whichStatsMiniMenuUpdate()
 	{
 		whichStatsMiniMenu = new BobMenu(this, "");
 		whichStatsMiniMenu->center = false;
-		whichStatsMiniMenu->font = BobFont::ttf_oswald_12;
+		whichStatsMiniMenu->font = BobFont::ttf_12;
 
 		whichStatsMiniMenu->add("Top Players By Total Time Played", "totalTimePlayed");
 		whichStatsMiniMenu->add("Top Players By Total Blocks Cleared", "totalBlocksCleared");
@@ -2044,8 +2046,9 @@ void BobsGame::statsMenuUpdate()
 	{
 		yourStatsMenu = new BobMenu(this, "");
 		yourStatsMenu->center = false;
-		yourStatsMenu->font = BobFont::ttf_oswald_10;
-
+		yourStatsMenu->font = BobFont::ttf_12;
+		yourStatsMenu->outline = false;
+		yourStatsMenu->defaultMenuColor = BobColor::darkGray;
 
 		populateUserStatsForSpecificGameAndDifficultyMenu(yourStatsMenu, "OVERALL", "OVERALL");
 
@@ -2055,7 +2058,9 @@ void BobsGame::statsMenuUpdate()
 	{
 		leaderBoardMenu = new BobMenu(this, "");
 		leaderBoardMenu->center = false;
-		leaderBoardMenu->font = BobFont::ttf_oswald_10;
+		leaderBoardMenu->font = BobFont::ttf_12;
+		leaderBoardMenu->outline = false;
+		leaderBoardMenu->defaultMenuColor = BobColor::darkGray;
 
 		populateLeaderBoardOrHighScoreBoardMenu(leaderBoardMenu, "OVERALL", "OVERALL", 
 			statsMenu_totalTimePlayed, statsMenu_totalBlocksCleared, statsMenu_planeswalkerPoints, statsMenu_eloScore, statsMenu_timeLasted, statsMenu_blocksCleared);
@@ -2139,8 +2144,8 @@ void BobsGame::statsMenuRender()
 	int leftX = 0;
 	int rightX = 0;
 	statsMenu->render(0, getWidth() / 6 * 1, getHeight(), true, &startHeight, &bottomHeight, false, &leftX, &rightX);
-	yourStatsMenu->render(startHeight, rightX + 80, getHeight(), false, nullptr, nullptr, false, nullptr, &rightX);
-	leaderBoardMenu->render(startHeight, rightX + 80, getHeight(), false);
+	yourStatsMenu->render(startHeight, rightX + 50, getHeight(), false, nullptr, nullptr, false, nullptr, &rightX);
+	leaderBoardMenu->render(startHeight, rightX + 50, getHeight(), false);
 
 
 	if (whichStatsMiniMenuShowing && whichStatsMiniMenu != nullptr)
@@ -3448,7 +3453,7 @@ void BobsGame::selectSingleGameTypeMenuUpdate()
 	{
 		selectSingleGameTypeMenu = new BobMenu(this, "");
 		selectSingleGameTypeMenu->center = false;
-		selectSingleGameTypeMenu->font = BobFont::ttf_oswald_12;
+		selectSingleGameTypeMenu->font = BobFont::ttf_12;
 
 
 		populateGameTypesMenu(selectSingleGameTypeMenu);
@@ -4375,8 +4380,8 @@ void BobsGame::localMultiplayerPlayerJoinMenuUpdate()
 			{
 				p->confirmed = true;
 
-				p->gameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, p->gameLogic->currentGameSequence->name, BobFont::ttf_oswald_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
-				p->difficultyCaption = getCaptionManager()->newManagedCaption(0, 0, -1, p->gameLogic->currentGameSequence->currentDifficultyName, BobFont::ttf_oswald_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+				p->gameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, p->gameLogic->currentGameSequence->name, BobFont::ttf_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+				p->difficultyCaption = getCaptionManager()->newManagedCaption(0, 0, -1, p->gameLogic->currentGameSequence->currentDifficultyName, BobFont::ttf_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 			}
 
 			
@@ -4389,7 +4394,7 @@ void BobsGame::localMultiplayerPlayerJoinMenuUpdate()
 		{
 			if (localMultiplayerPressStartCaption == nullptr) 
 			{
-				localMultiplayerPressStartCaption = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, (int)(getHeight() - 50), -1, "Press the Enter key or Start on your controller to start game", BobFont::ttf_oswald_16, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+				localMultiplayerPressStartCaption = getCaptionManager()->newManagedCaption(Caption::CENTERED_X, (int)(getHeight() - 50), -1, "Press the Enter key or Start on your controller to start game", BobFont::ttf_16, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 				localMultiplayerPressStartCaption->flashing = true;
 				localMultiplayerPressStartCaption->flashingTicksPerFlash = 1000;
 			}
@@ -4428,7 +4433,7 @@ void BobsGame::localMultiplayerPlayerJoinMenuUpdate()
 				PuzzlePlayer *p = new PuzzlePlayer(new GameLogic(this, -1));
 				p->useKeyboard = true;
 				players.add(p);
-				p->nameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, "Local (Keyboard)", BobFont::ttf_oswald_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+				p->nameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, "Local (Keyboard)", BobFont::ttf_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 			}
 		}
 	}
@@ -4467,7 +4472,7 @@ void BobsGame::localMultiplayerPlayerJoinMenuUpdate()
 					PuzzlePlayer *p = new PuzzlePlayer(new GameLogic(this, -1));
 					p->gameController = g;
 					players.add(p);
-					p->nameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, "Local (Controller " + to_string(controllerNum) + ")", BobFont::ttf_oswald_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+					p->nameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, "Local (Controller " + to_string(controllerNum) + ")", BobFont::ttf_12, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
 				}
 			}
 		}
@@ -4616,7 +4621,7 @@ void BobsGame::playerDifficultyMiniMenuUpdate(PuzzlePlayer *p)
 		{
 			p->menu = new BobMenu(this, "");
 			p->menu->center = false;
-			p->menu->font = BobFont::ttf_oswald_12;
+			p->menu->font = BobFont::ttf_12;
 			GameType g;
 
 			for (int i = 0; i<g.difficultyTypes.size(); i++)
@@ -4714,7 +4719,7 @@ void BobsGame::playerGameSequenceMiniMenuUpdate(PuzzlePlayer *p)
 		{
 			p->menu = new BobMenu(this, "");
 			p->menu->center = false;
-			p->menu->font = BobFont::ttf_oswald_12;
+			p->menu->font = BobFont::ttf_12;
 
 			if (p->selectGameSequenceOrSingleGameTypeMiniMenuShowing)
 			{
