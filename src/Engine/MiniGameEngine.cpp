@@ -82,6 +82,7 @@ void MiniGameEngine::setupMenus()
 	titleMenuShowing = true;
 }
 
+
 bool MiniGameEngine::updateMenus()
 { //=========================================================================================================================
 
@@ -100,18 +101,7 @@ bool MiniGameEngine::updateMenus()
 
 	if (titleMenuShowing)
 	{
-		titleMenuFrameTicks += super::engineTicksPassed();
-		if (titleMenuFrameTicks > 20)
-		{
-			titleMenuFrameTicks = 0;
-			currentTitleMenuTextureFrame++;
-			if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
-			{
-				currentTitleMenuTextureFrame = 0;
-			}
-
-			updateTitleMenuLogoTexture();
-		}
+		updateTitleScreenLogo();
 
 		titleMenuUpdate();
 		updatedMenu = true;
@@ -167,7 +157,23 @@ bool MiniGameEngine::renderMenus()
 	return renderedMenu;
 }
 
+//=========================================================================================================================
+void MiniGameEngine::updateTitleScreenLogo()
+{//=========================================================================================================================
 
+	titleMenuFrameTicks += super::engineTicksPassed();
+	if (titleMenuFrameTicks > 20)
+	{
+		titleMenuFrameTicks = 0;
+		currentTitleMenuTextureFrame++;
+		if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
+		{
+			currentTitleMenuTextureFrame = 0;
+		}
+
+		updateTitleMenuLogoTexture();
+	}
+}
 
 void MiniGameEngine::updateTitleMenuLogoTexture()
 { //=========================================================================================================================

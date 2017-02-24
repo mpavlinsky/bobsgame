@@ -160,6 +160,7 @@ public:
 
 	string cycleDots(int tries);
 
+	virtual void updateTitleScreenLogo() override;
 	virtual void updateTitleMenuLogoTexture() override;
 	virtual void titleMenuUpdate() override;
 	virtual void titleMenuRender() override;

@@ -12,7 +12,7 @@ void BobsGame::setupMenus()
 
 	super::setupMenus();
 
-	numTitleMenuTextureFrames = 22;//;//91; //139;//with quotes
+	numTitleMenuTextureFrames = 11;// 22;//;//91; //139;//with quotes
 
 }
 
@@ -310,14 +310,48 @@ bool BobsGame::renderMenus()
 
 
 //=========================================================================================================================
+void BobsGame::updateTitleScreenLogo()
+{//=========================================================================================================================
+
+	titleMenuFrameTicks += super::engineTicksPassed();
+	if (titleMenuFrameTicks > 20)
+	{
+		titleMenuFrameTicks = 0;
+		if (currentTitleMenuTextureFrameIncrementDecrementToggle)
+		{
+			currentTitleMenuTextureFrame++;
+			if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
+			{
+				currentTitleMenuTextureFrame = numTitleMenuTextureFrames-1;
+				currentTitleMenuTextureFrameIncrementDecrementToggle = !currentTitleMenuTextureFrameIncrementDecrementToggle;
+			}
+		}
+		else
+		{
+			currentTitleMenuTextureFrame--;
+			if (currentTitleMenuTextureFrame < 0)
+			{
+				currentTitleMenuTextureFrame = 0;
+				currentTitleMenuTextureFrameIncrementDecrementToggle = !currentTitleMenuTextureFrameIncrementDecrementToggle;
+			}
+		}
+
+		updateTitleMenuLogoTexture();
+	}
+}
+
+
+//=========================================================================================================================
 void BobsGame::updateTitleMenuLogoTexture()
 {//=========================================================================================================================
+
 
 //	if(titleScreenTexture!= nullptr)
 //	{
 //		titleScreenTexture->release();
 //		titleScreenTexture= nullptr;
 //	}
+
 
 //	string numString = ""+to_string(currentTitleScreenTextureFrame);
 //	int len = numString.length();
@@ -339,9 +373,9 @@ void BobsGame::updateTitleMenuLogoTexture()
 	}
 }
 
-
+//=========================================================================================================================
 void BobsGame::titleMenuUpdate()
-{ //=========================================================================================================================
+{//=========================================================================================================================
 
 
 	if (titleMenu == nullptr)
@@ -462,18 +496,7 @@ void BobsGame::titleMenuRender()
 void BobsGame::startScreenMenuUpdate()
 { //=========================================================================================================================
 
-	titleMenuFrameTicks += super::engineTicksPassed();
-	if (titleMenuFrameTicks > 20)
-	{
-		titleMenuFrameTicks = 0;
-		currentTitleMenuTextureFrame++;
-		if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
-		{
-			currentTitleMenuTextureFrame = 0;
-		}
-
-		updateTitleMenuLogoTexture();
-	}
+	updateTitleScreenLogo();
 
 	if (startScreenMenu == nullptr)
 	{
@@ -507,7 +530,7 @@ void BobsGame::startScreenMenuUpdate()
 		infoMenu->center = false;
 		infoMenu->font = BobFont::ttf_10;
 		infoMenu->outline = false;
-		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
+		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__ +" - Support this game: ", "Build Number");
 		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs. I rely on your feedback!");
 		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
 		infoMenu->addInfo("There are no built in games, they are downloaded. If no games show in the menu the server might be overloaded, wait a bit or restart a few times.");
@@ -516,13 +539,14 @@ void BobsGame::startScreenMenuUpdate()
 
 
 
-//	if (patreonMenu == nullptr)
-//	{
-//		patreonMenu = new BobMenu(this, "");
-//		patreonMenu->center = false;
-//		patreonMenu->font = BobFont::ttf_oswald_10;
-//		patreonMenu->addInfo("https://patreon.com/bobsgame", "Patreon", BobColor::lightBlue);
-//	}
+	if (patreonMenu == nullptr)
+	{
+		patreonMenu = new BobMenu(this, "");
+		patreonMenu->center = false;
+		patreonMenu->font = BobFont::ttf_10;
+		patreonMenu->outline = false;
+		patreonMenu->addInfo("https://patreon.com/bobsgame", "Patreon", BobColor::lightBlue);
+	}
 
 
 
@@ -725,21 +749,12 @@ void BobsGame::startScreenMenuRender()
 	}
 }
 
+
+
 void BobsGame::gettingGamesFromServerMenuUpdate()
 { //=========================================================================================================================
 
-	titleMenuFrameTicks += super::engineTicksPassed();
-	if (titleMenuFrameTicks > 20)
-	{
-		titleMenuFrameTicks = 0;
-		currentTitleMenuTextureFrame++;
-		if (currentTitleMenuTextureFrame >= numTitleMenuTextureFrames)
-		{
-			currentTitleMenuTextureFrame = 0;
-		}
-
-		updateTitleMenuLogoTexture();
-	}
+	updateTitleScreenLogo();
 
 	if (gettingGamesFromServerMenu == nullptr)
 	{
