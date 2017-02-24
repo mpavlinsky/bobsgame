@@ -53,6 +53,8 @@ public:
 	static BobTexture* downCursorTexture;
 	static long long cursorInOutToggleTicks;
 	static bool cursorInOutToggle;
+	static int lastMX;
+	static int lastMY;
 
 
 	long long rectangleCursorPulseLastTime = 0;

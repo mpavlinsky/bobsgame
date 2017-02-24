@@ -16,6 +16,8 @@ BobTexture* BobMenu::upCursorTexture = nullptr;
 BobTexture* BobMenu::downCursorTexture = nullptr;
 long long BobMenu::cursorInOutToggleTicks = 0;
 bool BobMenu::cursorInOutToggle = false;
+int BobMenu::lastMX = 0;
+int BobMenu::lastMY = 0;
 
 BobColor* BobMenu::menuColor = nullptr;
 BobColor* BobMenu::disabledMenuColor = nullptr;
@@ -177,6 +179,16 @@ void BobMenu::update(int ticksPassed)
 		cursorInOutToggle = !cursorInOutToggle;
 	}
 
+	int mx = getControlsManager()->getMouseX();
+	int my = getControlsManager()->getMouseY();
+	bool checkMouse = false;
+	if(mx!=lastMX || my!=lastMY)
+	{
+		checkMouse = true;
+		lastMX = mx;
+		lastMY = my;
+	}
+
 	for(int i = 0; i < activeMenus.size(); i++)
 	{
 		BobMenu *m = activeMenus.get(i);
@@ -188,8 +200,7 @@ void BobMenu::update(int ticksPassed)
 			if (mi->info)continue;
 			if (mi->hidden)continue;
 
-			int mx = getControlsManager()->getMouseX();
-			int my = getControlsManager()->getMouseY();
+
 
 			Caption *c = mi->caption;
 			if (c->visible == false)continue;
@@ -199,9 +210,12 @@ void BobMenu::update(int ticksPassed)
 			int y0 = c->screenY + (c->getHeight() * 0.05);
 			int y1 = c->screenY + c->getHeight() - (c->getHeight() * 0.05);
 
-			if (x0 < mx && x1 > mx && y0 < my && y1 > my)
+			if (checkMouse)
 			{
-				m->cursorPosition = n;
+				if (x0 < mx && x1 > mx && y0 < my && y1 > my)
+				{
+					m->cursorPosition = n;
+				}
 			}
 		}
 	}
@@ -485,7 +499,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		y = (int)(sy1 + 40);
 
 
-		GLUtils::drawTexture(graphic, tx0, tx1, ty0, ty1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_LINEAR);
+		GLUtils::drawTexture(graphic, tx0, tx1, ty0, ty1, sx0, sx1, sy0, sy1, 1.0f, GLUtils::FILTER_NEAREST);
 	}
 
 	if (returnBottomOfGraphic != nullptr)*returnBottomOfGraphic = y;

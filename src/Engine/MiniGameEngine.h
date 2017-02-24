@@ -46,6 +46,7 @@ public:
 	BobTexture* titleMenuTexture = nullptr;
 	long long titleMenuFrameTicks = 0;
 	int currentTitleMenuTextureFrame = 0;
+	bool currentTitleMenuTextureFrameIncrementDecrementToggle = false;
 	bool titleMenuShowing = false;
 
 	bool pauseMenuShowing = false;
@@ -64,6 +65,7 @@ public:
 	virtual void titleMenuUpdate();
 	virtual void titleMenuRender();
 	
+	virtual void updateTitleScreenLogo();
 	virtual void updateTitleMenuLogoTexture();
 	virtual void unloadTitleMenuTextures();
 
