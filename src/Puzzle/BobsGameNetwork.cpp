@@ -1614,7 +1614,7 @@ void BobsGame::networkMultiplayerLobbyMenuRender()
 	int leftX = 0;
 	int rightX = 0;
 	networkMultiplayerLobbyMenu->render(0, getWidth() / 10 * 1, getHeight(), !selectingHostedGame, &startHeight, &bottomHeight, false, &leftX, &rightX);
-	friendsOnlineMenu->render(bottomHeight, leftX, getHeight(), false);
+	friendsOnlineMenu->render(bottomHeight + 30, leftX, getHeight(), false);
 
 	roomsMenu->render(startHeight, rightX + 50, getHeight(), selectingHostedGame, nullptr, nullptr, false, nullptr, &rightX);
 

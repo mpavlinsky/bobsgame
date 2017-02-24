@@ -80,11 +80,11 @@ public:
 		int singlePlayerGamesCompleted = 0;
 		int singlePlayerGamesLost = 0;
 		int singlePlayerHighestLevelReached = 0;
-		long totalTimePlayed = 0;
-		long longestGameLength = 0;
-		long firstTimePlayed = 0;
-		long lastTimePlayed = 0;
-		long timeRecordSet = 0;
+		long long totalTimePlayed = 0;
+		long long longestGameLength = 0;
+		long long firstTimePlayed = 0;
+		long long lastTimePlayed = 0;
+		long long timeRecordSet = 0;
 		double eloScore = 0;
 		long planesWalkerPoints = 0;
 		long totalBlocksCleared = 0;
@@ -1103,6 +1103,12 @@ public:
 		}
 
 		decode(s);
+
+		int x = 0;
+		int y = 1;
+		x = y;
+		y = x;
+
 	}
 
 
@@ -1144,7 +1150,7 @@ public:
 
 		for (int i = 0; i<maxEntries; i++)
 		{
-			string diff = "_" + to_string(i);
+			//string diff = "_" + to_string(i);
 			BobsGameLeaderBoardAndHighScoreBoardEntry *stats = entries.get(i);
 
 
@@ -1157,103 +1163,104 @@ public:
 			s = s.substr(s.find('`') + 1);
 			t = s.substr(0, s.find('`'));
 			if (t.length()>0)try { stats->userID = stol(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find('`') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->totalGamesPlayed = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->singlePlayerGamesPlayed = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->tournamentGamesPlayed = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->localMultiplayerGamesPlayed = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->tournamentGamesWon = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->tournamentGamesLost = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->singlePlayerGamesCompleted = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->singlePlayerGamesLost = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->singlePlayerHighestLevelReached = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
-			if (t.length()>0)try { stats->totalTimePlayed = stol(t); }
-			catch (exception) {  return; }
+			if (t.length()>0)try { stats->totalTimePlayed = stoll(t); }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
-			if (t.length()>0)try { stats->longestGameLength = stol(t); }
-			catch (exception) {  return; }
+			if (t.length()>0)try { stats->longestGameLength = stoll(t); }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
-			if (t.length()>0)try { stats->firstTimePlayed = stol(t); }
-			catch (exception) {  return; }
+			if (t.length()>0)try { stats->firstTimePlayed = stoll(t); }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 			s = s.substr(s.find(':')+1);
 			t = s.substr(0, s.find(','));
-			if(t.length()>0)try{stats->lastTimePlayed = stol(t);}catch(exception){return;}
+			if(t.length()>0)try{stats->lastTimePlayed = stoll(t);}
+			catch(exception){log.error("Could not parse stats"); return;}
 			s = s.substr(s.find(',')+1);
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
-			if (t.length()>0)try { stats->timeRecordSet = stol(t); }
-			catch (exception) {  return; }
+			if (t.length()>0)try { stats->timeRecordSet = stoll(t); }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
@@ -1261,33 +1268,33 @@ public:
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->eloScore = stod(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->planesWalkerPoints = stol(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->totalBlocksCleared = stol(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->biggestCombo = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) {  log.error("Could not parse stats"); return; }
 			s = s.substr(s.find(',') + 1);
 
 			s = s.substr(s.find(':') + 1);
 			t = s.substr(0, s.find(','));
 			if (t.length()>0)try { stats->mostBlocksClearedInOneGame = stoi(t); }
-			catch (exception) {  return; }
+			catch (exception) { log.error("Could not parse stats");  return; }
 			s = s.substr(s.find(',') + 1);
 
 
@@ -1297,6 +1304,8 @@ public:
 			s = s.substr(s.find(',') + 1);
 
 		}
+
+
 	}
 //
 //
