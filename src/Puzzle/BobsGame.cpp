@@ -1015,10 +1015,13 @@ void BobsGame::update()
 
 	bool gameOver = false;
 
-	bool allPlayersDead = true;
-	int alivePlayers = 0;
-	bool someoneWon = false;
 
+	if (players.size() == 1 && players.get(0)->gameLogic->complete)
+	{
+		gameOver = true;
+	}
+
+	bool allPlayersDead = true;
 	for (int i = 0; i < players.size(); i++)
 	{
 		PuzzlePlayer *p = players.get(i);
@@ -1026,47 +1029,70 @@ void BobsGame::update()
 		{
 			allPlayersDead = false;
 		}
-		else if (p->gameLogic->complete == true)
-		{
-			someoneWon = true;
-		}
-		else alivePlayers++;
 	}
-
-	if (currentRoom->multiplayer_GameEndsWhenOnePlayerRemains && alivePlayers == 1)
-	{
-		for (int i = 0; i < players.size(); i++)
-		{
-			PuzzlePlayer *p = players.get(i);
-			if (p->gameLogic->died == false)
-			{
-				p->gameLogic->won = true;
-			}
-		}
-		gameOver = true;
-	}
-	if (currentRoom->multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel && someoneWon)
-	{
-		for (int i = 0; i < players.size(); i++)
-		{
-			PuzzlePlayer *p = players.get(i);
-			if (p->gameLogic->complete == false)
-			{
-				p->gameLogic->died = true;
-			}
-		}
-		gameOver = true;
-	}
-
 	if (allPlayersDead)
 	{
 		gameOver = true;
 	}
 
-	if(gameOver)
+
+	if (currentRoom->multiplayer_GameEndsWhenOnePlayerRemains)
+	{
+		int alivePlayers = 0;
+		for (int i = 0; i < players.size(); i++)
+		{
+			PuzzlePlayer *p = players.get(i);
+			if (p->gameLogic->died == false)
+			{
+				alivePlayers++;
+			}
+		}
+
+		if (alivePlayers == 1)
+		{
+			for (int i = 0; i < players.size(); i++)
+			{
+				PuzzlePlayer *p = players.get(i);
+				if (p->gameLogic->died == false)
+				{
+					p->gameLogic->won = true;
+				}
+			}
+			gameOver = true;
+		}
+	}
+
+
+	if (currentRoom->multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel)
 	{
 
-		
+		bool someoneWon = false;
+		for (int i = 0; i < players.size(); i++)
+		{
+			PuzzlePlayer *p = players.get(i);
+			if (p->gameLogic->complete == true)
+			{
+				someoneWon = true;
+			}
+		}
+
+		if (someoneWon)
+		{
+			for (int i = 0; i < players.size(); i++)
+			{
+				PuzzlePlayer *p = players.get(i);
+				if (p->gameLogic->complete == false)
+				{
+					p->gameLogic->lost = true;
+				}
+			}
+			gameOver = true;
+		}
+	}
+
+
+	if(gameOver)
+	{
 
 		sendGameStatsToServer();
 
