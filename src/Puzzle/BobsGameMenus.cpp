@@ -1966,14 +1966,27 @@ void BobsGame::statsMenuUpdate()
 		statsMenu = new BobMenu(this, "Stats And Leaderboards");
 
 		statsMenu->add("Leaderboard Type", "Stats Type");
-		statsMenu->add("All Games", "Game");
-		statsMenu->add("All Difficulties", "Difficulty");
+		statsMenu->add("Game: All Games", "Game");
+		statsMenu->add("Difficulty: All Difficulties", "Difficulty");
 		statsMenu->addInfo(" ");
 		statsMenu->add("Back To Title Screen", "Back To Title Screen");
 
 
 		statsMenu->cursorPosition = statsMenuCursorPosition;
 	}
+
+	if (statsMenu_difficultyName == "OVERALL") whichDifficultyToShow = 0;
+	if (statsMenu_difficultyName == "Beginner")whichDifficultyToShow = 1;
+	if (statsMenu_difficultyName == "Easy")	   whichDifficultyToShow = 2;
+	if (statsMenu_difficultyName == "Normal")  whichDifficultyToShow = 3;
+	if (statsMenu_difficultyName == "Hard")	   whichDifficultyToShow = 4;
+	if (statsMenu_difficultyName == "Insane")  whichDifficultyToShow = 5;
+
+	Caption *c = statsMenu->getCaptionByID("Difficulty");
+	if (c != nullptr)c->setText("Difficulty: " + statsMenu_difficultyName);
+
+	c = statsMenu->getCaptionByID("Game");
+	if (c != nullptr)c->setText("Game: " + statsMenu_gameSequenceOrTypeName);
 
 
 	bool leaveMenu = false;
@@ -2032,9 +2045,30 @@ void BobsGame::statsMenuUpdate()
 							bool confirm = getControlsManager()->miniGame_CONFIRM_Pressed();//, clicked, mx, my
 							bool clicked = getControlsManager()->mouse_LEFTBUTTON_Pressed();
 
-							if (confirm || clicked)
+
+
+							if (clicked == true && confirm == false)
 							{
 
+								if (yourStatsMenu->isSelectedID(yourStatsMenu->getSelectedMenuItem()->id, clicked, mx, my)
+									||
+									leaderBoardMenu->isSelectedID(leaderBoardMenu->getSelectedMenuItem()->id, clicked, mx, my)
+									)
+								{
+									whichDifficultyToShow++;
+									if (whichDifficultyToShow > 5)whichDifficultyToShow = 0;
+									if (whichDifficultyToShow == 0)statsMenu_difficultyName = "OVERALL";
+									if (whichDifficultyToShow == 1)statsMenu_difficultyName = "Beginner";
+									if (whichDifficultyToShow == 2)statsMenu_difficultyName = "Easy";
+									if (whichDifficultyToShow == 3)statsMenu_difficultyName = "Normal";
+									if (whichDifficultyToShow == 4)statsMenu_difficultyName = "Hard";
+									if (whichDifficultyToShow == 5)statsMenu_difficultyName = "Insane";
+								}
+
+							}
+
+							if (confirm || clicked)
+							{
 								if (statsMenu->isSelectedID("Back To Title Screen", clicked, mx, my))
 								{
 									leaveMenu = true;
@@ -2091,6 +2125,15 @@ void BobsGame::statsMenuUpdate()
 	
 		yourStatsMenu->clear();
 		leaderBoardMenu->clear();
+
+
+		if (whichDifficultyToShow > 5)whichDifficultyToShow = 0;
+		if (whichDifficultyToShow == 0)statsMenu_difficultyName = "OVERALL";
+		if (whichDifficultyToShow == 1)statsMenu_difficultyName = "Beginner";
+		if (whichDifficultyToShow == 2)statsMenu_difficultyName = "Easy";
+		if (whichDifficultyToShow == 3)statsMenu_difficultyName = "Normal";
+		if (whichDifficultyToShow == 4)statsMenu_difficultyName = "Hard";
+		if (whichDifficultyToShow == 5)statsMenu_difficultyName = "Insane";
 
 
 		populateUserStatsForSpecificGameAndDifficultyMenu(yourStatsMenu, statsMenu_gameSequenceOrTypeUUID, statsMenu_difficultyName);
@@ -2683,6 +2726,7 @@ void BobsGame::selectGameSequenceOrSingleGameTypeMenuUpdate()
 			if(statsMenuShowing)
 			{
 				statsMenu_gameSequenceOrTypeUUID = "OVERALL";
+				statsMenu_gameSequenceOrTypeName = "OVERALL";
 			}
 		}
 
@@ -2796,6 +2840,7 @@ void BobsGame::selectGameSequenceMenuUpdate()
 				if(statsMenuShowing)
 				{
 					statsMenu_gameSequenceOrTypeUUID = g->uuid;
+					statsMenu_gameSequenceOrTypeName = g->name;
 				}
 				else
 				{
@@ -3577,6 +3622,7 @@ void BobsGame::selectSingleGameTypeMenuUpdate()
 				if(statsMenuShowing)
 				{
 					statsMenu_gameSequenceOrTypeUUID = g->uuid;
+					statsMenu_gameSequenceOrTypeName = g->name;
 				}
 				else
 				{

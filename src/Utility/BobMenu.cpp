@@ -380,10 +380,10 @@ bool BobMenu::isSelectedID(string id, bool clicked, int mx, int my)
 			Caption *c = m->caption;
 			if (c->visible == false)continue;
 
-			int x0 = c->screenX + (c->getWidth()*0.05);
-			int x1 = c->screenX + c->getWidth() - (c->getWidth()*0.05);
-			int y0 = c->screenY + (c->getHeight()*0.05);
-			int y1 = c->screenY + c->getHeight() - (c->getHeight()*0.05);
+			int x0 = c->screenX + (c->getWidth()*0.01);
+			int x1 = c->screenX + c->getWidth() - (c->getWidth()*0.01);
+			int y0 = c->screenY + (c->getHeight()*0.01);
+			int y1 = c->screenY + c->getHeight() - (c->getHeight()*0.01);
 
 			if(x0 < mx && x1 > mx && y0 < my && y1 > my)
 			{

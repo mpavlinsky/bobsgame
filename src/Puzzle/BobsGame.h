@@ -336,6 +336,7 @@ public:
 	int statsMenuCursorPosition = 0;
 	string statsMenu_difficultyName = "OVERALL";
 	string statsMenu_gameSequenceOrTypeUUID = "OVERALL";
+	string statsMenu_gameSequenceOrTypeName = "OVERALL";
 	bool statsMenu_totalTimePlayed = true;
 	bool statsMenu_totalBlocksCleared = false;
 	bool statsMenu_planeswalkerPoints = false;
