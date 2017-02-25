@@ -1241,7 +1241,7 @@ void BobsGame::sendGameStatsToServer()
 					s.multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel = currentRoom->multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel;
 					s.multiplayer_DisableVSGarbage = currentRoom->multiplayer_DisableVSGarbage;
 
-					s.allFrameStatesZipped = FrameState::getFrameStatesAsBase64GZippedXML(g->framesArray);
+					s.allFrameStatesZipped = "temp";// FrameState::getFrameStatesAsBase64GZippedXML(g->framesArray);
 
 					for (int n = 0; n < players.size(); n++)
 					{

@@ -3988,7 +3988,7 @@ void BobsGame::multiplayerOptionsMenuUpdate()
 		if(networkMultiplayer)
 		{
 			multiplayerOptionsMenu = new BobMenu(this, "Set Network Multiplayer Room Options");
-			multiplayerOptionsMenu->center = false;
+			//multiplayerOptionsMenu->center = false;
 			multiplayerOptionsMenu->add("Visibility: Public", "Public Or Private");
 			multiplayerOptionsMenu->add("Score Mode: Free Play", "Free Play Or Tournament");
 			multiplayerOptionsMenu->add("Max Players: Unlimited", "Max Players");
@@ -3998,7 +3998,7 @@ void BobsGame::multiplayerOptionsMenuUpdate()
 		else
 		{
 			multiplayerOptionsMenu = new BobMenu(this, "Set Local Multiplayer Options");
-			multiplayerOptionsMenu->center = false;
+			//multiplayerOptionsMenu->center = false;
 		}
 
 		multiplayerOptionsMenu->add("Game Sequence: Allow Different Game Sequences Or Types", "Select Game");
@@ -4020,8 +4020,8 @@ void BobsGame::multiplayerOptionsMenuUpdate()
 	if(currentRoom==nullptr)
 	{
 		currentRoom = new Room();
-
 	}
+
 	if(currentRoom->multiplayer_SelectedGameSequence == nullptr)
 	{
 		currentRoom->multiplayer_SelectedGameSequence = new GameSequence();
