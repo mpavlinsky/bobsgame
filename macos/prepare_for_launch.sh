@@ -17,5 +17,10 @@ do
 	install_name_tool -change /usr/local/lib/$name @loader_path/lib/$name ./bobsgame
 	otool -L $name
 done
+install_name_tool -change @rpath/SDL2_image.framework/Versions/A/SDL2_image @loader_path/libs/SDL2_image.framework/Versions/A/SDL2_image ./bobsgame
+install_name_tool -change @rpath/SDL2_mixer.framework/Versions/A/SDL2_mixer @loader_path/libs/SDL2_mixer.framework/Versions/A/SDL2_mixer ./bobsgame
+install_name_tool -change @rpath/SDL2_net.framework/Versions/A/SDL2_net @loader_path/libs/SDL2_net.framework/Versions/A/SDL2_net ./bobsgame
+install_name_tool -change @rpath/SDL2_ttf.framework/Versions/A/SDL2_ttf @loader_path/libs/SDL2_ttf.framework/Versions/A/SDL2_ttf ./bobsgame
+install_name_tool -change @rpath/SDL2.framework/Versions/A/SDL2 @loader_path/libs/SDL2.framework/Versions/A/SDL2 ./bobsgame
 otool -L ./bobsgame
 chmod 755 bobsgame
