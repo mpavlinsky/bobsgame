@@ -25,7 +25,7 @@ That means **no forks** except to create pull requests!
 
 ##SOURCE CODE AVAILABLE
 
-#DOWNLOAD IT RIGHT NOW!
+##DOWNLOAD IT RIGHT NOW!
 
 ##This game is actively developed. New features are being added constantly and bugs will happen.
 
