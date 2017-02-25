@@ -1036,7 +1036,7 @@ void BobsGame::update()
 	}
 
 
-	if (currentRoom->multiplayer_GameEndsWhenOnePlayerRemains)
+	if (currentRoom->multiplayer_GameEndsWhenOnePlayerRemains && players.size()>1)
 	{
 		int alivePlayers = 0;
 		for (int i = 0; i < players.size(); i++)
@@ -1063,7 +1063,7 @@ void BobsGame::update()
 	}
 
 
-	if (currentRoom->multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel)
+	if (currentRoom->multiplayer_GameEndsWhenSomeoneCompletesCreditsLevel && players.size()>1)
 	{
 
 		bool someoneWon = false;

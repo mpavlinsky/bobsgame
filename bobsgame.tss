@@ -86,10 +86,19 @@
       <string>C:\Users\Administrator\workspace\bobsgame\src\Puzzle\Stats\LeaderBoardAndHighScoreBoardEntry.h</string>
     </ArrayOfString>
     <ArrayOfString>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Engine\MiniGameEngine.cpp</string>
       <string>C:\Users\Administrator\workspace\bobsgame\src\Engine\MiniGameEngine.h</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\Caption.cpp</string>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\Caption.h</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\BobFont.cpp</string>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\BobFont.h</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\Logger.cpp</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
