@@ -17,6 +17,11 @@ do
 	install_name_tool -change /usr/local/lib/$name @loader_path/lib/$name ./bobsgame
 	otool -L $name
 done
+
+install_name_tool -change @rpath/../../../SDL2.framework/Versions/A/SDL2 @loader_path/../../../../../../../SDL2.framework/Versions/A/SDL2 ./SDL2_mixer.framework/Versions/A/Frameworks/smpeg2.framework/Versions/A/smpeg2
+otool -L ./SDL2_mixer.framework/Versions/A/Frameworks/smpeg2.framework/Versions/A/smpeg2
+
+
 install_name_tool -change @rpath/SDL2_image.framework/Versions/A/SDL2_image @loader_path/libs/SDL2_image.framework/Versions/A/SDL2_image ./bobsgame
 install_name_tool -change @rpath/SDL2_mixer.framework/Versions/A/SDL2_mixer @loader_path/libs/SDL2_mixer.framework/Versions/A/SDL2_mixer ./bobsgame
 install_name_tool -change @rpath/SDL2_net.framework/Versions/A/SDL2_net @loader_path/libs/SDL2_net.framework/Versions/A/SDL2_net ./bobsgame
