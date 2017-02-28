@@ -68,6 +68,7 @@ public:
 	float rectangleCursorFromY = 0;
 	float rectangleCursorToY = 0;
 	float rectangleCursorCurrentY = 0;
+
 	
 	static ArrayList<BobMenu*> activeMenus;
 
@@ -101,6 +102,8 @@ public:
 	};
 
 	ArrayList<MenuItem*> menuItems;
+
+	MenuItem* topMenuItemDrawn = nullptr;
 
 	BobMenu(Engine *g, string title);
 	~BobMenu();
