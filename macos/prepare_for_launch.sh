@@ -15,6 +15,16 @@ do
 	install_name_tool -change /usr/local/lib/libCppUnit.1.dylib @loader_path/libs/libCppUnit.1.dylib $name
 	install_name_tool -change /usr/local/opt/boost/lib/libboost_serialization.dylib @loader_path/libs/ibboost_serialization.dylib $name
 	install_name_tool -change /usr/local/lib/$name @loader_path/lib/$name ./bobsgame
+
+	install_name_tool -change @loader_path/libs/libPocoFoundation.45.dylib @loader_path/libPocoFoundation.45.dylib $name
+	install_name_tool -change @loader_path/libs/libPocoUtil.45.dylib @loader_path/libPocoUtil.45.dylib $name
+	install_name_tool -change @loader_path/libs/libPocoNet.45.dylib @loader_path/libPocoNet.45.dylib $name
+	install_name_tool -change @loader_path/libs/libPocoZip.45.dylib @loader_path/libPocoZip.45.dylib $name
+	install_name_tool -change @loader_path/libs/libPocoXML.45.dylib @loader_path/libPocoXML.45.dylib $name
+	install_name_tool -change @loader_path/libs/libPocoJSON.45.dylib @loader_path/libPocoJSON.45.dylib $name
+	install_name_tool -change @loader_path/libs/libCppUnit.1.dylib @loader_path/libCppUnit.1.dylib $name
+	install_name_tool -change @loader_path/libs/ibboost_serialization.dylib @loader_path/libboost_serialization.dylib $name
+	install_name_tool -change @loader_path/lib/$name @loader_path/libs/$name ./bobsgame
 	otool -L $name
 done
 
