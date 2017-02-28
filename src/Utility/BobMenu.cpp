@@ -586,6 +586,36 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 		bool drawDownArrow = false;
 		float downArrowY = 0;
 
+		int topVisibleMenuItemIndex = 0;
+		//get index of last menu item drawn
+		if(topMenuItemDrawn!=nullptr)
+		{
+			bool found = false;
+			for (int i = 0; i < visibleMenuItems.size(); i++)
+			{
+				if(topMenuItemDrawn == visibleMenuItems.get(i))
+				{
+					found = true;
+					topVisibleMenuItemIndex = i;
+					break;
+				}
+			}
+			if (found == false)topMenuItemDrawn = nullptr;
+		}
+
+		int selectedVisibleMenuItemIndex = 0;
+		for (int i = 0; i < visibleMenuItems.size(); i++)
+		{
+			if(menuItems.get(cursorPosition) == visibleMenuItems.get(i))
+			{
+				selectedVisibleMenuItemIndex = i;
+				break;
+			}
+		}
+		if (selectedVisibleMenuItemIndex < topVisibleMenuItemIndex)topVisibleMenuItemIndex = selectedVisibleMenuItemIndex;
+		if (selectedVisibleMenuItemIndex >= topVisibleMenuItemIndex + menuItemsToShow)topVisibleMenuItemIndex = selectedVisibleMenuItemIndex - menuItemsToShow;
+		if (topVisibleMenuItemIndex < 0)topVisibleMenuItemIndex = 0;
+
 		for (int i = 0; i < visibleMenuItems.size() && numDrawn <= menuItemsToShow; i++)
 		{
 
@@ -593,21 +623,29 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 			//scroll down until the rest of the menus show on the screen
 			if (numDrawn == 0)
 			{
-				if (numVisibleMenuItemsBeforeCursor > menuItemsToShow / 2 && menuItemsToShow < visibleMenuItems.size())
+				if (topMenuItemDrawn != nullptr)
+				{
+					//if selected menu item is top visible menu item and topMenuItemIndex > 0, topMenuItemIndex--(scroll menu up)
+					if (selectedVisibleMenuItemIndex == topVisibleMenuItemIndex && topVisibleMenuItemIndex > 0)topVisibleMenuItemIndex--;
+
+					//if selected menu item is topMenuItemIndex+menuItemsToShow and topMenuItemIndex+menuItemsToShow < visibleMenuItems, topMenuItemIndex++(scroll menu down)
+					int bottomIndex = topVisibleMenuItemIndex + menuItemsToShow;
+					if (bottomIndex >= visibleMenuItems.size())bottomIndex = visibleMenuItems.size()-1;
+					if (selectedVisibleMenuItemIndex == bottomIndex && bottomIndex < visibleMenuItems.size() - 1)topVisibleMenuItemIndex++;
+				}
+				//set topMenuItemDrawn to top menu item
+				topMenuItemDrawn = visibleMenuItems.get(topVisibleMenuItemIndex);
+
+				if (topVisibleMenuItemIndex > 0 && menuItemsToShow < visibleMenuItems.size())
 				{
 					//if cursor > menuItemsToShow / 2, draw up arrow, start on cursor position - menuItemsToShow/2 - 1
 					//draw up arrow
 					drawUpArrow = true;
 					upArrowY = (float)(y - 16);
-
-					//jump i to numVisibleMenuItemsBeforeCursor - menuItemsToShow/2 -
-					i = numVisibleMenuItemsBeforeCursor - (menuItemsToShow / 2);
-
-					if (visibleMenuItems.size() - numVisibleMenuItemsBeforeCursor < menuItemsToShow)
-					{
-						i = (visibleMenuItems.size() - menuItemsToShow) - 1;
-					}
 				}
+
+				//jump i to topMenuItemIndex
+				i = topVisibleMenuItemIndex;
 			}
 			if (i < 0)i = 0;
 
@@ -650,7 +688,7 @@ void BobMenu::render(int y, int x, int endY, bool drawCursor, int* returnBottomO
 				numDrawn++;
 			}
 		}
-		if (visibleMenuItems.size() - numVisibleMenuItemsBeforeCursor > menuItemsToShow)
+		if (topVisibleMenuItemIndex + menuItemsToShow < visibleMenuItems.size()-1)
 		{
 			drawDownArrow = true;
 			downArrowY = (float)bottomOfCaptions;
