@@ -136,7 +136,7 @@ set(SOURCE_FILES
         lib/stb_truetype.h
         lib/stb_vorbis.c
         lib/minilzo-2.09/minilzo.c
-        lib/authenticate-GWEN-master/source/input/gwen_input_sdl2.cpp
+        lib/GWEN-master/gwen/src/Input/gwen_input_sdl2.cpp
         #lib/miniz-master/miniz.c
     src/Engine/cinematics/CinematicsManager.cpp
     src/Engine/cinematics/CinematicsManager.h
