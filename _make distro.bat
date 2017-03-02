@@ -73,7 +73,7 @@ C:\Users\Administrator\AppData\Roaming\itch\bin\butler.exe push "bob's game %myd
 C:\Users\Administrator\AppData\Roaming\itch\bin\butler.exe push "bob's game %mydate:~0,8% MacOS.zip" bobsgame/bobs-game-puzzle-game:osx --userversion %mydate:~0,8%
 C:\Users\Administrator\AppData\Roaming\itch\bin\butler.exe push "bob's game %mydate:~0,8% Linux.zip" bobsgame/bobs-game-puzzle-game:linux --userversion %mydate:~0,8%
 
-ftp -i -s:C:\Users\Administrator\workspace\ftp_script.txt
+rem ftp -i -s:C:\Users\Administrator\workspace\ftp_script.txt
 
 cd "C:\Users\Administrator\workspace\bobsgame"
 rmdir /S /Q "C:\Users\Administrator\workspace\steam\steamworks_sdk_137\sdk\tools\ContentBuilder\content\"
