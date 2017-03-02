@@ -3213,7 +3213,7 @@ void BobsGame::populateGameSequencesMenu(BobMenu *menu)
 
 
 //=========================================================================================================================
-string getNiceTime(long ms)
+string getNiceTime(long long ms)
 {//=========================================================================================================================
 	int sec = ms / 1000;
 	int min = sec / 60;
@@ -3231,15 +3231,23 @@ string getNiceTime(long ms)
 	return niceTime;
 }
 
-string getDateFromEpochTime(long ms)
-{
-	std::time_t result = ms;
-	string s = std::asctime(std::localtime(&result));
+
+
+#include <time.h>
+
+//=========================================================================================================================
+string getDateFromEpochTime(long long ms)
+{//=========================================================================================================================
+	std::time_t seconds = ms / 1000;
+	tm * time = localtime(&seconds);
+	string s = std::asctime(time);
 	std::string::size_type i = s.find("\n");
 	if (i != std::string::npos)
 		s.erase(i, s.length());
 	return s;
 }
+
+
 
 //=========================================================================================================================
 //gameTypeOrSequenceString or difficulty string can be "OVERALL"
