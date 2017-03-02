@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2_image.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameLogic.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/CustomGameEditor.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameType.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/BobsGameMenus.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameSequence.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/BobsGame.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Stats/UserStatsForSpecificGameAndDifficulty.h" isTestSource="false" />
@@ -21,11 +21,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameType.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/CustomGameEditor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/PuzzlePlayer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameType.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Grid.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Room.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameSequenceEditor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameTestMenu.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/BobsGameMenus.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Block.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameSequence.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Block.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/BobsGameNetwork.cpp" isTestSource="false" />
@@ -34,7 +35,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GlobalSettings.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameLogic.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/GameSequenceEditor.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Block.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/BobsGame.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Piece.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Puzzle/Piece.h" isTestSource="false" />
@@ -342,7 +342,6 @@
       <sourceFolder url="file://$MODULE_DIR$/lib/HQ2X/HQ2X.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/stb_image.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/stb_image_write.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/lib/authenticate-GWEN-master/source/input/gwen_input_sdl2.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/SDL_platform.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/stb_vorbis.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/glew-2.0.0/src/glew.c" isTestSource="false" />
@@ -350,8 +349,9 @@
       <sourceFolder url="file://$MODULE_DIR$/lib/glew-2.0.0/include/GL/glew.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/glew-2.0.0/include/GL/glxew.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/stb_image_resize.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/lib/stb_truetype.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/DG_misc.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/stb_truetype.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/GWEN-master/gwen/src/Input/gwen_input_sdl2.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stdafx.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bobtypes.h" isTestSource="false" />
     </content>
