@@ -13,7 +13,7 @@
 #include "GameSequence.h"
 #include <src/Engine/network/GameSave.h>
 #include <src/Engine/network/UDPPeerConnection.h>
-#include "GlobalSettings.h"
+
 
 class Logger;
 
@@ -508,8 +508,7 @@ public:
 	static ArrayList<Sprite*> loadedSprites;
 	void loadGameSequencesFromXML();
 	void loadGameTypesFromXML();
-	void loadGlobalSettingsFromXML();
-	void saveGlobalSettingsToXML();
+
 	static void saveUnknownGameSequencesAndTypesToXML(GameSequence *gs);
 	static void saveGameSequenceToXML(GameSequence *gs, bool downloaded);
 	static void saveGameTypeToXML(GameType *gt, bool downloaded);
@@ -518,7 +517,8 @@ public:
 	static GameType* getGameTypeByUUID(string uuid);
 	static GameSequence* getGameSequenceByName(string name);
 	static GameSequence* getGameSequenceByUUID(string uuid);
-	GlobalSettings* globalSettings = nullptr;
+
+
 	void increaseVolume();
 	void decreaseVolume();
 

@@ -88,7 +88,7 @@ BobsGame::~BobsGame()
 
 	players.clear();
 
-	saveGlobalSettingsToXML();
+	
 
 }
 
@@ -118,8 +118,8 @@ void BobsGame::init()
 
 	//TODO: load sprite text files regardless of names
 
-
-	loadGlobalSettingsFromXML();
+	music->setVolume((((float)Main::globalSettings->musicVolume) / 100.0f));
+	
 	loadGameTypesFromXML();
 	loadGameSequencesFromXML();
 
@@ -775,11 +775,11 @@ void BobsGame::render()
 		{
 			GLUtils::useShader(GLUtils::colorShader);
 
-			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameHue", globalSettings->hue);
-			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameSaturation", globalSettings->saturation);
-			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameBrightness", globalSettings->brightness);
-			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameContrast", globalSettings->contrast);
-			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameGamma", globalSettings->gamma);
+			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameHue", Main::globalSettings->hue);
+			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameSaturation", Main::globalSettings->saturation);
+			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameBrightness", Main::globalSettings->brightness);
+			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameContrast", Main::globalSettings->contrast);
+			GLUtils::setShaderVar1f(GLUtils::colorShader, (char*)"gameGamma", Main::globalSettings->gamma);
 			GLUtils::setShaderVar1i(GLUtils::colorShader, (char*)"Tex0", 0);
 		}
 
@@ -864,73 +864,73 @@ void BobsGame::debugKeys()
 
 	if (getControlsManager()->key_1_Pressed() == true)
 	{
-		globalSettings->hue -= 0.1f;
-		Console::debug(string("Hue: ") + to_string(globalSettings->hue), 1000);
+		Main::globalSettings->hue -= 0.1f;
+		Console::debug(string("Hue: ") + to_string(Main::globalSettings->hue), 1000);
 	}
 
 	if (getControlsManager()->key_2_Pressed() == true)
 	{
-		globalSettings->hue += 0.1f;
-		Console::debug(string("Hue: ") + to_string(globalSettings->hue), 1000);
+		Main::globalSettings->hue += 0.1f;
+		Console::debug(string("Hue: ") + to_string(Main::globalSettings->hue), 1000);
 	}
 
 	if (getControlsManager()->key_3_Pressed() == true)
 	{
-		globalSettings->contrast -= 0.1f;
-		Console::debug(string("Contrast: ") + to_string(globalSettings->contrast), 1000);
+		Main::globalSettings->contrast -= 0.1f;
+		Console::debug(string("Contrast: ") + to_string(Main::globalSettings->contrast), 1000);
 	}
 
 	if (getControlsManager()->key_4_Pressed() == true)
 	{
-		globalSettings->contrast += 0.1f;
-		Console::debug(string("Contrast: ") + to_string(globalSettings->contrast), 1000);
+		Main::globalSettings->contrast += 0.1f;
+		Console::debug(string("Contrast: ") + to_string(Main::globalSettings->contrast), 1000);
 	}
 
 	if (getControlsManager()->key_5_Pressed() == true)
 	{
-		globalSettings->
+		Main::globalSettings->
 			brightness -= 0.1f;
-		Console::debug(string("Brightness: ") + to_string(globalSettings->brightness), 1000);
+		Console::debug(string("Brightness: ") + to_string(Main::globalSettings->brightness), 1000);
 	}
 
 	if (getControlsManager()->key_6_Pressed() == true)
 	{
-		globalSettings->brightness += 0.1f;
-		Console::debug(string("Brightness: ") + to_string(globalSettings->brightness), 1000);
+		Main::globalSettings->brightness += 0.1f;
+		Console::debug(string("Brightness: ") + to_string(Main::globalSettings->brightness), 1000);
 	}
 
 	if (getControlsManager()->key_7_Pressed() == true)
 	{
-		globalSettings->saturation -= 0.1f;
-		Console::debug(string("Saturation: ") + to_string(globalSettings->saturation), 1000);
+		Main::globalSettings->saturation -= 0.1f;
+		Console::debug(string("Saturation: ") + to_string(Main::globalSettings->saturation), 1000);
 	}
 
 	if (getControlsManager()->key_8_Pressed() == true)
 	{
-		globalSettings->saturation += 0.1f;
-		Console::debug(string("Saturation: ") + to_string(globalSettings->saturation), 1000);
+		Main::globalSettings->saturation += 0.1f;
+		Console::debug(string("Saturation: ") + to_string(Main::globalSettings->saturation), 1000);
 	}
 
 	if (getControlsManager()->key_9_Pressed() == true)
 	{
-		globalSettings->gamma -= 0.1f;
-		Console::debug(string("Gamma: ") + to_string(globalSettings->gamma), 1000);
+		Main::globalSettings->gamma -= 0.1f;
+		Console::debug(string("Gamma: ") + to_string(Main::globalSettings->gamma), 1000);
 	}
 
 	if (getControlsManager()->key_0_Pressed() == true)
 	{
-		globalSettings->gamma += 0.1f;
-		Console::debug(string("Gamma: ") + to_string(globalSettings->gamma), 1000);
+		Main::globalSettings->gamma += 0.1f;
+		Console::debug(string("Gamma: ") + to_string(Main::globalSettings->gamma), 1000);
 	}
 
 	if (getControlsManager()->key_BACKSPACE_Pressed() == true)
 	{
-		globalSettings->hue = 1.5f;
-		globalSettings->saturation = 1.2f;
-		globalSettings->brightness = 1.0f;
-		globalSettings->contrast = 1.2f;
-		globalSettings->gamma = 1.0f;
-		Console::debug(string("Hue: ") + to_string(globalSettings->hue) + string(" | Saturation: ") + to_string(globalSettings->saturation) + string(" | Brightness: ") + to_string(globalSettings->brightness) + string(" | Contrast: ") + to_string(globalSettings->contrast) + string(" | Gamma: ") + to_string(globalSettings->gamma), 1000);
+		Main::globalSettings->hue = 1.5f;
+		Main::globalSettings->saturation = 1.2f;
+		Main::globalSettings->brightness = 1.0f;
+		Main::globalSettings->contrast = 1.2f;
+		Main::globalSettings->gamma = 1.0f;
+		Console::debug(string("Hue: ") + to_string(Main::globalSettings->hue) + string(" | Saturation: ") + to_string(Main::globalSettings->saturation) + string(" | Brightness: ") + to_string(Main::globalSettings->brightness) + string(" | Contrast: ") + to_string(Main::globalSettings->contrast) + string(" | Gamma: ") + to_string(Main::globalSettings->gamma), 1000);
 	}
 
 #endif
@@ -1958,95 +1958,6 @@ GameSequence* BobsGame::getGameSequenceByUUID(string uuid)
 		}
 	}
 	return bt;
-}
-//=========================================================================================================================
-void BobsGame::loadGlobalSettingsFromXML()
-{//=========================================================================================================================
-	string userDataPathString = FileUtils::appDataPath + "";
-	Path userDataPath(userDataPathString);
-	File userDataPathDir(userDataPath);
-	if (userDataPathDir.exists() == false)userDataPathDir.createDirectories();
-
-
-	string filename = "globalSettings.xml";
-	File f = File(userDataPathString + filename);
-	if(f.exists())
-	{
-		ifstream t(userDataPathString + filename);
-		string str;
-
-		t.seekg(0, ios::end);
-		str.reserve((size_t)t.tellg());
-		t.seekg(0, ios::beg);
-
-		str.assign((istreambuf_iterator<char>(t)),
-			istreambuf_iterator<char>());
-
-		stringstream ss;
-		ss << str;
-
-		boost::archive::xml_iarchive ia(ss);
-		GlobalSettings gs;
-		try
-		{
-			ia >> BOOST_SERIALIZATION_NVP(gs);
-		}
-		catch(exception)
-		{
-			gs = GlobalSettings();
-			log.error("Could not unserialize GlobalSettings");
-		}
-
-		GlobalSettings *s = new GlobalSettings();
-		*s = gs;
-		globalSettings = s;
-	}
-	else
-	{
-		globalSettings = new GlobalSettings();
-	}
-
-
-
-	music->setVolume((((float)globalSettings->musicVolume) / 100.0f));
-
-}
-
-
-//=========================================================================================================================
-void BobsGame::saveGlobalSettingsToXML()
-{//=========================================================================================================================
-
-	string userDataPathString = FileUtils::appDataPath + "";
-	Path userDataPath(userDataPathString);
-	File userDataPathDir(userDataPath);
-	if (userDataPathDir.exists() == false)userDataPathDir.createDirectories();
-
-
-	string filename = "globalSettings.xml";
-
-	Path filePath(userDataPathString + filename);
-	File file(filePath);
-
-	if (file.exists())
-	{
-		file.remove();
-	}
-
-	{
-		std::stringstream ss;
-		boost::archive::xml_oarchive oarchive(ss);
-
-		GlobalSettings s;
-		s = *globalSettings;
-		oarchive << BOOST_SERIALIZATION_NVP(s);
-
-		ofstream outputFile;
-		outputFile.open(userDataPathString + filename, ofstream::out);
-		outputFile << ss.str() << endl;
-		outputFile.close();
-	}
-
 }
 
 //=========================================================================================================================

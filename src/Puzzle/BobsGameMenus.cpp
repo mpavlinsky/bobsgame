@@ -530,7 +530,7 @@ void BobsGame::startScreenMenuUpdate()
 		infoMenu->center = false;
 		infoMenu->font = BobFont::ttf_10;
 		infoMenu->outline = false;
-		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__ +" - Support this game: ", "Build Number");
+		infoMenu->addInfo("Build " + Main::version + " " + __TIMESTAMP__);// +" - Support this game: ", "Build Number");
 		infoMenu->addInfo("This game is actively developed by one person for free and will have bugs. I rely on your feedback!");
 		infoMenu->addInfo("Please report problems, crashes, and suggestions to bugs@bobsgame.com or ", "Open Forum");
 		infoMenu->addInfo("There are no built in games, they are downloaded. If no games show in the menu the server might be overloaded, wait a bit or restart a few times.");
@@ -539,14 +539,14 @@ void BobsGame::startScreenMenuUpdate()
 
 
 
-	if (patreonMenu == nullptr)
-	{
-		patreonMenu = new BobMenu(this, "");
-		patreonMenu->center = false;
-		patreonMenu->font = BobFont::ttf_10;
-		patreonMenu->outline = false;
-		patreonMenu->addInfo("https://patreon.com/bobsgame", "Patreon", BobColor::lightBlue);
-	}
+//	if (patreonMenu == nullptr)
+//	{
+//		patreonMenu = new BobMenu(this, "");
+//		patreonMenu->center = false;
+//		patreonMenu->font = BobFont::ttf_10;
+//		patreonMenu->outline = false;
+//		patreonMenu->addInfo("https://patreon.com/bobsgame", "Patreon", BobColor::lightBlue);
+//	}
 
 
 
@@ -801,17 +801,17 @@ void BobsGame::gettingGamesFromServerMenuRender()
 
 void BobsGame::decreaseVolume()
 {//=========================================================================================================================
-	if (globalSettings->musicVolume > 0)globalSettings->musicVolume -= 1;
-	if (globalSettings->musicVolume < 0)globalSettings->musicVolume = 0;
-	music->setVolume(((float)globalSettings->musicVolume / 100.0f));
+	if (Main::globalSettings->musicVolume > 0)Main::globalSettings->musicVolume -= 1;
+	if (Main::globalSettings->musicVolume < 0)Main::globalSettings->musicVolume = 0;
+	music->setVolume(((float)Main::globalSettings->musicVolume / 100.0f));
 }
 
 
 void BobsGame::increaseVolume()
 {//=========================================================================================================================
-	if (globalSettings->musicVolume < 100)globalSettings->musicVolume += 1;
-	if (globalSettings->musicVolume > 100)globalSettings->musicVolume = 100;
-	music->setVolume(((float)globalSettings->musicVolume / 100.0f));
+	if (Main::globalSettings->musicVolume < 100)Main::globalSettings->musicVolume += 1;
+	if (Main::globalSettings->musicVolume > 100)Main::globalSettings->musicVolume = 100;
+	music->setVolume(((float)Main::globalSettings->musicVolume / 100.0f));
 }
 
 
@@ -951,6 +951,9 @@ void BobsGame::controllerMenuUpdate()
 		controllerMenu->addInfo("If your controller does not work, try downloading x360ce.");
 		controllerMenu->addInfo("If it still does not work, please report to bugs@bobsgame.com");
 		controllerMenu->addInfo(" ");
+#ifdef _WINDOWS_
+		controllerMenu->add("Use XInput (better XBox controller support, 4 player max)", "XInput");
+#endif
 		controllerMenu->add("Test detected button mapping");
 		controllerMenu->add("Return to Title Screen");
 		controllerMenu->addInfo(" ", "Testing Caption");
@@ -959,7 +962,10 @@ void BobsGame::controllerMenuUpdate()
 		controllerMenu->cursorPosition = controllerMenuCursorPosition;
 	}
 	
-
+#ifdef _WINDOWS_
+	if(Main::globalSettings->useXInput)controllerMenu->getMenuItemByID("XInput")->setText("Use XInput (better XBox controller support, 4 player max)");
+	else controllerMenu->getMenuItemByID("XInput")->setText("Use DirectInput (worse support but no controller limit)");
+#endif
 
 	if(controllerMenuTestingButtons)
 	{
@@ -1018,6 +1024,12 @@ void BobsGame::controllerMenuUpdate()
 
 		if (confirm || clicked)
 		{
+
+			if (controllerMenu->isSelectedID("XInput", clicked, mx, my))
+			{
+				Main::globalSettings->useXInput = !Main::globalSettings->useXInput;
+				controllerMenu->getMenuItemByID("Button Press Caption")->setText("Must Restart To Apply Changes!");
+			}
 
 			if (controllerMenu->isSelectedID("Test detected button mapping", clicked, mx, my))
 			{
@@ -1578,9 +1590,9 @@ void BobsGame::createAccountMenuRender()
 void BobsGame::settingsMenuInit(BobMenu* m)
 {//=========================================================================================================================
 	m->add("Music Volume: " + to_string((int)(music->getVolume() * 100)) + "%", "Music Volume");
-	m->add("Brightness: " + to_string((int)(globalSettings->brightness * 100)) + "%", "Brightness");
-	m->add("Contrast: " + to_string((int)(globalSettings->contrast * 100)) + "%", "Contrast");
-	m->add("Saturation: " + to_string((int)(globalSettings->saturation * 100)) + "%", "Saturation");
+	m->add("Brightness: " + to_string((int)(Main::globalSettings->brightness * 100)) + "%", "Brightness");
+	m->add("Contrast: " + to_string((int)(Main::globalSettings->contrast * 100)) + "%", "Contrast");
+	m->add("Saturation: " + to_string((int)(Main::globalSettings->saturation * 100)) + "%", "Saturation");
 	//m->add("Hue Shift: " + to_string((int)(globalSettings->hue * 100)) + "%", "Hue Shift");
 	m->add("Defaults");
 }
@@ -1611,9 +1623,9 @@ void BobsGame::settingsMenuLeft(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->brightness > 0)globalSettings->brightness -= 0.01f;
-			if (globalSettings->brightness < 0)globalSettings->brightness = 0;
-			m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(globalSettings->brightness * 100)) + "%");
+			if (Main::globalSettings->brightness > 0)Main::globalSettings->brightness -= 0.01f;
+			if (Main::globalSettings->brightness < 0)Main::globalSettings->brightness = 0;
+			m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(Main::globalSettings->brightness * 100)) + "%");
 		}
 	}
 
@@ -1626,9 +1638,9 @@ void BobsGame::settingsMenuLeft(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->contrast > 0)globalSettings->contrast -= 0.01f;
-			if (globalSettings->contrast < 0)globalSettings->contrast = 0;
-			m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(globalSettings->contrast * 100)) + "%");
+			if (Main::globalSettings->contrast > 0)Main::globalSettings->contrast -= 0.01f;
+			if (Main::globalSettings->contrast < 0)Main::globalSettings->contrast = 0;
+			m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(Main::globalSettings->contrast * 100)) + "%");
 		}
 	}
 
@@ -1641,9 +1653,9 @@ void BobsGame::settingsMenuLeft(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->saturation > 0)globalSettings->saturation -= 0.01f;
-			if (globalSettings->saturation < 0)globalSettings->saturation = 0;
-			m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(globalSettings->saturation * 100)) + "%");
+			if (Main::globalSettings->saturation > 0)Main::globalSettings->saturation -= 0.01f;
+			if (Main::globalSettings->saturation < 0)Main::globalSettings->saturation = 0;
+			m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(Main::globalSettings->saturation * 100)) + "%");
 		}
 	}
 //
@@ -1689,9 +1701,9 @@ void BobsGame::settingsMenuRight(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->brightness < 2)globalSettings->brightness += 0.01f;
-			if (globalSettings->brightness > 2)globalSettings->brightness = 2;
-			m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(globalSettings->brightness * 100)) + "%");
+			if (Main::globalSettings->brightness < 2)Main::globalSettings->brightness += 0.01f;
+			if (Main::globalSettings->brightness > 2)Main::globalSettings->brightness = 2;
+			m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(Main::globalSettings->brightness * 100)) + "%");
 		}
 	}
 
@@ -1704,9 +1716,9 @@ void BobsGame::settingsMenuRight(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->contrast < 2)globalSettings->contrast += 0.01f;
-			if (globalSettings->contrast > 2)globalSettings->contrast = 2;
-			m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(globalSettings->contrast * 100)) + "%");
+			if (Main::globalSettings->contrast < 2)Main::globalSettings->contrast += 0.01f;
+			if (Main::globalSettings->contrast > 2)Main::globalSettings->contrast = 2;
+			m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(Main::globalSettings->contrast * 100)) + "%");
 		}
 	}
 
@@ -1719,9 +1731,9 @@ void BobsGame::settingsMenuRight(BobMenu* m)
 		if (ticksPassed > 15)
 		{
 			timeLastChangedSetting = currentTime;
-			if (globalSettings->saturation < 2)globalSettings->saturation += 0.01f;
-			if (globalSettings->saturation > 2)globalSettings->saturation = 2;
-			m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(globalSettings->saturation * 100)) + "%");
+			if (Main::globalSettings->saturation < 2)Main::globalSettings->saturation += 0.01f;
+			if (Main::globalSettings->saturation > 2)Main::globalSettings->saturation = 2;
+			m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(Main::globalSettings->saturation * 100)) + "%");
 		}
 	}
 //
@@ -1734,9 +1746,9 @@ void BobsGame::settingsMenuRight(BobMenu* m)
 //		if (ticksPassed > 15)
 //		{
 //			timeLastChangedSetting = currentTime;
-//			if (globalSettings->hue < 2)globalSettings->hue += 0.01f;
-//			if (globalSettings->hue > 2)globalSettings->hue = 2;
-//			m->getCaptionByID("Hue Shift")->replaceText("Hue Shift: " + to_string((int)(globalSettings->hue * 100)) + "%");
+//			if (Main::globalSettings->hue < 2)Main::globalSettings->hue += 0.01f;
+//			if (Main::globalSettings->hue > 2)Main::globalSettings->hue = 2;
+//			m->getCaptionByID("Hue Shift")->replaceText("Hue Shift: " + to_string((int)(Main::globalSettings->hue * 100)) + "%");
 //		}
 //	}
 }
@@ -1745,17 +1757,17 @@ void BobsGame::settingsMenuRight(BobMenu* m)
 void BobsGame::settingsMenuConfirm(BobMenu* m)
 {//=========================================================================================================================
 
-		globalSettings->musicVolume = 50;
-		music->setVolume(((float)globalSettings->musicVolume / 100.0f));
-		globalSettings->hue = 1.5f;
-		globalSettings->saturation = 1.2f;
-		globalSettings->brightness = 1.0f;
-		globalSettings->contrast = 1.2f;
-		globalSettings->gamma = 1.0f;
+		Main::globalSettings->musicVolume = 50;
+		music->setVolume(((float)Main::globalSettings->musicVolume / 100.0f));
+		Main::globalSettings->hue = 1.5f;
+		Main::globalSettings->saturation = 1.2f;
+		Main::globalSettings->brightness = 1.0f;
+		Main::globalSettings->contrast = 1.2f;
+		Main::globalSettings->gamma = 1.0f;
 		m->getMenuItemByID("Music Volume")->setText("Music Volume: " + to_string((int)(music->getVolume() * 100)) + "%");
-		m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(globalSettings->brightness * 100)) + "%");
-		m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(globalSettings->contrast * 100)) + "%");
-		m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(globalSettings->saturation * 100)) + "%");
+		m->getMenuItemByID("Brightness")->setText("Brightness: " + to_string((int)(Main::globalSettings->brightness * 100)) + "%");
+		m->getMenuItemByID("Contrast")->setText("Contrast: " + to_string((int)(Main::globalSettings->contrast * 100)) + "%");
+		m->getMenuItemByID("Saturation")->setText("Saturation: " + to_string((int)(Main::globalSettings->saturation * 100)) + "%");
 	
 }
 
@@ -3209,6 +3221,15 @@ void BobsGame::populateGameSequencesMenu(BobMenu *menu)
 
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

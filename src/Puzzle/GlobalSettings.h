@@ -20,6 +20,7 @@ public:
 	float brightness = 1.0f;
 	float contrast = 1.2f;
 	float gamma = 1.0f;
+	bool useXInput = true;
 
 	template <typename Archive>
 	void serialize(Archive & ar, const unsigned int version)
@@ -34,9 +35,13 @@ public:
 			ar & BOOST_SERIALIZATION_NVP(contrast);
 			ar & BOOST_SERIALIZATION_NVP(gamma);
 		}
+		if(version>1)
+		{
+			ar & BOOST_SERIALIZATION_NVP(useXInput);
+		}
 	}
 
 
 };
-BOOST_CLASS_VERSION(GlobalSettings, 1)
+BOOST_CLASS_VERSION(GlobalSettings, 2)
 BOOST_CLASS_TRACKING(GlobalSettings, boost::serialization::track_never)
