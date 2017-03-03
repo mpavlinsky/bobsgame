@@ -16,6 +16,8 @@
 #include "Engine/network/BobNet.h"
 #include "Engine/rpg/BGClientEngine.h"
 
+#include "Puzzle/GlobalSettings.h"
+
 class Logger;
 
 
@@ -115,6 +117,11 @@ public:
 
 	virtual void makeGhostThread();
 
+
+
+	static GlobalSettings* globalSettings;
+	void loadGlobalSettingsFromXML();
+	void saveGlobalSettingsToXML();
 
 	//JAVA TO C++ CONVERTER TODO TASK: 'volatile' has a different meaning in C++:
 	//ORIGINAL LINE: public volatile boolean exit = false;

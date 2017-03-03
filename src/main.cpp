@@ -64,7 +64,7 @@ bool Main::quit = false;
 bool Main::GLOBAL_hq2x_is_on = false;
 //int Main::fpsmeter = true;
 
-
+GlobalSettings* Main::globalSettings = nullptr;
 
 ControlsManager* Main::controlsManager = new ControlsManager();
 BGClientEngine* Main::gameEngine = nullptr;
@@ -160,9 +160,15 @@ void Main::mainInit()
  }
  */
 
+	cacheManager = new FileUtils();
+	cacheManager->initCache();
+	
 
+	loadGlobalSettingsFromXML();
+
+	if (globalSettings->useXInput == false)SDL_SetHint(SDL_HINT_XINPUT_ENABLED, "0");
 	SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS,"1");
-	//SDL_SetHint(SDL_HINT_XINPUT_ENABLED, "0");
+	
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
@@ -228,9 +234,7 @@ void Main::mainInit()
 		doLegalScreen();
 	}
 
-	cacheManager = new FileUtils();
-	cacheManager->initCache();
-	GLUtils::e();
+
 
 	stateManager = new StateManager();
 	GLUtils::e();
@@ -344,6 +348,109 @@ void Main::mainInit()
 
 
 }
+
+#include <fstream>
+#include <iostream>
+#include "Poco/File.h"
+#include "Poco/Path.h"
+#include "Poco/Delegate.h"
+#include "Poco/Zip/Decompress.h"
+#include "Poco/Process.h"
+#include "Poco/DirectoryIterator.h"
+using Poco::DirectoryIterator;
+using Poco::File;
+using Poco::Process;
+using Poco::Path;
+
+//=========================================================================================================================
+void Main::loadGlobalSettingsFromXML()
+{//=========================================================================================================================
+	string userDataPathString = FileUtils::appDataPath + "";
+	Path userDataPath(userDataPathString);
+	File userDataPathDir(userDataPath);
+	if (userDataPathDir.exists() == false)userDataPathDir.createDirectories();
+
+
+	string filename = "globalSettings.xml";
+	File f = File(userDataPathString + filename);
+	if (f.exists())
+	{
+		ifstream t(userDataPathString + filename);
+		string str;
+
+		t.seekg(0, ios::end);
+		str.reserve((size_t)t.tellg());
+		t.seekg(0, ios::beg);
+
+		str.assign((istreambuf_iterator<char>(t)),
+			istreambuf_iterator<char>());
+
+		stringstream ss;
+		ss << str;
+
+		boost::archive::xml_iarchive ia(ss);
+		GlobalSettings gs;
+		try
+		{
+			ia >> BOOST_SERIALIZATION_NVP(gs);
+		}
+		catch (exception)
+		{
+			gs = GlobalSettings();
+			log.error("Could not unserialize GlobalSettings");
+		}
+
+		GlobalSettings *s = new GlobalSettings();
+		*s = gs;
+		globalSettings = s;
+	}
+	else
+	{
+		globalSettings = new GlobalSettings();
+	}
+
+
+
+
+}
+
+
+//=========================================================================================================================
+void Main::saveGlobalSettingsToXML()
+{//=========================================================================================================================
+
+	string userDataPathString = FileUtils::appDataPath + "";
+	Path userDataPath(userDataPathString);
+	File userDataPathDir(userDataPath);
+	if (userDataPathDir.exists() == false)userDataPathDir.createDirectories();
+
+
+	string filename = "globalSettings.xml";
+
+	Path filePath(userDataPathString + filename);
+	File file(filePath);
+
+	if (file.exists())
+	{
+		file.remove();
+	}
+
+	{
+		std::stringstream ss;
+		boost::archive::xml_oarchive oarchive(ss);
+
+		GlobalSettings s;
+		s = *globalSettings;
+		oarchive << BOOST_SERIALIZATION_NVP(s);
+
+		ofstream outputFile;
+		outputFile.open(userDataPathString + filename, ofstream::out);
+		outputFile << ss.str() << endl;
+		outputFile.close();
+	}
+
+}
+
 
 ////===========================================================================================================================
 //void Main::e(const string &whereErrorOccurredString)
@@ -1647,6 +1754,8 @@ void Main::cleanup()
 
 	SDLNet_Quit();
 	//enet_deinitialize();
+
+	saveGlobalSettingsToXML();
 
 	log.info("Exiting...");
 	SDL_Quit();
