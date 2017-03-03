@@ -996,13 +996,15 @@ void BobsGame::controllerMenuUpdate()
 		}
 
 		if (getControlsManager()->key_ESC_Pressed() || (getControlsManager()->MINIGAME_START_HELD && getControlsManager()->MINIGAME_SELECT_HELD))
+		{
 			controllerMenuTestingButtons = false;
-
+			controllerMenu->getMenuItemByID("Testing Caption")->setText(" ");
+			controllerMenu->getMenuItemByID("Button Press Caption")->setText(" ");
+		}
+			
 	}
 	else
 	{
-		controllerMenu->getMenuItemByID("Testing Caption")->setText(" ");
-		controllerMenu->getMenuItemByID("Button Press Caption")->setText(" ");
 
 		if (getControlsManager()->miniGame_UP_Pressed())
 		{
