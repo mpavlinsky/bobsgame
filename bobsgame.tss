@@ -86,7 +86,10 @@
       <string>C:\Users\Administrator\workspace\bobsgame\src\Puzzle\Stats\LeaderBoardAndHighScoreBoardEntry.h</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\Logger.cpp</string>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\FileUtils.cpp</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Administrator\workspace\bobsgame\src\Utility\ControlsManager.cpp</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
