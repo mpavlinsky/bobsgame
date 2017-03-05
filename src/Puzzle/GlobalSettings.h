@@ -20,7 +20,7 @@ public:
 	float brightness = 1.0f;
 	float contrast = 1.2f;
 	float gamma = 1.0f;
-	bool useXInput = false;
+	bool useXInput = true;
 
 	template <typename Archive>
 	void serialize(Archive & ar, const unsigned int version)
