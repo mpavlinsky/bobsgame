@@ -944,11 +944,23 @@ void BobsGame::debugKeys()
 void BobsGame::update()
 {//=========================================================================================================================
 
-	if(music->isPlaying()==false)
-	{
-		music->play();
-	}
 
+
+	if(networkMultiplayerLobbyMenuShowing || networkMultiplayerPlayerJoinMenuShowing)
+	{
+		if (music->isPlaying() == true)
+		{
+			music->pause();
+		}
+
+	}
+	else
+	{
+		if (music->isPlaying() == false)
+		{
+			music->play();
+		}
+	}
 
 
 
