@@ -1,0 +1,1 @@
+DirectInputControllerMap.exe 0 >> add_me_to_the_bottom_of_gamecontrollerdb_and_email_to_bugs_at_bobsgame_dot_com_if_it_works.txt

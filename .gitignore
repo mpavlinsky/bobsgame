@@ -6,26 +6,23 @@
 *.res
 *.opendb
 *.db
+*.suo
+*.dia
+.DS_Store
+
 distro/
-<<<<<<< HEAD
-=======
 _resources/
 DerivedData/
 obj/
->>>>>>> fdd96b86fcf03a9517c1969419d5e307acea1cf7
 Release/
 Debug/
+
 version.txt
 log.html
-*.suo
-<<<<<<< HEAD
-
-=======
 src/Puzzle/Legacy.h
->>>>>>> fdd96b86fcf03a9517c1969419d5e307acea1cf7
+_just steam.bat
 
-*.dia
-.DS_Store
+
 
 # Compiled Object files
 *.slo

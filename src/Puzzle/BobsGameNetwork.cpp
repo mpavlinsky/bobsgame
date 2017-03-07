@@ -424,6 +424,9 @@ bool BobsGame::udpPeerMessageReceived(UDPPeerConnection *c, string s)
 					string userName = p->peerConnection->getUserName();
 					if (userName != "")name = userName;
 					p->nameCaption = getCaptionManager()->newManagedCaption(0, 0, -1, name, BobFont::ttf_16, BobMenu::menuColor, BobMenu::clearColor, RenderOrder::OVER_GUI);
+
+					getAudioManager()->playSound("ready");
+
 				}
 
 			}

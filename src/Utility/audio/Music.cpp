@@ -367,6 +367,8 @@ void Music::pause()
 	//   {
 	//      channel->pause();
 	//   }
+
+	shouldBePlaying = false;
 }
 
 void Music::unpause()
@@ -375,6 +377,7 @@ void Music::unpause()
 	//   {
 	//      channel->unPause();
 	//   }
+	shouldBePlaying = true;
 }
 
 void Music::stop()

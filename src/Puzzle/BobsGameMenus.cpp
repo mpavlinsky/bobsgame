@@ -948,11 +948,15 @@ void BobsGame::controllerMenuUpdate()
 
 		controllerMenu = new BobMenu(this, "Controller Test");
 		controllerMenu->addInfo("Game controllers should be automatically detected.");
+#ifdef _WINDOWS_
 		controllerMenu->addInfo("If your controller does not work, try downloading x360ce.");
+		controllerMenu->addInfo("You can also try the controller map tool in /data/ControllerMapTool");
+#endif
 		controllerMenu->addInfo("If it still does not work, please report to bugs@bobsgame.com");
 		controllerMenu->addInfo(" ");
 #ifdef _WINDOWS_
-		controllerMenu->add("Use XInput (better XBox controller support, 4 player max)", "XInput");
+		controllerMenu->add("Use XInput (better controller support but 4 player max)", "XInput");
+		controllerMenu->addInfo("");
 #endif
 		controllerMenu->add("Test detected button mapping");
 		controllerMenu->add("Return to Title Screen");
@@ -963,8 +967,8 @@ void BobsGame::controllerMenuUpdate()
 	}
 	
 #ifdef _WINDOWS_
-	if(Main::globalSettings->useXInput)controllerMenu->getMenuItemByID("XInput")->setText("Use XInput (better XBox controller support, 4 player max)");
-	else controllerMenu->getMenuItemByID("XInput")->setText("Use DirectInput (worse support but no controller limit)");
+	if(Main::globalSettings->useXInput)controllerMenu->getMenuItemByID("XInput")->setText("Use XInput (better controller support but 4 player max)");
+	else controllerMenu->getMenuItemByID("XInput")->setText("Use DirectInput (worse controller support but no player limit)");
 #endif
 
 	if(controllerMenuTestingButtons)
